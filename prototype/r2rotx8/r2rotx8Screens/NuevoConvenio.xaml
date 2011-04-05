@@ -1,0 +1,51 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+	mc:Ignorable="d"
+	x:Class="ar2rotx8Screens.Screen_2"
+	Width="1000" Height="800">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="SketchStyles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<TextBlock HorizontalAlignment="Stretch" Margin="103,61,105,0" Style="{StaticResource SubtitleCenter-Sketch}" TextWrapping="Wrap" Text="Nuevo Convenio" VerticalAlignment="Top" Height="65" FontSize="48"/>
+		<TextBox Margin="0,168,23,0" Style="{StaticResource TextBox-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="208"/>
+		<TextBox Margin="383,340,247,0" Style="{StaticResource TextBox-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+		<TextBox Margin="25,0,23,325" Style="{StaticResource TextBox-Sketch}" TextWrapping="Wrap" Height="72" VerticalAlignment="Bottom"/>
+		<TextBox Margin="25,0,253,261" Style="{StaticResource TextBox-Sketch}" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+		<TextBox Margin="25,0,253,196" Style="{StaticResource TextBox-Sketch}" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+		<Button Content="Guardar" HorizontalAlignment="Right" Margin="0,0,23,21" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="110" FontSize="26.667" Height="38" RenderTransformOrigin="0.782,0.471"/>
+		<TextBlock HorizontalAlignment="Right" Height="22" Margin="0,146,23,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="No. de Expediente:" VerticalAlignment="Top" Width="208" TextAlignment="Right"/>
+		<TextBlock HorizontalAlignment="Right" Height="22" Margin="0,206,23,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Fecha de Entrada:" VerticalAlignment="Top" Width="208" TextAlignment="Right"/>
+		<TextBlock HorizontalAlignment="Left" Height="22" Margin="25,314,0,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Dependencia Politécnica:" VerticalAlignment="Top" Width="340"/>
+		<TextBlock Height="22" Margin="383,314,409,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Contraparte:" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Left" Margin="25,377,0,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Objeto del convenio:" Width="208" Height="22" VerticalAlignment="Top"/>
+		<TextBlock HorizontalAlignment="Right" Height="22" Margin="0,314,23,0" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Monto:" VerticalAlignment="Top" Width="208"/>
+		<TextBlock HorizontalAlignment="Left" Height="22" Margin="25,0,0,299" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Responsable Técnico:" VerticalAlignment="Bottom" Width="208"/>
+		<TextBlock HorizontalAlignment="Right" Margin="0,0,23,299" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Fecha de firma:" Width="208" Height="22" VerticalAlignment="Bottom"/>
+		<TextBlock HorizontalAlignment="Right" Height="22" Margin="0,0,23,235" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Vigencia del convenio:" VerticalAlignment="Bottom" Width="208"/>
+		<TextBlock HorizontalAlignment="Left" Height="22" Margin="25,0,0,235" Style="{StaticResource TextBlock-Sketch}" TextWrapping="Wrap" Text="Tipo de instrumento jurídico:" VerticalAlignment="Bottom" Width="208"/>
+		<ComboBox Height="33" Margin="25,340,0,0" Style="{StaticResource ComboBox-Sketch}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340">
+			<ComboBoxItem Content="ESCOM" Style="{StaticResource ComboBoxItem-Sketch}"/>
+			<ComboBoxItem Content="ESIME" Style="{StaticResource ComboBoxItem-Sketch}"/>
+			<ComboBoxItem Content="ESIQUIE" Style="{StaticResource ComboBoxItem-Sketch}"/>
+		</ComboBox>
+		<TextBox Margin="0,340,23,0" Style="{StaticResource TextBox-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="208"/>
+		<ComboBox HorizontalAlignment="Right" Height="32" Margin="0,228,23,0" Style="{StaticResource ComboBox-Sketch}" VerticalAlignment="Top" Width="208"/>
+		<ComboBox HorizontalAlignment="Right" Height="32" Margin="0,0,23,263" Style="{StaticResource ComboBox-Sketch}" VerticalAlignment="Bottom" Width="208"/>
+		<ComboBox HorizontalAlignment="Right" Height="32" Margin="0,0,23,198" Style="{StaticResource ComboBox-Sketch}" VerticalAlignment="Bottom" Width="208"/>
+		<Button Content="Descartar" HorizontalAlignment="Left" Margin="25,0,0,21" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="170" FontSize="26.667" Height="38" RenderTransformOrigin="0.782,0.471"/>
+		<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="45" Margin="156,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="45"/>
+		<Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="29" Margin="182,73,0,0" Stroke="Black" VerticalAlignment="Top" Width="29"/>
+		<ed:RegularPolygon Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="37" InnerRadius="1" Margin="156,79,0,0" PointCount="3" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.533,1.514"/>
+	</Grid>
+</UserControl>

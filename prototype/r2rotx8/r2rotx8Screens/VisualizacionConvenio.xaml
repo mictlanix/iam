@@ -1,0 +1,20 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	x:Class="ar2rotx8Screens.VisualizacionConvenio"
+	Width="1000" mc:Ignorable="d" Height="800">
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<TextBlock HorizontalAlignment="Stretch" Margin="199,34,196,0" Style="{StaticResource SubtitleCenter-Sketch}" TextWrapping="Wrap" Text="Visualización de un convenio" VerticalAlignment="Top" Height="66" FontSize="48"/>
+		<TextBox Margin="72,117,315,0" Style="{StaticResource TextBox-Sketch}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="33"/>
+		<Button Content="Buscar" HorizontalAlignment="Right" Margin="0,120,220,0" Style="{StaticResource Button-Sketch}" VerticalAlignment="Top" Width="75"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" Content="No. de expediente" HorizontalAlignment="Left" Margin="64,244,0,0" VerticalAlignment="Top" Width="128"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" Content="Dependencia Politécnica" HorizontalAlignment="Left" Margin="64,348,0,0" VerticalAlignment="Top" Width="159"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" Content="Monto" HorizontalAlignment="Left" Margin="64,296,0,0" VerticalAlignment="Top" Width="159"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" Content="Fecha de entrada" HorizontalAlignment="Left" Margin="64,269,0,0" VerticalAlignment="Top" Width="128"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" Content="Responsable Técnico" HorizontalAlignment="Left" Margin="64,322,0,0" VerticalAlignment="Top" Width="159"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" Content="Fecha de Firma" HorizontalAlignment="Left" Margin="64,374,0,0" VerticalAlignment="Top" Width="159"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" Content="Vigencia del convenio" HorizontalAlignment="Left" Margin="64,0,0,383" Width="159" VerticalAlignment="Bottom"/>
+		<CheckBox Style="{StaticResource CheckBox-Sketch}" HorizontalAlignment="Left" Margin="64,0,0,355" Width="195" VerticalAlignment="Bottom" Content="Tipo de instrumento jurídico" Height="19"/>
+		<TextBlock Height="44" Margin="64,183,0,0" Style="{StaticResource TitleLeft-Sketch}" TextWrapping="Wrap" Text="Campos" VerticalAlignment="Top" Width="196"/>
+		<Button Content="Ver" HorizontalAlignment="Right" Margin="0,0,425,176" Style="{StaticResource Button-Sketch}" VerticalAlignment="Bottom" Width="75"/>
+	</Grid>
+</UserControl>
