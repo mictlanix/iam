@@ -3,3 +3,4 @@ Packages/*
 */obj
 *.suo
 *.sdf
+*.user

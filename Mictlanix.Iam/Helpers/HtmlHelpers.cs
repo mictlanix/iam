@@ -36,11 +36,16 @@ using Mictlanix.Iam.Models;
 using System.Data;
 using System.Data.Entity;
 
-
 namespace Mictlanix.Iam.Helpers
 {
     public static class HtmlHelpers
     {
+        public static User GetUser(this HtmlHelper helper, string username)
+        {
+            SSContext db = new SSContext();
+            return db.Users.SingleOrDefault(x => x.UserName == username);
+        }
+
         public static List<School> GetSchools(this HtmlHelper helper)
         {
             SSContext db = new SSContext();

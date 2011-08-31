@@ -40,7 +40,7 @@ namespace Mictlanix.Iam.Controllers
 { 
     public class ArrangementRequestsController : Controller
     {
-        private SSContext db = new SSContext();
+        SSContext db = new SSContext();
 
         //
         // GET: /ArrangementRequests/
