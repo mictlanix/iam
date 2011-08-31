@@ -1,0 +1,63 @@
+﻿@model Mictlanix.Iam.Models.Arrangement
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿En realidad desea borrar lo siguiente?</h3>
+<fieldset>
+    <legend>Datos del Convenio</legend>
+
+    <div class="display-label">FechaEntrada</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaEntrada)
+    </div>
+
+    <div class="display-label">Dependencia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dependencia)
+    </div>
+
+    <div class="display-label">Contraparte</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contraparte)
+    </div>
+
+    <div class="display-label">Objeto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Objeto)
+    </div>
+
+    <div class="display-label">Monto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Monto)
+    </div>
+
+    <div class="display-label">ResponsableTecnico</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ResponsableTecnico)
+    </div>
+
+    <div class="display-label">FechaFirma</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaFirma)
+    </div>
+
+    <div class="display-label">VigenciaConvenio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VigenciaConvenio)
+    </div>
+
+    <div class="display-label">Tipo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tipo)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Borrar" /> |
+        @Html.ActionLink("Regresar al listado", "Index")
+    </p>
+}

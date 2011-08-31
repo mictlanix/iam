@@ -1,0 +1,108 @@
+﻿@using Mictlanix.Iam.Helpers;
+@model Mictlanix.Iam.Models.Arrangement
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Datos del Convenio</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaEntrada)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaEntrada)
+            @Html.ValidationMessageFor(model => model.FechaEntrada)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Dependencia)
+        </div>
+        <div class="editor-field">
+            <select id="dependency-list" name="Dependencia">
+            @foreach (var item in Html.GetSchools())
+            {
+            <option>@Html.DisplayFor(x => item.Nombre)</option>
+            }
+            </select>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contraparte)
+        </div>
+        <div class="editor-field">
+            <select id="dependency-list" name="Contraparte">
+            @foreach (var item in Html.GetOrganizations())
+            {
+            <option>@Html.DisplayFor(x => item.Nombre)</option>
+            }
+            </select>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Objeto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Objeto)
+            @Html.ValidationMessageFor(model => model.Objeto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Monto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Monto)
+            @Html.ValidationMessageFor(model => model.Monto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResponsableTecnico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResponsableTecnico)
+            @Html.ValidationMessageFor(model => model.ResponsableTecnico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaFirma)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaFirma)
+            @Html.ValidationMessageFor(model => model.FechaFirma)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VigenciaConvenio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VigenciaConvenio)
+            @Html.ValidationMessageFor(model => model.VigenciaConvenio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tipo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tipo)
+            @Html.ValidationMessageFor(model => model.Tipo)
+        </div>
+
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar al listado", "Index")
+</div>

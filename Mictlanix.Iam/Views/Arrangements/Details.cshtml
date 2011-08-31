@@ -1,0 +1,60 @@
+﻿@model Mictlanix.Iam.Models.Arrangement
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<fieldset>
+    <legend>Datos del Convenio</legend>
+
+    <div class="display-label">FechaEntrada</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaEntrada)
+    </div>
+
+    <div class="display-label">Dependencia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dependencia)
+    </div>
+
+    <div class="display-label">Contraparte</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contraparte)
+    </div>
+
+    <div class="display-label">Objeto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Objeto)
+    </div>
+
+    <div class="display-label">Monto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Monto)
+    </div>
+
+    <div class="display-label">ResponsableTecnico</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ResponsableTecnico)
+    </div>
+
+    <div class="display-label">FechaFirma</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaFirma)
+    </div>
+
+    <div class="display-label">VigenciaConvenio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VigenciaConvenio)
+    </div>
+
+    <div class="display-label">Tipo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tipo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Regresar al listado", "Index")
+</p>

@@ -1,0 +1,75 @@
+﻿@model Mictlanix.Iam.Models.ArrangementRequest
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<fieldset>
+    <legend>Revision de Arreglos</legend>
+
+    <div class="display-label">Dependencia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dependencia)
+    </div>
+
+    <div class="display-label">Contraparte</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contraparte)
+    </div>
+
+    <div class="display-label">Objeto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Objeto)
+    </div>
+
+    <div class="display-label">FiguraJuridica</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FiguraJuridica)
+    </div>
+
+    <div class="display-label">OficioSolicitud</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OficioSolicitud)
+    </div>
+
+    <div class="display-label">MedioElectronico</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MedioElectronico)
+    </div>
+
+    <div class="display-label">Anexos</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Anexos)
+    </div>
+
+    <div class="display-label">Formato</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Formato)
+    </div>
+
+    <div class="display-label">DocumentacionContraparte</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DocumentacionContraparte)
+    </div>
+
+    <div class="display-label">Escrito</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Escrito)
+    </div>
+
+    <div class="display-label">AutorizacionAcademica</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AutorizacionAcademica)
+    </div>
+
+    <div class="display-label">Reviso</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reviso)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Regresar al listado", "Index")
+</p>

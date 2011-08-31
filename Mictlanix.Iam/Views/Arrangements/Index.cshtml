@@ -1,0 +1,86 @@
+﻿@using Mictlanix.Iam.Models
+@model IEnumerable<Mictlanix.Iam.Models.Arrangement>
+
+@{
+    ViewBag.Title = "Índice";
+}
+
+<h2>Catálogo de Convenios</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+     	<legend>Búsqueda</legend>
+        <div class="editor-field">
+            @Html.EditorFor(model => new Search().Pattern)
+            <input type="submit" value= "Buscar" />
+        </div>
+        <p>
+            @Html.ValidationMessageFor(model => new Search().Pattern)
+        </p>
+    </fieldset>
+}
+
+
+<table>
+    <tr>
+        <th>
+            Número de Expediente
+        </th>
+        <th>
+            Fecha de Entrada
+        </th>
+        <th>
+            Dependencia
+        </th>
+        <th>
+            Contraparte
+        </th>
+        <th>
+            Monto
+        </th>
+        <th>
+            Fecha de Firma
+        </th>
+        <th>
+            Vigencia del Convenio
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEntrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dependencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contraparte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFirma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VigenciaConvenio)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

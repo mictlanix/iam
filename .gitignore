@@ -1,0 +1,5 @@
+Packages/*
+*/bin
+*/obj
+*.suo
+*.sdf
