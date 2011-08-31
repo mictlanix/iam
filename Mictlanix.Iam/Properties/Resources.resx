@@ -117,20 +117,140 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Amount" xml:space="preserve">
+    <value>Monto</value>
+  </data>
+  <data name="Annexes" xml:space="preserve">
+    <value>Anexos</value>
+  </data>
+  <data name="Arrangement" xml:space="preserve">
+    <value>Convenio</value>
+  </data>
+  <data name="ArrangementRequests" xml:space="preserve">
+    <value>Revisión</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Regresar a la Lista</value>
   </data>
+  <data name="Borough" xml:space="preserve">
+    <value>Delegación o Municipio</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+  </data>
   <data name="Create" xml:space="preserve">
-    <value>Crear</value>
+    <value>Nuevo</value>
   </data>
   <data name="CreateNew" xml:space="preserve">
     <value>Crear Nuevo</value>
   </data>
+  <data name="Creator" xml:space="preserve">
+    <value>Revisó</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="DisplayName_Arrangement" xml:space="preserve">
+    <value>Catálogo de Convenios</value>
+  </data>
+  <data name="DisplayName_ArrangementRequests" xml:space="preserve">
+    <value>Catálogo de Revisiones</value>
+  </data>
+  <data name="DisplayName_Organization" xml:space="preserve">
+    <value>Catálogo de Contrapartes</value>
+  </data>
+  <data name="DisplayName_School" xml:space="preserve">
+    <value>Catálogo de Dependencias Politécnicas</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>Vigencia del Convenio</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Editar</value>
   </data>
+  <data name="ElectronicMedia" xml:space="preserve">
+    <value>Medio Electrónico</value>
+  </data>
+  <data name="ExteriorNumber" xml:space="preserve">
+    <value>Número Exterior</value>
+  </data>
+  <data name="Folio" xml:space="preserve">
+    <value>Folio</value>
+  </data>
+  <data name="Forms" xml:space="preserve">
+    <value>Formato PV1, Pv2 y PV3</value>
+  </data>
+  <data name="InteriorNumber" xml:space="preserve">
+    <value>Número Interior</value>
+  </data>
+  <data name="LegalDocuments" xml:space="preserve">
+    <value>Documentación Legal (Contraparte)</value>
+  </data>
+  <data name="LegalRequirement" xml:space="preserve">
+    <value>Figura Jurídica</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="Neighborhood" xml:space="preserve">
+    <value>Colonia</value>
+  </data>
+  <data name="Object" xml:space="preserve">
+    <value>Objeto del Convenio</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Contraparte</value>
+  </data>
+  <data name="ReceiptDate" xml:space="preserve">
+    <value>Fecha de Entrada</value>
+  </data>
+  <data name="RequestForm" xml:space="preserve">
+    <value>Oficio de Solicitud</value>
+  </data>
+  <data name="Responsible" xml:space="preserve">
+    <value>Responsable Técnico</value>
+  </data>
+  <data name="ResponsibleStatement" xml:space="preserve">
+    <value>Escrito del Responsable Técnico</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Guardar</value>
+  </data>
+  <data name="School" xml:space="preserve">
+    <value>Dependencia Politécnica</value>
+  </data>
+  <data name="SchoolAutorization" xml:space="preserve">
+    <value>Autorización Académica</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Búsqueda</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Número de Expedientes</value>
+  </data>
+  <data name="SignatureDate" xml:space="preserve">
+    <value>Fecha de Firma</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Calle</value>
+  </data>
+  <data name="Tipe" xml:space="preserve">
+    <value>Tipo de Instrumento Jurídico</value>
+  </data>
+  <data name="Title_ArragementRequest" xml:space="preserve">
+    <value>Revsión de Arreglo</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Usuario</value>
   </data>
   <data name="Validation_DateGreaterThan" xml:space="preserve">
     <value>{0} debe ser posterior a {1}.</value>
@@ -149,5 +269,8 @@
   </data>
   <data name="Validation_StringLength" xml:space="preserve">
     <value>El {0} debe tener al menos {2} caracteres de largo.</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Código Postal</value>
   </data>
 </root>

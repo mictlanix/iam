@@ -2,10 +2,10 @@
 @model Mictlanix.Iam.Models.ArrangementRequest
 
 @{
-    ViewBag.Title = "Crear";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Create;
 }
 
-<h2>Crear</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.Create </h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -13,13 +13,13 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Revision de Arreglo</legend>
+        <legend>@Mictlanix.Iam.Properties.Resources.Title_ArrangementRequest</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Dependencia)
+            @Html.LabelFor(model => model.School)
         </div>
         <div class="editor-field">
-            <select id="dependency-list" name="Dependencia">
+            <select id="dependency-list" name="School">
             @foreach (var item in Html.GetSchools()) {
             <option>@Html.DisplayFor(x => item.Nombre)</option>
             }
@@ -27,10 +27,10 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Contraparte)
+            @Html.LabelFor(model => model.Organization)
         </div>
         <div class="editor-field">
-            <select id="dependency-list" name="Contraparte">
+            <select id="dependency-list" name="Organization">
             @foreach (var item in Html.GetOrganizations())
             {
             <option>@Html.DisplayFor(x => item.Nombre)</option>
@@ -39,91 +39,91 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Objeto)
+            @Html.LabelFor(model => model.Object)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Objeto)
-            @Html.ValidationMessageFor(model => model.Objeto)
+            @Html.EditorFor(model => model.Object)
+            @Html.ValidationMessageFor(model => model.Object)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FiguraJuridica)
+            @Html.LabelFor(model => model.LegalRequirement)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.FiguraJuridica)
-            @Html.ValidationMessageFor(model => model.FiguraJuridica)
+            @Html.EditorFor(model => model.LegalRequirement)
+            @Html.ValidationMessageFor(model => model.LegalRequirement)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OficioSolicitud)
+            @Html.LabelFor(model => model.RequestForm)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.OficioSolicitud)
-            @Html.ValidationMessageFor(model => model.OficioSolicitud)
+            @Html.EditorFor(model => model.RequestForm)
+            @Html.ValidationMessageFor(model => model.RequestForm)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.MedioElectronico)
+            @Html.LabelFor(model => model.ElectronicMedia)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.MedioElectronico)
-            @Html.ValidationMessageFor(model => model.MedioElectronico)
+            @Html.EditorFor(model => model.ElectronicMedia)
+            @Html.ValidationMessageFor(model => model.ElectronicMedia)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Anexos)
+            @Html.LabelFor(model => model.Annexes)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Anexos)
-            @Html.ValidationMessageFor(model => model.Anexos)
+            @Html.EditorFor(model => model.Annexes)
+            @Html.ValidationMessageFor(model => model.Annexes)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Formato)
+            @Html.LabelFor(model => model.Forms)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Formato)
-            @Html.ValidationMessageFor(model => model.Formato)
+            @Html.EditorFor(model => model.Forms)
+            @Html.ValidationMessageFor(model => model.Forms)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DocumentacionContraparte)
+            @Html.LabelFor(model => model.LegalDocuments)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DocumentacionContraparte)
-            @Html.ValidationMessageFor(model => model.DocumentacionContraparte)
+            @Html.EditorFor(model => model.LegalDocuments)
+            @Html.ValidationMessageFor(model => model.LegalDocuments)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Escrito)
+            @Html.LabelFor(model => model.ResponsibleStatement)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Escrito)
-            @Html.ValidationMessageFor(model => model.Escrito)
+            @Html.EditorFor(model => model.ResponsibleStatement)
+            @Html.ValidationMessageFor(model => model.ResponsibleStatement)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.AutorizacionAcademica)
+            @Html.LabelFor(model => model.SchoolAutorization)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.AutorizacionAcademica)
-            @Html.ValidationMessageFor(model => model.AutorizacionAcademica)
+            @Html.EditorFor(model => model.SchoolAutorization)
+            @Html.ValidationMessageFor(model => model.SchoolAutorization)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Reviso)
+            @Html.LabelFor(model => model.Creator)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Reviso)
-            @Html.ValidationMessageFor(model => model.Reviso)
+            @Html.EditorFor(model => model.Creator)
+            @Html.ValidationMessageFor(model => model.Creator)
         </div>
 
         <p>
-            <input type="submit" value="Crear" />
+            <input type="submit" value= "@Mictlanix.Iam.Properties.Resources.Create " />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Regresar al listado", "Index")
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </div>

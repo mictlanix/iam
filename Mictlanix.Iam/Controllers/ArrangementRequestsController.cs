@@ -63,8 +63,8 @@ namespace Mictlanix.Iam.Controllers
                 use_id = int.TryParse(search.Pattern, out id);
 
                 var qry = from x in db.ArrangementRequests
-                          where x.Contraparte.Contains(search.Pattern) ||
-                                x.Dependencia.Contains(search.Pattern) ||
+                          where x.Organization.Contains(search.Pattern) ||
+                                x.School.Contains(search.Pattern) ||
                                 (use_id && x.Id == id)
                           select x;
 

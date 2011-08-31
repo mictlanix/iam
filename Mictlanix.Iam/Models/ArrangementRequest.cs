@@ -40,57 +40,57 @@ namespace Mictlanix.Iam.Models
     {
         [Key]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Folio")]
+        [Display(Name = "Folio", ResourceType = typeof(Resources))]
         [DatabaseGenerated(System.ComponentModel.DataAnnotations.DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Dependencia")]
-        public string Dependencia { get; set; }
+        [Display(Name = "School", ResourceType = typeof(Resources))]
+        public string School { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Contraparte")]
-        public string Contraparte { get; set; }
+        [Display(Name = "Organization", ResourceType = typeof(Resources))]
+        public string Organization { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.MultilineText)]
-        [Display(Name = "Objeto")]
-        public string Objeto { get; set; }
+        [Display(Name = "Object", ResourceType = typeof(Resources))]
+        public string Object { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Figura Jurídica")]
-        public string FiguraJuridica { get; set; }
+        [Display(Name = "LegalRequirement", ResourceType = typeof(Resources))]
+        public string LegalRequirement { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Oficio de Solicitud")]
-        public bool OficioSolicitud { get; set; }
+        [Display(Name = "RequestForm", ResourceType = typeof(Resources))]
+        public bool RequestForm { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Medio Electrónico")]
-        public bool MedioElectronico { get; set; }
+        [Display(Name = "ElectronicMedia", ResourceType = typeof(Resources))]
+        public bool ElectronicMedia { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Anexos")]
-        public bool Anexos { get; set; }
+        [Display(Name = "Annexes", ResourceType = typeof(Resources))]
+        public bool Annexes { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Formato PV1, Pv2 y PV3")]
-        public bool Formato { get; set; }
+        [Display(Name = "Forms", ResourceType = typeof(Resources))]
+        public bool Forms { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Documentación Legal (Contraparte)")]
-        public bool DocumentacionContraparte { get; set; }
+        [Display(Name = "LegalDocuments", ResourceType = typeof(Resources))]
+        public bool LegalDocuments { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Escrito del Responsable Técnico")]
-        public bool Escrito { get; set; }
+        [Display(Name = "ResponsibleStatement", ResourceType = typeof(Resources))]
+        public bool ResponsibleStatement { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Autorización Académica")]
-        public bool AutorizacionAcademica { get; set; }
+        [Display(Name = "SchoolAutorization", ResourceType = typeof(Resources))]
+        public bool SchoolAutorization { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Revisó")]
-        public string Reviso { get; set; }
+        [Display(Name = "Creator", ResourceType = typeof(Resources))]
+        public string Creator { get; set; }
     }
 }

@@ -1,63 +1,81 @@
 ﻿@model Mictlanix.Iam.Models.Arrangement
 
 @{
-    ViewBag.Title = "Borrar";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Delete;
 }
 
-<h2>Borrar</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.Delete</h2>
 
 <h3>¿En realidad desea borrar lo siguiente?</h3>
 <fieldset>
-    <legend>Datos del Convenio</legend>
+    <legend>@Mictlanix.Iam.Properties.Resources.Arrangement</legend>
 
-    <div class="display-label">FechaEntrada</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.ReceiptDate)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.FechaEntrada)
+        @Html.DisplayFor(model => model.ReceiptDate)
     </div>
 
-    <div class="display-label">Dependencia</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.School)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Dependencia)
+        @Html.DisplayFor(model => model.School)
     </div>
 
-    <div class="display-label">Contraparte</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.Organization)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Contraparte)
+        @Html.DisplayFor(model => model.Organization)
     </div>
 
-    <div class="display-label">Objeto</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.Object)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Objeto)
+        @Html.DisplayFor(model => model.Object)
     </div>
 
-    <div class="display-label">Monto</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.Amount)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Monto)
+        @Html.DisplayFor(model => model.Amount)
     </div>
 
-    <div class="display-label">ResponsableTecnico</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.Responsible)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.ResponsableTecnico)
+        @Html.DisplayFor(model => model.Responsible)
     </div>
 
-    <div class="display-label">FechaFirma</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.SignatureDate)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.FechaFirma)
+        @Html.DisplayFor(model => model.SignatureDate)
     </div>
 
-    <div class="display-label">VigenciaConvenio</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.DueDate)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.VigenciaConvenio)
+        @Html.DisplayFor(model => model.DueDate)
     </div>
 
-    <div class="display-label">Tipo</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.Tipe)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Tipo)
+        @Html.DisplayFor(model => model.Tipe)
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Borrar" /> |
-        @Html.ActionLink("Regresar al listado", "Index")
+        <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Delete" /> |
+        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
     </p>
 }

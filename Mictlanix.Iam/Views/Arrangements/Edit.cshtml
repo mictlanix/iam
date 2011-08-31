@@ -2,10 +2,10 @@
 @model Mictlanix.Iam.Models.Arrangement
 
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Edit;
 }
 
-<h2>Editar</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.Edit</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -13,35 +13,33 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Datos del Convenio</legend>
+        <legend>@Mictlanix.Iam.Properties.Resources.Arrangement</legend>
 
         @Html.HiddenFor(model => model.Id)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FechaEntrada)
+            @Html.LabelFor(model => model.ReceiptDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.FechaEntrada)
-            @Html.ValidationMessageFor(model => model.FechaEntrada)
+            @Html.EditorFor(model => model.ReceiptDate)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Dependencia)
+            @Html.LabelFor(model => model.School)
         </div>
         <div class="editor-field">
-            <select id="dependency-list" name="Dependencia">
-            @foreach (var item in Html.GetSchools())
-            {
+            <select id="dependency-list" name="School">
+            @foreach (var item in Html.GetSchools()) {
             <option>@Html.DisplayFor(x => item.Nombre)</option>
             }
             </select>
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Contraparte)
+            @Html.LabelFor(model => model.Organization)
         </div>
         <div class="editor-field">
-            <select id="dependency-list" name="Contraparte">
+            <select id="dependency-list" name="Organization">
             @foreach (var item in Html.GetOrganizations())
             {
             <option>@Html.DisplayFor(x => item.Nombre)</option>
@@ -50,59 +48,59 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Objeto)
+            @Html.LabelFor(model => model.Object)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Objeto)
-            @Html.ValidationMessageFor(model => model.Objeto)
+            @Html.EditorFor(model => model.Object)
+            @Html.ValidationMessageFor(model => model.Object)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Monto)
+            @Html.LabelFor(model => model.Amount)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Monto)
-            @Html.ValidationMessageFor(model => model.Monto)
+            @Html.EditorFor(model => model.Amount)
+            @Html.ValidationMessageFor(model => model.Amount)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ResponsableTecnico)
+            @Html.LabelFor(model => model.Responsible)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ResponsableTecnico)
-            @Html.ValidationMessageFor(model => model.ResponsableTecnico)
+            @Html.EditorFor(model => model.Responsible)
+            @Html.ValidationMessageFor(model => model.Responsible)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FechaFirma)
+            @Html.LabelFor(model => model.SignatureDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.FechaFirma)
-            @Html.ValidationMessageFor(model => model.FechaFirma)
+            @Html.EditorFor(model => model.SignatureDate)
+            @Html.ValidationMessageFor(model => model.SignatureDate)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.VigenciaConvenio)
+            @Html.LabelFor(model => model.DueDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.VigenciaConvenio)
-            @Html.ValidationMessageFor(model => model.VigenciaConvenio)
+            @Html.EditorFor(model => model.DueDate)
+            @Html.ValidationMessageFor(model => model.DueDate)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Tipo)
+            @Html.LabelFor(model => model.Tipe)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Tipo)
-            @Html.ValidationMessageFor(model => model.Tipo)
+            @Html.EditorFor(model => model.Tipe)
+            @Html.ValidationMessageFor(model => model.Tipe)
         </div>
 
         <p>
-            <input type="submit" value="Guardar" />
+            <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Save" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Regresar al listado", "Index")
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </div>

@@ -41,52 +41,52 @@ namespace Mictlanix.Iam.Models
     {
         [Key]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Número de Expedientes")]
+        [Display(Name = "Serial", ResourceType= typeof(Resources))]
         [DisplayFormat(DataFormatString = "CV11{0:000}")]
         [DatabaseGenerated(System.ComponentModel.DataAnnotations.DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
-        [Display(Name = "Fecha de Entrada")]
-        public DateTime? FechaEntrada { get; set; }
+        [Display(Name = "ReceiptDate", ResourceType = typeof(Resources))]
+        public DateTime? ReceiptDate { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Dependencia Politécnica")]
-        public string Dependencia { get; set; }
+        [Display(Name = "School", ResourceType = typeof(Resources))]
+        public string School { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Contraparte")]
-        public string Contraparte { get; set; }
+        [Display(Name = "Organization", ResourceType = typeof(Resources))]
+        public string Organization { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.MultilineText)]
-        [Display(Name = "Objeto del Convenio")]
-        public string Objeto { get; set; }
+        [Display(Name = "Object", ResourceType = typeof(Resources))]
+        public string Object { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Monto")]
-        [Column(TypeName = "money")]
-        public decimal Monto { get; set; }
+        [Display(Name = "Amount", ResourceType = typeof(Resources))]
+        [DataType(DataType.Currency)]
+        public decimal Amount { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Responsable Técnico")]
-        public string ResponsableTecnico { get; set; }
+        [Display(Name = "Responsible", ResourceType = typeof(Resources))]
+        public string Responsible { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
-        [Display(Name = "Fecha de Firma")]
-        [DateGreaterThan("FechaEntrada", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime? FechaFirma { get; set; }
+        [Display(Name = "SignatureDate", ResourceType = typeof(Resources))]
+        [DateGreaterThan("ReceiptDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
+        public DateTime? SignatureDate { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [DataType(DataType.Date)]        
-        [Display(Name = "Vigencia del Convenio")]
-        [DateGreaterThan("FechaFirma", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime? VigenciaConvenio { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "DueDate", ResourceType = typeof(Resources))]
+        [DateGreaterThan("SignatureDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
+        public DateTime? DueDate { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Tipo de Instrumento Jurídico")]
-        public string Tipo { get; set; }
+        [Display(Name = "Tipe", ResourceType = typeof(Resources))]
+        public string Tipe { get; set; }
     }
 }

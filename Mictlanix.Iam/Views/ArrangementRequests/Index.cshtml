@@ -2,19 +2,19 @@
 @model IEnumerable<Mictlanix.Iam.Models.ArrangementRequest>
 
 @{
-    ViewBag.Title = "Índice";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.ArrangementRequests;
 }
 
-<h2>Catálogo de Arreglos</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.DisplayName_ArrangementRequests</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo", "Create")
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.CreateNew, "Create")
 </p>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-     	<legend>Búsqueda</legend>
+     	<legend>@Mictlanix.Iam.Properties.Resources.Search</legend>
         <div class="editor-field">
             @Html.EditorFor(model => new Search().Pattern)
             <input type="submit" value= "Buscar" />
@@ -29,16 +29,16 @@
 <table>
     <tr>
         <th>
-            Folio
+            @Html.LabelFor(x => new ArrangementRequest().Id)
         </th>
         <th>
-            Dependencia
+            @Html.LabelFor(x => new ArrangementRequest().School)
         </th>
         <th>
-            Contraparte
+            @Html.LabelFor(x => new ArrangementRequest().Organization)
         </th>
         <th>
-            Objeto
+            @Html.LabelFor(x => new ArrangementRequest().Object)
         </th>
         
         <th></th>
@@ -50,19 +50,19 @@
             @Html.DisplayFor(modelItem => item.Id)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Dependencia)
+            @Html.DisplayFor(modelItem => item.School)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Contraparte)
+            @Html.DisplayFor(modelItem => item.Organization)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Objeto)
+            @Html.DisplayFor(modelItem => item.Object)
         </td>
         
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Borrar", "Delete", new { id=item.Id })
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id=item.Id }) |
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { id = item.Id }) |
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id = item.Id })
         </td>
     </tr>
 }

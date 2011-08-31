@@ -48,5 +48,6 @@ namespace Mictlanix.Iam.Models
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "Contraparte")]
         public string Nombre { get; set; }
+
     }
 }

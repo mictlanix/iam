@@ -1,20 +1,21 @@
 ﻿@using Mictlanix.Iam.Models
+@using Mictlanix.Iam.Properties
 @model IEnumerable<Mictlanix.Iam.Models.Arrangement>
 
 @{
-    ViewBag.Title = "Índice";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Arrangement;
 }
 
-<h2>Catálogo de Convenios</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.DisplayName_Arrangement</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo", "Create")
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.CreateNew, "Create")
 </p>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-     	<legend>Búsqueda</legend>
+     	<legend>@Mictlanix.Iam.Properties.Resources.Search</legend>
         <div class="editor-field">
             @Html.EditorFor(model => new Search().Pattern)
             <input type="submit" value= "Buscar" />
@@ -29,25 +30,25 @@
 <table>
     <tr>
         <th>
-            Número de Expediente
+            @Html.LabelFor(x => new Arrangement().Id)
         </th>
         <th>
-            Fecha de Entrada
+            @Html.LabelFor(x => new Arrangement().ReceiptDate)
         </th>
         <th>
-            Dependencia
+            @Html.LabelFor(x => new Arrangement().School)
         </th>
         <th>
-            Contraparte
+            @Html.LabelFor(x => new Arrangement().Organization)
         </th>
         <th>
-            Monto
+            @Html.LabelFor(x => new Arrangement().Amount)
         </th>
         <th>
-            Fecha de Firma
+            @Html.LabelFor(x => new Arrangement().SignatureDate)
         </th>
         <th>
-            Vigencia del Convenio
+            @Html.LabelFor(x => new Arrangement().DueDate)
         </th>
         <th></th>
     </tr>
@@ -58,27 +59,27 @@
             @Html.DisplayFor(modelItem => item.Id)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FechaEntrada)
+            @Html.DisplayFor(modelItem => item.ReceiptDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Dependencia)
+            @Html.DisplayFor(modelItem => item.School)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Contraparte)
+            @Html.DisplayFor(modelItem => item.Organization)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Monto)
+            @Html.DisplayFor(modelItem => item.Amount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FechaFirma)
+            @Html.DisplayFor(modelItem => item.SignatureDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.VigenciaConvenio)
+            @Html.DisplayFor(modelItem => item.DueDate)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Borrar", "Delete", new { id=item.Id })
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id=item.Id }) |
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { id=item.Id }) |
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id=item.Id })
         </td>
     </tr>
 }
