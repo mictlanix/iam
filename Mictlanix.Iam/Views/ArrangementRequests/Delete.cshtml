@@ -1,78 +1,103 @@
 ﻿@model Mictlanix.Iam.Models.ArrangementRequest
 
 @{
-    ViewBag.Title = "Borrar";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Delete;
 }
 
-<h2>Borrar</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.Delete</h2>
 
 <h3>¿En realidad desea borrar lo siguiente?</h3>
 <fieldset>
-    <legend>Revision de Arreglo</legend>
+    <legend>@Mictlanix.Iam.Properties.Resources.ArrangementRequests</legend>
 
-    <div class="display-label">Dependencia</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Dependencia)
+<div class="editor-label">
+        @Html.LabelFor(model => model.School)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.School)
     </div>
 
-    <div class="display-label">Contraparte</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Contraparte)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Organization)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Organization)
     </div>
 
-    <div class="display-label">Objeto</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Objeto)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Object)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Object)
     </div>
 
-    <div class="display-label">FiguraJuridica</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FiguraJuridica)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.LegalRequirement)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.LegalRequirement)
     </div>
 
-    <div class="display-label">OficioSolicitud</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.OficioSolicitud)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.RequestForm)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.RequestForm)
     </div>
 
-    <div class="display-label">MedioElectronico</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.MedioElectronico)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.ElectronicMedia)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.ElectronicMedia)
     </div>
 
-    <div class="display-label">Anexos</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Anexos)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Annexes)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Annexes)
     </div>
 
-    <div class="display-label">Formato</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Formato)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Forms)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Forms)
     </div>
 
-    <div class="display-label">DocumentacionContraparte</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DocumentacionContraparte)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.LegalDocuments)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.LegalDocuments)
     </div>
 
-    <div class="display-label">Escrito</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Escrito)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.ResponsibleStatement)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.ResponsibleStatement)
     </div>
 
-    <div class="display-label">AutorizacionAcademica</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.AutorizacionAcademica)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.SchoolAutorization)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.SchoolAutorization)
     </div>
 
-    <div class="display-label">Reviso</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Reviso)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Creator)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Creator)
     </div>
 </fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     <p>
-        <input type="submit" value="Borrar" /> |
-        @Html.ActionLink("Regresar al listado", "Index")
+        <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Delete" /> |
+        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
     </p>
 }
