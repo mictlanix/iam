@@ -42,23 +42,78 @@ namespace Mictlanix.Iam.Models
     {
         [Key]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Usuario")]
         [StringLength(10, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
-        public string Id { get; set; }
+        [Display(Name = "UserName", ResourceType = typeof(Resources))]
+        public string UserName { get; set; }
 
-        [Display(Name = "Contraseña")]
+        [Required]
+        [StringLength(100, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Password)]
+        [Display(Name = "Password", ResourceType = typeof(Resources))]
         public string Password { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Nombre")]
+        [Display(Name = "FirstName", ResourceType = typeof(Resources))]
         public string FirstName { get; set; }
 
-        [Display(Name = "Apellido")]
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "LastName", ResourceType = typeof(Resources))]
         public string LastName { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email", ResourceType = typeof(Resources))]
         public string Email { get; set; }
+
+        [Display(Name = "IsAdministrator", ResourceType = typeof(Resources))]
+        public bool IsAdministrator { get; set; }
+
+        [Display(Name = "AllowReadSchools", ResourceType = typeof(Resources))]
+        public bool AllowReadSchools { get; set; }
+
+        [Display(Name = "AllowCreateSchools", ResourceType = typeof(Resources))]
+        public bool AllowCreateSchools { get; set; }
+
+        [Display(Name = "AllowEditSchools", ResourceType = typeof(Resources))]
+        public bool AllowEditSchools { get; set; }
+
+        [Display(Name = "AllowDeleteSchools", ResourceType = typeof(Resources))]
+        public bool AllowDeleteSchools { get; set; }
+
+        [Display(Name = "AllowReadOrganizations", ResourceType = typeof(Resources))]
+        public bool AllowReadOrganizations { get; set; }
+
+        [Display(Name = "AllowCreateOrganizations", ResourceType = typeof(Resources))]
+        public bool AllowCreateOrganizations { get; set; }
+
+        [Display(Name = "AllowEditOrganizations", ResourceType = typeof(Resources))]
+        public bool AllowEditOrganizations { get; set; }
+
+        [Display(Name = "AllowDeleteOrganizations", ResourceType = typeof(Resources))]
+        public bool AllowDeleteOrganizations { get; set; }
+
+        [Display(Name = "AllowReadRequests", ResourceType = typeof(Resources))]
+        public bool AllowReadRequests { get; set; }
+
+        [Display(Name = "AllowCreateRequests", ResourceType = typeof(Resources))]
+        public bool AllowCreateRequests { get; set; }
+
+        [Display(Name = "AllowEditRequests", ResourceType = typeof(Resources))]
+        public bool AllowEditRequests { get; set; }
+
+        [Display(Name = "AllowDeleteRequests", ResourceType = typeof(Resources))]
+        public bool AllowDeleteRequests { get; set; }
+
+        [Display(Name = "AllowReadArrangements", ResourceType = typeof(Resources))]
+        public bool AllowReadArrangements { get; set; }
+
+        [Display(Name = "AllowCreateArrangements", ResourceType = typeof(Resources))]
+        public bool AllowCreateArrangements { get; set; }
+
+        [Display(Name = "AllowEditArrangements", ResourceType = typeof(Resources))]
+        public bool AllowEditArrangements { get; set; }
+
+        [Display(Name = "AllowDeleteArrangements", ResourceType = typeof(Resources))]
+        public bool AllowDeleteArrangements { get; set; }
     }
 }

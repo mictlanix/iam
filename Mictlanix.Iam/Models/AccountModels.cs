@@ -37,38 +37,69 @@ using Mictlanix.Iam.Properties;
 
 namespace Mictlanix.Iam.Models
 {
-
     public class ChangePasswordModel
     {
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Contraseña actual")]
+        [Display(Name = "CurrentPassword", ResourceType = typeof(Resources))]
         public string OldPassword { get; set; }
 
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [StringLength(100, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [Required]
+        [StringLength(100, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Password)]
-        [Display(Name = "Nueva contraseña")]
+        [Display(Name = "NewPassword", ResourceType = typeof(Resources))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar contraseña")]
         [Compare("NewPassword", ErrorMessageResourceName = "Validation_PasswordDoNotMatch", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources))]
         public string ConfirmPassword { get; set; }
     }
 
     public class LogOnModel
     {
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Usuario")]
+        [Required]
+        [Display(Name = "UserName", ResourceType = typeof(Resources))]
         public string UserName { get; set; }
 
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Contraseña")]
+        [Display(Name = "Password", ResourceType = typeof(Resources))]
         public string Password { get; set; }
 
-        [Display(Name = "Recordarme?")]
+        [Display(Name = "RememberMe", ResourceType = typeof(Resources))]
         public bool RememberMe { get; set; }
+    }
+
+    public class RegisterModel
+    {
+        [Required]
+        [StringLength(20, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "UserName", ResourceType = typeof(Resources))]
+        public string UserName { get; set; }
+
+        [Required]
+        [StringLength(100, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password", ResourceType = typeof(Resources))]
+        public string Password { get; set; }
+
+        [Compare("Password", ErrorMessageResourceName = "Validation_PasswordDoNotMatch", ErrorMessageResourceType = typeof(Resources))]
+        [DataType(DataType.Password)]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources))]
+        public string ConfirmPassword { get; set; }
+        
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "FirstName", ResourceType = typeof(Resources))]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "LastName", ResourceType = typeof(Resources))]
+        public string LastName { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email", ResourceType = typeof(Resources))]
+        public string Email { get; set; }
     }
 }

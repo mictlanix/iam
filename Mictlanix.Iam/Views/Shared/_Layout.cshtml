@@ -22,11 +22,10 @@
             <nav>
                 <ul id="menu">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    @Html.Partial("MenuPartial")
-                    <li>@Html.ActionLink("Dependecias","Index","Schools")</li>
-                    <li>@Html.ActionLink("Contraparte","Index","Organizations")</li>
-                    <li>@Html.ActionLink("Revisión","Index","ArrangementRequests")</li>
-                    <li>@Html.ActionLink("Convenios","Index","Arrangements")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        @Html.Partial("_MenuPartial");
+                    }
                     <li>@Html.ActionLink("Acerca del MAI", "About", "Home")</li>
                 </ul>
             </nav>

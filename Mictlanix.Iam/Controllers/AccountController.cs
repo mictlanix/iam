@@ -1,48 +1,63 @@
-﻿// 
-// AccountController.cs
-// 
-// Author:
-//   Eddy Zavaleta <eddy@mictlanix.org>
-//   Eduardo Nieto <enieto@mictlanix.org>
-// 
-// Copyright (C) 2011 Eddy Zavaleta, Mictlanix (http://www.mictlanix.org)
-// 
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-// 
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using Mictlanix.Iam.Models;
-using Mictlanix.Iam.Properties;
 
 namespace Mictlanix.Iam.Controllers
 {
     public class AccountController : Controller
     {
         SSContext db = new SSContext();
+
+        bool ValidateUser(string username, string password)
+        {
+            User user = db.Users.SingleOrDefault(u => u.UserName == username);
+            return user != null && user.Password == SHA1(password);
+        }
+
+        bool CreateUser(string username, string password, string firstName, string lastName, string email)
+        {
+            User user = new User
+            {
+                UserName = username,
+                Password = SHA1(password),
+                FirstName = firstName,
+                LastName = lastName,
+                Email = email
+            };
+
+            db.Users.Add(user);
+            
+            return db.SaveChanges() != 0;
+        }
+
+        bool ChangePassword(string username, string oldPassword, string newPassword)
+        {
+            User user = db.Users.SingleOrDefault(u => u.UserName == username);
+            string pwd = SHA1(oldPassword);
+
+            if (user == null || user.Password != pwd)
+                return false;
+
+            user.Password = SHA1(newPassword);
+
+            return db.SaveChanges() != 0;
+        }
+
+
+        protected string SHA1(string text)
+        {
+            byte[] bytes = Encoding.Default.GetBytes("" + text);
+            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
+
+            return BitConverter.ToString(sha1.ComputeHash(bytes)).Replace("-", "");
+        }
 
         //
         // GET: /Account/LogOn
@@ -60,12 +75,9 @@ namespace Mictlanix.Iam.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = db.Users.SingleOrDefault(x => x.Id == model.UserName && x.Password == model.Password);
-
-                if (user != null)
+                if (ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
@@ -78,7 +90,7 @@ namespace Mictlanix.Iam.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", Resources.Validation_InvalidLogOn);
+                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
                 }
             }
 
@@ -94,6 +106,46 @@ namespace Mictlanix.Iam.Controllers
             FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        //
+        // GET: /Account/Register
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/Register
+
+        [HttpPost]
+        public ActionResult Register(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Attempt to register the user
+
+                try
+                {
+                    if (CreateUser(model.UserName, model.Password, model.FirstName, model.LastName, model.Email))
+                    {
+                        FormsAuthentication.SetAuthCookie(model.UserName, false);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", ex.Message);                    
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
         }
 
         //
@@ -114,22 +166,30 @@ namespace Mictlanix.Iam.Controllers
         {
             if (ModelState.IsValid)
             {
+                // ChangePassword will throw an exception rather
+                // than return false in certain failure scenarios.
+                bool changePasswordSucceeded;
+
                 try
                 {
-                    User user = db.Users.Single(x => x.Id == User.Identity.Name && x.Password == model.OldPassword);
-                    
-                    user.Password = model.NewPassword;
-                    db.Entry(user).State = EntityState.Modified;
-                    db.SaveChanges();
-
-                    return RedirectToAction("ChangePasswordSuccess");
+                    changePasswordSucceeded = ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
                 }
                 catch (Exception)
                 {
-                    ModelState.AddModelError("", Resources.Validation_InvalidPassword);
+                    changePasswordSucceeded = false;
+                }
+
+                if (changePasswordSucceeded)
+                {
+                    return RedirectToAction("ChangePasswordSuccess");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
                 }
             }
 
+            // If we got this far, something failed, redisplay form
             return View(model);
         }
 

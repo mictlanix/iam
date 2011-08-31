@@ -129,6 +129,57 @@
   <data name="ArrangementRequests" xml:space="preserve">
     <value>Revisión</value>
   </data>
+  <data name="AccountInformation" xml:space="preserve">
+    <value>Información del Usuario</value>
+  </data>
+  <data name="AllowCreateArrangements" xml:space="preserve">
+    <value>Crear Convenios</value>
+  </data>
+  <data name="AllowCreateOrganizations" xml:space="preserve">
+    <value>Crear Contrapartes</value>
+  </data>
+  <data name="AllowCreateRequests" xml:space="preserve">
+    <value>Crear Revisiones de Convenios</value>
+  </data>
+  <data name="AllowCreateSchools" xml:space="preserve">
+    <value>Crear Dependencias</value>
+  </data>
+  <data name="AllowDeleteArrangements" xml:space="preserve">
+    <value>Eliminar Convenios</value>
+  </data>
+  <data name="AllowDeleteOrganizations" xml:space="preserve">
+    <value>Eliminar Contrapartes</value>
+  </data>
+  <data name="AllowDeleteRequests" xml:space="preserve">
+    <value>Eliminar Revisiones de Convenios</value>
+  </data>
+  <data name="AllowDeleteSchools" xml:space="preserve">
+    <value>Eliminar Dependencias</value>
+  </data>
+  <data name="AllowEditArrangements" xml:space="preserve">
+    <value>Editar Convenios</value>
+  </data>
+  <data name="AllowEditOrganizations" xml:space="preserve">
+    <value>Editar Contrapartes</value>
+  </data>
+  <data name="AllowEditRequests" xml:space="preserve">
+    <value>Editar Revisiones de Convenios</value>
+  </data>
+  <data name="AllowEditSchools" xml:space="preserve">
+    <value>Editar Dependencias</value>
+  </data>
+  <data name="AllowReadArrangements" xml:space="preserve">
+    <value>Consultar Convenios</value>
+  </data>
+  <data name="AllowReadOrganizations" xml:space="preserve">
+    <value>Consultar Contrapartes</value>
+  </data>
+  <data name="AllowReadRequests" xml:space="preserve">
+    <value>Consultar Revisiones de Convenios</value>
+  </data>
+  <data name="AllowReadSchools" xml:space="preserve">
+    <value>Consultar Dependencias</value>
+  </data>
   <data name="BackToList" xml:space="preserve">
     <value>Regresar a la Lista</value>
   </data>
@@ -140,6 +191,12 @@
   </data>
   <data name="Country" xml:space="preserve">
     <value>País</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmar Contraseña</value>
   </data>
   <data name="Create" xml:space="preserve">
     <value>Nuevo</value>
@@ -170,6 +227,21 @@
   </data>
   <data name="DueDate" xml:space="preserve">
     <value>Vigencia del Convenio</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña Actual</value>
+  </data>
+  <data name="DisplayName_ChangePassword" xml:space="preserve">
+    <value>Cambio de Contraseña</value>
+  </data>
+  <data name="DisplayName_LogOn" xml:space="preserve">
+    <value>Inicio de Sesión</value>
+  </data>
+  <data name="DisplayName_Register" xml:space="preserve">
+    <value>Registro de Usuario</value>
+  </data>
+  <data name="DisplayName_Users" xml:space="preserve">
+    <value>Catálogo de Usuarios</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Editar</value>
@@ -219,6 +291,48 @@
   <data name="ResponsibleStatement" xml:space="preserve">
     <value>Escrito del Responsable Técnico</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo Electrónico</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="IsAdministrator" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Iniciar Sesión</value>
+  </data>
+  <data name="Message_ChangePasswordFail" xml:space="preserve">
+    <value>El cambio de contraseña no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo.</value>
+  </data>
+  <data name="Message_ChangePasswordSuccess" xml:space="preserve">
+    <value>Su contraseña se ha cambiado exitosamente.</value>
+  </data>
+  <data name="Message_LoginRegister" xml:space="preserve">
+    <value>Por favor ingrese su usuario y contraseña. O si usted no tiene un usuario, favor de</value>
+  </data>
+  <data name="Message_LoginUnsuccessful" xml:space="preserve">
+    <value>El inicio de sesión no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo.</value>
+  </data>
+  <data name="Message_RegisterUnsuccessful" xml:space="preserve">
+    <value>El registro no fue exitoso. Por favor, corrija los errores y vuelva a intentarlo.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Contraseña Nueva</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>¿Recordarme?</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
@@ -249,7 +363,22 @@
   <data name="Title_ArragementRequest" xml:space="preserve">
     <value>Revsión de Arreglo</value>
   </data>
+  <data name="Title_ChangePassword" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Title_LogOn" xml:space="preserve">
+    <value>Inicio de Sesión</value>
+  </data>
+  <data name="Title_Register" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="Title_Users" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
   <data name="User" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
     <value>Usuario</value>
   </data>
   <data name="Validation_DateGreaterThan" xml:space="preserve">
