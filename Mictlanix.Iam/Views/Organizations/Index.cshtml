@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Mictlanix.Iam.Models.Organization>
+﻿@using Mictlanix.Iam.Models;
+@using Mictlanix.Iam.Helpers;
+@model IEnumerable<Mictlanix.Iam.Models.Organization>
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +9,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (Html.GetUser(User.Identity.Name).AllowCreateOrganizations)
+    {
+        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.CreateNew, "Create");
+    }
 </p>
 <table>
     <tr>
@@ -23,9 +28,17 @@
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @if (Html.GetUser(User.Identity.Name).AllowEditOrganizations)
+            {
+                @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = item.Id }) @:|
+            }
+            
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { id = item.Id })
+            
+            @if (Html.GetUser(User.Identity.Name).AllowDeleteOrganizations)
+            {
+                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id = item.Id })
+            }
         </td>
     </tr>
 }

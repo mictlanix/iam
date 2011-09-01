@@ -45,8 +45,14 @@ namespace Mictlanix.Iam.Controllers
         //
         // GET: /Organizations/
 
-        public ViewResult Index()
+        public ActionResult Index()
         {
+            if (!Request.IsAuthenticated ||
+                !Helpers.HtmlHelpers.GetUser(null, User.Identity.Name).AllowReadOrganizations)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(db.Organizations.ToList());
         }
 

@@ -32,6 +32,11 @@ namespace Mictlanix.Iam.Controllers
                 Email = email
             };
 
+            if (db.Users.SingleOrDefault(u => u.UserName == username) != null)
+            {
+                throw new Exception(Mictlanix.Iam.Properties.Resources.Message_UserNameAlreadyExists);
+            }
+
             db.Users.Add(user);
             
             return db.SaveChanges() != 0;
@@ -90,7 +95,7 @@ namespace Mictlanix.Iam.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    ModelState.AddModelError("", Mictlanix.Iam.Properties.Resources.Message_InvalidUserPassword);
                 }
             }
 
@@ -135,7 +140,7 @@ namespace Mictlanix.Iam.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.");
+                        ModelState.AddModelError("", Mictlanix.Iam.Properties.Resources.Message_UnknownError);
                     }
                 }
                 catch (Exception ex)
@@ -185,7 +190,7 @@ namespace Mictlanix.Iam.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
+                    ModelState.AddModelError("", Mictlanix.Iam.Properties.Resources.Message_ChangePasswordWrong);
                 }
             }
 

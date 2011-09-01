@@ -1,13 +1,14 @@
-﻿@model Mictlanix.Iam.Models.User
+﻿@using Mictlanix.Iam.Helpers;
+@model Mictlanix.Iam.Models.User
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Details;
 }
 
-<h2>Details</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.Details</h2>
 
 <fieldset>
-    <legend>User</legend>
+    <legend>@Mictlanix.Iam.Properties.Resources.User</legend>
 
     <div class="display-label">@Html.LabelFor(model => model.UserName)</div>
     <div class="display-field">
@@ -35,6 +36,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.UserName }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id=Model.UserName }) |
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </p>

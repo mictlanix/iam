@@ -45,8 +45,14 @@ namespace Mictlanix.Iam.Controllers
         //
         // GET: /ArrangementRequests/
 
-        public ViewResult Index()
+        public ActionResult Index()
         {
+            if (!Request.IsAuthenticated ||
+                !Helpers.HtmlHelpers.GetUser(null, User.Identity.Name).AllowReadRequests)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(db.ArrangementRequests.ToList());
         }
 
@@ -88,8 +94,9 @@ namespace Mictlanix.Iam.Controllers
 
         public ActionResult Create()
         {
-            return View();
-        } 
+            var item = Helpers.HtmlHelpers.GetUser(null, User.Identity.Name);
+            return View(new ArrangementRequest { CreatorId = item.UserName, Creator = item });
+        }
 
         //
         // POST: /ArrangementRequests/Create

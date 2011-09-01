@@ -1,4 +1,5 @@
-﻿@model Mictlanix.Iam.Models.ArrangementRequest
+﻿@using Mictlanix.Iam.Helpers;
+@model Mictlanix.Iam.Models.ArrangementRequest
 
 @{
     ViewBag.Title = Mictlanix.Iam.Properties.Resources.Details;
@@ -36,64 +37,53 @@
     <div class="editor-field">
         @Html.DisplayFor(model => model.LegalRequirement)
     </div>
-
+    
     <div class="editor-label">
+        @Html.DisplayFor(model => model.RequestForm)
         @Html.LabelFor(model => model.RequestForm)
     </div>
-    <div class="editor-field">
-        @Html.DisplayFor(model => model.RequestForm)
-    </div>
 
     <div class="editor-label">
+        @Html.DisplayFor(model => model.ElectronicMedia)
         @Html.LabelFor(model => model.ElectronicMedia)
     </div>
-    <div class="editor-field">
-        @Html.DisplayFor(model => model.ElectronicMedia)
-    </div>
 
     <div class="editor-label">
+        @Html.DisplayFor(model => model.Annexes)
         @Html.LabelFor(model => model.Annexes)
     </div>
-    <div class="editor-field">
-        @Html.DisplayFor(model => model.Annexes)
-    </div>
 
     <div class="editor-label">
+        @Html.DisplayFor(model => model.Forms)
         @Html.LabelFor(model => model.Forms)
     </div>
-    <div class="editor-field">
-        @Html.DisplayFor(model => model.Forms)
-    </div>
 
     <div class="editor-label">
+        @Html.DisplayFor(model => model.LegalDocuments)
         @Html.LabelFor(model => model.LegalDocuments)
     </div>
-    <div class="editor-field">
-        @Html.DisplayFor(model => model.LegalDocuments)
-    </div>
 
     <div class="editor-label">
+        @Html.DisplayFor(model => model.ResponsibleStatement)
         @Html.LabelFor(model => model.ResponsibleStatement)
     </div>
-    <div class="editor-field">
-        @Html.DisplayFor(model => model.ResponsibleStatement)
-    </div>
 
     <div class="editor-label">
+        @Html.DisplayFor(model => model.SchoolAutorization)
         @Html.LabelFor(model => model.SchoolAutorization)
     </div>
-    <div class="editor-field">
-        @Html.DisplayFor(model => model.SchoolAutorization)
-    </div>
-
+    
     <div class="editor-label">
-        @Html.LabelFor(model => model.Creator)
+        @Html.LabelFor(model => model.CreatorId)
     </div>
     <div class="editor-field">
-        @Html.DisplayFor(model => model.Creator)
+        @Html.DisplayFor(model => model.Creator.FirstName) @Html.DisplayFor(model => model.Creator.LastName)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id=Model.Id }) |
+    @if (Html.GetUser(User.Identity.Name).AllowEditRequests)
+    {
+        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = Model.Id }) @:|
+    }
     @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </p>

@@ -2,25 +2,25 @@
 @using Mictlanix.Iam.Helpers;
 
 @{
-    var user = Html.GetUser(User.Identity.Name);
+    var user = Html.GetUser(User.Identity.Name) ?? new User();
 }
 
-@if (user.IsAdministrator || user.AllowReadSchools)
+@if (user.AllowReadSchools)
 {
     <li>@Html.ActionLink("Dependecias", "Index", "Schools")</li>
 }
 
-@if (user.IsAdministrator || user.AllowReadOrganizations)
+@if (user.AllowReadOrganizations)
 {
-    <li>@Html.ActionLink("Contraparte", "Index", "Organizations")</li>
+    <li>@Html.ActionLink("Contrapartes", "Index", "Organizations")</li>
 }
 
-@if (user.IsAdministrator || user.AllowReadRequests)
+@if (user.AllowReadRequests)
 {
-    <li>@Html.ActionLink("Revisión", "Index", "ArrangementRequests")</li>
+    <li>@Html.ActionLink("Revisiones", "Index", "ArrangementRequests")</li>
 }
 
-@if (user.IsAdministrator || user.AllowReadArrangements)
+@if (user.AllowReadArrangements)
 {
     <li>@Html.ActionLink("Convenios", "Index", "Arrangements")</li>
 }

@@ -402,4 +402,31 @@
   <data name="ZipCode" xml:space="preserve">
     <value>Código Postal</value>
   </data>
+  <data name="Message_ChangePasswordWrong" xml:space="preserve">
+    <value>La contraseña actual es incorrecta o la contraseña nueva es inválida.</value>
+  </data>
+  <data name="Message_InvalidUserPassword" xml:space="preserve">
+    <value>The user name or password provided is incorrect.</value>
+  </data>
+  <data name="Message_UnknownError" xml:space="preserve">
+    <value>Error desconocido. Por favor, verifica tus datos y vuelve a intentarlo. Si el problema persiste contacte a su administrador de sistema.</value>
+  </data>
+  <data name="Message_UserNameAlreadyExists" xml:space="preserve">
+    <value>El nombre de usuario ya existe.</value>
+  </data>
+  <data name="Arrangements" xml:space="preserve">
+    <value>Convenios</value>
+  </data>
+  <data name="Organizations" xml:space="preserve">
+    <value>Contrapartes</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Revisiones</value>
+  </data>
+  <data name="Schools" xml:space="preserve">
+    <value>Dependencias</value>
+  </data>
 </root>

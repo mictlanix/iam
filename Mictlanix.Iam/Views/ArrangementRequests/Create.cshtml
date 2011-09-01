@@ -19,9 +19,9 @@
             @Html.LabelFor(model => model.School)
         </div>
         <div class="editor-field">
-            <select id="dependency-list" name="School">
+            <select id="school-list" name="School">
             @foreach (var item in Html.GetSchools()) {
-            <option>@Html.DisplayFor(x => item.Nombre)</option>
+            <option>@Html.DisplayFor(x => item.Name)</option>
             }
             </select>
         </div>
@@ -30,7 +30,7 @@
             @Html.LabelFor(model => model.Organization)
         </div>
         <div class="editor-field">
-            <select id="dependency-list" name="Organization">
+            <select id="organization-list" name="Organization">
             @foreach (var item in Html.GetOrganizations())
             {
             <option>@Html.DisplayFor(x => item.Nombre)</option>
@@ -55,71 +55,49 @@
         </div>
 
         <div class="editor-label">
+            @Html.EditorFor(model => model.RequestForm)
             @Html.LabelFor(model => model.RequestForm)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.RequestForm)
-            @Html.ValidationMessageFor(model => model.RequestForm)
-        </div>
 
         <div class="editor-label">
+            @Html.EditorFor(model => model.ElectronicMedia)
             @Html.LabelFor(model => model.ElectronicMedia)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ElectronicMedia)
-            @Html.ValidationMessageFor(model => model.ElectronicMedia)
-        </div>
 
         <div class="editor-label">
+            @Html.EditorFor(model => model.Annexes)
             @Html.LabelFor(model => model.Annexes)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Annexes)
-            @Html.ValidationMessageFor(model => model.Annexes)
-        </div>
 
         <div class="editor-label">
+            @Html.EditorFor(model => model.Forms)
             @Html.LabelFor(model => model.Forms)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Forms)
-            @Html.ValidationMessageFor(model => model.Forms)
-        </div>
 
         <div class="editor-label">
+            @Html.EditorFor(model => model.LegalDocuments)
             @Html.LabelFor(model => model.LegalDocuments)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LegalDocuments)
-            @Html.ValidationMessageFor(model => model.LegalDocuments)
-        </div>
 
         <div class="editor-label">
+            @Html.EditorFor(model => model.ResponsibleStatement)
             @Html.LabelFor(model => model.ResponsibleStatement)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ResponsibleStatement)
-            @Html.ValidationMessageFor(model => model.ResponsibleStatement)
-        </div>
 
         <div class="editor-label">
+            @Html.EditorFor(model => model.SchoolAutorization)
             @Html.LabelFor(model => model.SchoolAutorization)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SchoolAutorization)
-            @Html.ValidationMessageFor(model => model.SchoolAutorization)
-        </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Creator)
+            @Html.LabelFor(model => model.CreatorId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Creator)
-            @Html.ValidationMessageFor(model => model.Creator)
+            @Html.HiddenFor(model => model.CreatorId)
+            @Html.DisplayFor(model => model.Creator.FirstName) @Html.DisplayFor(model => model.Creator.LastName)
         </div>
-
         <p>
-            <input type="submit" value= "@Mictlanix.Iam.Properties.Resources.Create " />
+            <input type="submit" value= "@Mictlanix.Iam.Properties.Resources.Create" />
         </p>
     </fieldset>
 }

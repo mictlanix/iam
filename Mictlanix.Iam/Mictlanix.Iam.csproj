@@ -196,9 +196,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\MenuPartial.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Schools\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

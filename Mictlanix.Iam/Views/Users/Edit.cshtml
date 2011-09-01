@@ -49,17 +49,14 @@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.IsAdministrator)
-        </div>
-        <div class="editor-field">
             @Html.EditorFor(model => model.IsAdministrator)
-            @Html.ValidationMessageFor(model => model.IsAdministrator)
         </div>
 
         <table>
             <tr>
                 <th></th>
                 <th>
-                    Consultar
+                    @Mictlanix.Iam.Properties.Resources.Read
                 </th>
                 <th>
                     @Mictlanix.Iam.Properties.Resources.Create
@@ -68,12 +65,12 @@
                     @Mictlanix.Iam.Properties.Resources.Edit
                 </th>
                 <th>
-                    Eliminar
+                    @Mictlanix.Iam.Properties.Resources.Delete
                 </th>
             </tr>
             <tr>
                 <td>
-                    Schools
+                    @Mictlanix.Iam.Properties.Resources.Schools
                 </td>
                 <td>
                     @Html.EditorFor(model => model.AllowReadSchools)
@@ -90,7 +87,7 @@
             </tr>
             <tr>
                 <td>
-                    Organizations
+                    @Mictlanix.Iam.Properties.Resources.Organizations
                 </td>
                 <td>
                     @Html.EditorFor(model => model.AllowReadOrganizations)
@@ -107,7 +104,7 @@
             </tr>
             <tr>
                 <td>
-                    Requests
+                    @Mictlanix.Iam.Properties.Resources.Requests
                 </td>
                 <td>
                     @Html.EditorFor(model => model.AllowReadRequests)
@@ -124,7 +121,7 @@
             </tr>
             <tr>
                 <td>
-                    Arrangements
+                    @Mictlanix.Iam.Properties.Resources.Arrangements
                 </td>
                 <td>
                     @Html.EditorFor(model => model.AllowReadArrangements)
@@ -141,11 +138,11 @@
             </tr>
         </table>
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Save" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </div>

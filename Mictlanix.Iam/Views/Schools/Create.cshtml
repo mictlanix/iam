@@ -17,19 +17,19 @@
         <legend>Dependencia Politécnica</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Nombre)
+            @Html.LabelFor(model => model.Name)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Nombre)
-            @Html.ValidationMessageFor(model => model.Nombre)
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value= "@Mictlanix.Iam.Properties.Resources.Create" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </div>

@@ -45,9 +45,9 @@
             @Html.DisplayFor(modelItem => item.IsAdministrator)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserName }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserName }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserName })
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = item.UserName }) |
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { id = item.UserName }) |
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id = item.UserName })
         </td>
     </tr>
 }

@@ -39,6 +39,7 @@ namespace Mictlanix.Iam
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
+            //new SSContext().Database.Create();
             Database.SetInitializer<SSContext>(new DropCreateDatabaseIfModelChanges<SSContext>());
         }
     }

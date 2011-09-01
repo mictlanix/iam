@@ -1,4 +1,5 @@
-﻿@model Mictlanix.Iam.Models.School
+﻿@using Mictlanix.Iam.Helpers;
+@model Mictlanix.Iam.Models.School
 
 @{
     ViewBag.Title = "Details";
@@ -9,12 +10,15 @@
 <fieldset>
     <legend>Dependencia Politécnica</legend>
 
-    <div class="display-label">Nombre</div>
+    <div class="display-label">@Html.LabelFor(model => model.Name)</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
+        @Html.DisplayFor(model => model.Name)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @if (Html.GetUser(User.Identity.Name).AllowEditSchools)
+    {
+        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = Model.Id }) @:|
+    }
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </p>

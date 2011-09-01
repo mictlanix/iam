@@ -89,8 +89,11 @@ namespace Mictlanix.Iam.Models
         [Display(Name = "SchoolAutorization", ResourceType = typeof(Resources))]
         public bool SchoolAutorization { get; set; }
 
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        //[Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "Creator", ResourceType = typeof(Resources))]
-        public string Creator { get; set; }
+        public string CreatorId { get; set; }
+
+        [ForeignKey("CreatorId")]
+        public virtual User Creator { get; set; }
     }
 }

@@ -47,8 +47,14 @@ namespace Mictlanix.Iam.Controllers
         // GET: /Arrangements/
 
 
-        public ViewResult Index()
+        public ActionResult Index()
         {
+            if (!Request.IsAuthenticated ||
+                !Helpers.HtmlHelpers.GetUser(null, User.Identity.Name).AllowReadArrangements)
+            {
+                return RedirectToAction("Index", "Home");  
+            }
+
             return View(db.Arrangements.ToList());
         }
 

@@ -47,6 +47,6 @@ namespace Mictlanix.Iam.Models
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "Dependencia Politécnica")]
-        public string Nombre { get; set; }
+        public string Name { get; set; }
     }
 }

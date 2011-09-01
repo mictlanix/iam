@@ -16,8 +16,14 @@ namespace Mictlanix.Iam.Controllers
         //
         // GET: /Users/
 
-        public ViewResult Index()
+        public ActionResult Index()
         {
+            //if (!Request.IsAuthenticated ||
+            //    !Helpers.HtmlHelpers.GetUser(null, User.Identity.Name).IsAdministrator)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
+
             return View(db.Users.ToList());
         }
 
