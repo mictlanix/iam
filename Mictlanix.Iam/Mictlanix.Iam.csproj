@@ -93,10 +93,10 @@
     <Content Include="Content\images\body-bg.png" />
     <Content Include="Content\images\false.png" />
     <Content Include="Content\images\header-bg.png" />
-    <Content Include="Content\images\logo-ipn-75-aniv.jpg" />
-    <Content Include="Content\images\logo-ipn.gif" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\mtx-logo-small.png" />
     <Content Include="Content\images\true.png" />
+    <Content Include="Content\images\welcome.png" />
     <Content Include="Content\Menu.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
