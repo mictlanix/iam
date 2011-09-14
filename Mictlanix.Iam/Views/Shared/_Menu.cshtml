@@ -1,0 +1,72 @@
+﻿@using Mictlanix.Iam.Models;
+@using Mictlanix.Iam.Helpers;
+@{
+    ViewBag.User = Html.GetUser(User.Identity.Name) ?? new User();
+}
+
+<div id="gb">
+    <div id="gbz">
+        <ol class="gbtc">
+            <li class="gbt">
+                <a class="gbzt @Html.GetMenuClass("Home", "Index")" href="@Url.Action("Index", "Home")">
+                    <span class="gbtb2"></span>
+                    <span class="gbts">@Mictlanix.Iam.Properties.Resources.Title_Home</span>
+                </a>
+            </li>
+            @if (ViewBag.User.AllowReadSchools)
+            {
+                <li class="gbt">
+                    <a class="gbzt @Html.GetMenuClass("Schools")" href="@Url.Action("Index", "Schools")">
+                        <span class="gbtb2"></span>
+                        <span class="gbts">@Mictlanix.Iam.Properties.Resources.Title_Schools</span>
+                    </a>
+                </li>
+            }
+            @if (ViewBag.User.AllowReadOrganizations)
+            {
+                <li class="gbt">
+                    <a class="gbzt @Html.GetMenuClass("Organizations")" href="@Url.Action("Index", "Organizations")">
+                        <span class="gbtb2"></span>
+                        <span class="gbts">@Mictlanix.Iam.Properties.Resources.Title_Organizations</span>
+                    </a>
+                </li>
+            }
+            @if (ViewBag.User.AllowReadRequests)
+            {
+                <li class="gbt">
+                    <a class="gbzt @Html.GetMenuClass("ArrangementRequests")" href="@Url.Action("Index", "ArrangementRequests")">
+                        <span class="gbtb2"></span>
+                        <span class="gbts">@Mictlanix.Iam.Properties.Resources.Title_ArrangementRequests</span>
+                    </a>
+                </li>
+            }
+            @if (ViewBag.User.AllowReadArrangements)
+            {
+                <li class="gbt">
+                    <a class="gbzt @Html.GetMenuClass("Arrangements")" href="@Url.Action("Index", "Arrangements")">
+                        <span class="gbtb2"></span>
+                        <span class="gbts">@Mictlanix.Iam.Properties.Resources.Title_Arrangements</span>
+                    </a>
+                </li>
+            }
+            @if (ViewBag.User.IsAdministrator)
+            {
+                <li class="gbt">
+                    <a class="gbzt @Html.GetMenuClass("Users")" href="@Url.Action("Index", "Users")">
+                        <span class="gbtb2"></span>
+                        <span class="gbts">@Mictlanix.Iam.Properties.Resources.Title_Users</span>
+                    </a>
+                </li>
+            }
+            <li class="gbt">
+                <a class="gbzt @Html.GetMenuClass("Home", "About")" href="@Url.Action("About", "Home")">
+                    <span class="gbtb2"></span>
+                    <span class="gbts">@Mictlanix.Iam.Properties.Resources.Title_About</span>
+                </a>
+            </li>
+        </ol>
+    </div>
+    @Html.Partial("_LogOnPartial")
+    <div id="gbx3"></div>
+    <div id="gbx4"></div>
+</div>

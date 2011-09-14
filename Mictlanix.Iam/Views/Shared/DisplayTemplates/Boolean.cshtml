@@ -1,0 +1,10 @@
+﻿@model Boolean
+
+@if (Model)
+{
+    <img src="@Url.Content("~/Content/images/true.png")" alt="@Mictlanix.Iam.Properties.Resources.Yes" title="@Mictlanix.Iam.Properties.Resources.Yes"/>
+}
+else
+{
+    <img src="@Url.Content("~/Content/images/false.png")" alt="@Mictlanix.Iam.Properties.Resources.No" title="@Mictlanix.Iam.Properties.Resources.No"/>
+}

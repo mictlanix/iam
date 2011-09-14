@@ -429,4 +429,49 @@
   <data name="Schools" xml:space="preserve">
     <value>Dependencias</value>
   </data>
+  <data name="Title_Application" xml:space="preserve">
+    <value>Sistema de Seguimiento de Convenios Vinculados</value>
+  </data>
+  <data name="Title_ArrangementRequests" xml:space="preserve">
+    <value>Revisiones</value>
+  </data>
+  <data name="Title_Arrangements" xml:space="preserve">
+    <value>Convenios</value>
+  </data>
+  <data name="Title_Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="Title_Organizations" xml:space="preserve">
+    <value>Contrapartes</value>
+  </data>
+  <data name="Title_Schools" xml:space="preserve">
+    <value>Dependecias</value>
+  </data>
+  <data name="Title_About" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bienvenido</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="DisplayName_About" xml:space="preserve">
+    <value>Acerca de SiSeCoVi (Mictlanix Iam)</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Autores</value>
+  </data>
+  <data name="Alt_Logo" xml:space="preserve">
+    <value>IPN</value>
+  </data>
+  <data name="Title_Logo" xml:space="preserve">
+    <value>Instituto Politécnico Nacional</value>
+  </data>
+  <data name="DisplayName_Application" xml:space="preserve">
+    <value>SiSeCoVi</value>
+  </data>
 </root>

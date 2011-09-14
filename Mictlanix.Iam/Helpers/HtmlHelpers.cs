@@ -57,5 +57,18 @@ namespace Mictlanix.Iam.Helpers
             SSContext db = new SSContext();
             return db.Organizations.ToList();
         }
+
+        public static string GetMenuClass(this HtmlHelper html, string controller)
+        {
+            string ctl = html.ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString();
+            return ctl == controller ? "gbz0l" : string.Empty;
+        }
+
+        public static string GetMenuClass(this HtmlHelper html, string controller, string action)
+        {
+            string ctl = html.ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString();
+            string atn = html.ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
+            return ctl == controller && atn == action ? "gbz0l" : string.Empty;
+        }
     }
 }

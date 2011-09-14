@@ -39,8 +39,6 @@ namespace Mictlanix.Iam.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Bienvenido!";
-            
             return View();
         }
 

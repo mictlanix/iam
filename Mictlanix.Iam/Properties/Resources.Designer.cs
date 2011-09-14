@@ -214,6 +214,15 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IPN.
+        /// </summary>
+        public static string Alt_Logo {
+            get {
+                return ResourceManager.GetString("Alt_Logo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monto.
         /// </summary>
         public static string Amount {
@@ -255,6 +264,15 @@ namespace Mictlanix.Iam.Properties {
         public static string Arrangements {
             get {
                 return ResourceManager.GetString("Arrangements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autores.
+        /// </summary>
+        public static string Authors {
+            get {
+                return ResourceManager.GetString("Authors", resourceCulture);
             }
         }
         
@@ -363,6 +381,24 @@ namespace Mictlanix.Iam.Properties {
         public static string Details {
             get {
                 return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acerca de SiSeCoVi (Mictlanix Iam).
+        /// </summary>
+        public static string DisplayName_About {
+            get {
+                return ResourceManager.GetString("DisplayName_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SiSeCoVi.
+        /// </summary>
+        public static string DisplayName_Application {
+            get {
+                return ResourceManager.GetString("DisplayName_Application", resourceCulture);
             }
         }
         
@@ -673,6 +709,15 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Objeto del Convenio.
         /// </summary>
         public static string Object {
@@ -871,11 +916,47 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acerca de.
+        /// </summary>
+        public static string Title_About {
+            get {
+                return ResourceManager.GetString("Title_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sistema de Seguimiento de Convenios Vinculados.
+        /// </summary>
+        public static string Title_Application {
+            get {
+                return ResourceManager.GetString("Title_Application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Revsión de Arreglo.
         /// </summary>
         public static string Title_ArragementRequest {
             get {
                 return ResourceManager.GetString("Title_ArragementRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revisiones.
+        /// </summary>
+        public static string Title_ArrangementRequests {
+            get {
+                return ResourceManager.GetString("Title_ArrangementRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Convenios.
+        /// </summary>
+        public static string Title_Arrangements {
+            get {
+                return ResourceManager.GetString("Title_Arrangements", resourceCulture);
             }
         }
         
@@ -889,6 +970,24 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inicio.
+        /// </summary>
+        public static string Title_Home {
+            get {
+                return ResourceManager.GetString("Title_Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instituto Politécnico Nacional.
+        /// </summary>
+        public static string Title_Logo {
+            get {
+                return ResourceManager.GetString("Title_Logo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inicio de Sesión.
         /// </summary>
         public static string Title_LogOn {
@@ -898,11 +997,29 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contrapartes.
+        /// </summary>
+        public static string Title_Organizations {
+            get {
+                return ResourceManager.GetString("Title_Organizations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registro.
         /// </summary>
         public static string Title_Register {
             get {
                 return ResourceManager.GetString("Title_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependecias.
+        /// </summary>
+        public static string Title_Schools {
+            get {
+                return ResourceManager.GetString("Title_Schools", resourceCulture);
             }
         }
         
@@ -984,6 +1101,24 @@ namespace Mictlanix.Iam.Properties {
         public static string Validation_StringLength {
             get {
                 return ResourceManager.GetString("Validation_StringLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bienvenido.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Si.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
         

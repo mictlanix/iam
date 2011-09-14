@@ -1,17 +1,26 @@
 ﻿@{
-    ViewBag.Title = "Acerca de IAM";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Title_About;
 }
 
-<h2>Acerca del Manejador de Acuerdos Institucionales</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.DisplayName_About</h2>
 
-<leyend>Autores:</leyend>
+<img src="@Url.Content("~/Content/images/mtx-logo-small.png")" alt="Mictlanix" style="float:right;"/>
+<leyend>@Mictlanix.Iam.Properties.Resources.Authors:</leyend>
 <ul>
     <li>Angélica Jiménez &lt;melekika@mictlanix.org&gt;</li>
     <li>Eddy Zavaleta &lt;eddy@mictlanix.org&gt;</li>
     <li>Eduardo Nieto &lt;enieto@mictlanix.org&gt;</li>
 </ul>
+<h3>Free/Libre/Open Source Software</h3>
 <p>
-    Copyright &copy; 2011 Eddy Zavaleta, Mictlanix (<a href="http://www.mictlanix.org">www.mictlanix.org</a>)
+    Mictlanix Iam is free/open source software released under the MIT/X11
+    license. Mictlanix Iam is Copyright 2011 by Eddy Zavaleta, Mictlanix
+    and its other contributors where noted in source code.
+</p>
+<h3>MIT/X11 License</h3>
+<p>
+    Copyright &copy; 2011 Eddy Zavaleta, <a href="http://www.mictlanix.org">Mictlanix</a>
+    and contributors.
 </p>
 <p>
     Permission is hereby granted, free of charge, to any person obtaining

@@ -60,6 +60,8 @@ namespace Mictlanix.Iam.Models
         [Display(Name = "LastName", ResourceType = typeof(Resources))]
         public string LastName { get; set; }
 
+        public string FullName { get { return string.Format("{0} {1}", FirstName, LastName); } }
+
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email", ResourceType = typeof(Resources))]
