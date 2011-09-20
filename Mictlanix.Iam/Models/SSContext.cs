@@ -40,7 +40,8 @@ namespace Mictlanix.Iam.Models
         public DbSet<User> Users { get; set; }
         public DbSet<ArrangementRequest> ArrangementRequests { get; set; }
         public DbSet<Arrangement> Arrangements { get; set; }
+        public DbSet<ArrangementStatus> Statuses { get; set; }
         public DbSet<School> Schools { get; set; }
-        public DbSet<Organization> Organizations { get; set; } 
+        public DbSet<Organization> Organizations { get; set; }
     }
 }

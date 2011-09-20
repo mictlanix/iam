@@ -16,26 +16,41 @@
         <legend>Revisión de Arreglo</legend>
 
         @Html.HiddenFor(model => model.Id)
-
+        
         <div class="editor-label">
-            @Html.LabelFor(model => model.School)
+            @Html.LabelFor(model => model.SchoolId)
         </div>
         <div class="editor-field">
-            <select id="school-list" name="School">
-            @foreach (var item in Html.GetSchools()) {
-            <option>@Html.DisplayFor(x => item.Name)</option>
+            <select id="schools-list" name="SchoolId">
+            @foreach (var item in Html.GetSchools())
+            {
+                if (Model.SchoolId == item.Id)
+                {
+                    <option value="@item.Id" selected="selected">@item.ShortName - @item.Name</option>
+                }
+                else
+                {
+                    <option value="@item.Id">@item.ShortName - @item.Name</option>
+                }
             }
             </select>
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Organization)
+            @Html.LabelFor(model => model.OrganizationId)
         </div>
         <div class="editor-field">
-            <select id="organization-list" name="Organization">
+            <select id="organizations-list" name="OrganizationId">
             @foreach (var item in Html.GetOrganizations())
             {
-            <option>@Html.DisplayFor(x => item.Nombre)</option>
+                if (Model.OrganizationId == item.Id)
+                {
+                    <option value="@item.Id" selected="selected">@item.ShortName - @item.Name</option>
+                }
+                else
+                {
+                    <option value="@item.Id">@item.ShortName - @item.Name</option>
+                }
             }
             </select>
         </div>
@@ -89,6 +104,13 @@
         <div class="editor-label">
             @Html.EditorFor(model => model.SchoolAutorization)
             @Html.LabelFor(model => model.SchoolAutorization)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Comment)
         </div>
         
         <div class="editor-label">

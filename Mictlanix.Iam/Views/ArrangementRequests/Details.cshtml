@@ -11,17 +11,17 @@
     <legend>@Mictlanix.Iam.Properties.Resources.ArrangementRequests</legend>
 
     <div class="editor-label">
-        @Html.LabelFor(model => model.School)
+        @Html.LabelFor(model => model.SchoolId)
     </div>
     <div class="editor-field">
-        @Html.DisplayFor(model => model.School)
+        @Html.DisplayFor(model => model.School.Name)
     </div>
 
     <div class="editor-label">
-        @Html.LabelFor(model => model.Organization)
+        @Html.LabelFor(model => model.OrganizationId)
     </div>
     <div class="editor-field">
-        @Html.DisplayFor(model => model.Organization)
+        @Html.DisplayFor(model => model.Organization.Name)
     </div>
 
     <div class="editor-label">
@@ -71,6 +71,13 @@
     <div class="editor-label">
         @Html.DisplayFor(model => model.SchoolAutorization)
         @Html.LabelFor(model => model.SchoolAutorization)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
     </div>
     
     <div class="editor-label">

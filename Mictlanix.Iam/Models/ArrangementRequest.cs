@@ -44,13 +44,17 @@ namespace Mictlanix.Iam.Models
         [DatabaseGenerated(System.ComponentModel.DataAnnotations.DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [ForeignKey("School")]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Range(1, int.MaxValue, ErrorMessageResourceName = "Validation_WrongId", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "School", ResourceType = typeof(Resources))]
-        public string School { get; set; }
+        public int SchoolId { get; set; }
 
+        [ForeignKey("Organization")]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Range(1, int.MaxValue)]
         [Display(Name = "Organization", ResourceType = typeof(Resources))]
-        public string Organization { get; set; }
+        public int OrganizationId { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.MultilineText)]
@@ -89,11 +93,33 @@ namespace Mictlanix.Iam.Models
         [Display(Name = "SchoolAutorization", ResourceType = typeof(Resources))]
         public bool SchoolAutorization { get; set; }
 
+        [ForeignKey("Creator")]
         //[Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "Creator", ResourceType = typeof(Resources))]
         public string CreatorId { get; set; }
 
-        [ForeignKey("CreatorId")]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Comment", ResourceType = typeof(Resources))]
+        [StringLength(500, MinimumLength = 0)]
+        public string Comment { get; set; }
+
         public virtual User Creator { get; set; }
+        public virtual School School { get; set; }
+        public virtual Organization Organization { get; set; }
+
+        [NotMapped]
+        public bool IsCorrect
+        {
+            get
+            {
+                return RequestForm && 
+                       ElectronicMedia && 
+                       Annexes && Forms && 
+                       LegalDocuments && 
+                       ResponsibleStatement && 
+                       SchoolAutorization;
+            }
+        }
+
     }
 }

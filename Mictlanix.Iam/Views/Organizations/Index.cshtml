@@ -3,10 +3,10 @@
 @model IEnumerable<Mictlanix.Iam.Models.Organization>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.DisplayName_Organization;
 }
 
-<h2>Index</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.DisplayName_Organization</h2>
 
 <p>
     @if (Html.GetUser(User.Identity.Name).AllowCreateOrganizations)
@@ -17,7 +17,10 @@
 <table>
     <tr>
         <th>
-            Nombre
+            @Html.LabelFor(x => new Organization().ShortName)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Organization().Name)
         </th>
         <th></th>
     </tr>
@@ -25,7 +28,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
+            @Html.DisplayFor(modelItem => item.ShortName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @if (Html.GetUser(User.Identity.Name).AllowEditOrganizations)

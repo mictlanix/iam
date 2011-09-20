@@ -3,10 +3,10 @@
 @model IEnumerable<Mictlanix.Iam.Models.School>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.DisplayName_School;
 }
 
-<h2>Index</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.DisplayName_School</h2>
 
 <p>
     @if (Html.GetUser(User.Identity.Name).AllowCreateSchools)
@@ -17,13 +17,19 @@
 <table>
     <tr>
         <th>
-            Dependencia Politécnica
+            @Html.LabelFor(x => new Organization().ShortName)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Organization().Name)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortName)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>

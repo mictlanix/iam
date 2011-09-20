@@ -2,21 +2,116 @@
 @model Mictlanix.Iam.Models.Organization
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Details;
 }
 
-<h2>Details</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.Details</h2>
 
 <fieldset>
-    <legend>Empresa</legend>
+    <legend>@Mictlanix.Iam.Properties.Resources.Organization</legend>
 
-    <div class="display-label">Nombre</div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.ShortName)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
+        @Html.DisplayFor(model => model.ShortName)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Street)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Street)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.ExteriorNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExteriorNumber)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.InteriorNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InteriorNumber)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Neighborhood)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Neighborhood)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Borough)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Borough)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.ZipCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZipCode)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.PhoneExt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneExt)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+        @Html.ValidationMessageFor(Model => Model.Email)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Website)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Website)
+        @Html.ValidationMessageFor(Model => Model.Website)
     </div>
 </fieldset>
 <p>
-    @if (Html.GetUser(User.Identity.Name).AllowEditOrganizations)
+    @if (Html.GetUser(User.Identity.Name).AllowEditSchools)
     {
         @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = Model.Id }) @:|
     }

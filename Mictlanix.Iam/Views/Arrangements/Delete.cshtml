@@ -18,17 +18,17 @@
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.School)
+        @Html.LabelFor(model => model.SchoolId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.School)
+        @Html.DisplayFor(model => model.School.Name)
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.Organization)
+        @Html.LabelFor(model => model.OrganizationId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Organization)
+        @Html.DisplayFor(model => model.Organization.Name)
     </div>
 
     <div class="display-label">
@@ -72,6 +72,14 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Tipe)
     </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
+    </div>
+
 </fieldset>
 @using (Html.BeginForm()) {
     <p>

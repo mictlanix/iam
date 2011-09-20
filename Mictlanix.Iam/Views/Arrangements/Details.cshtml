@@ -1,4 +1,5 @@
 ﻿@using Mictlanix.Iam.Helpers;
+@using Mictlanix.Iam.Models;
 @model Mictlanix.Iam.Models.Arrangement
 
 @{
@@ -18,17 +19,17 @@
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.School)
+        @Html.LabelFor(model => model.SchoolId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.School)
+        @Html.DisplayFor(model => model.School.Name)
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.Organization)
+        @Html.LabelFor(model => model.OrganizationId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Organization)
+        @Html.DisplayFor(model => model.Organization.Name)
     </div>
 
     <div class="display-label">
@@ -72,11 +73,54 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Tipe)
     </div>
+
+     <div class="display-label">
+        @Html.LabelFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
+    </div>
+
+<h2>@Mictlanix.Iam.Properties.Resources.FollowUp</h2>
+<table style="width:100%">
+    <tr>
+        <th >
+            @Html.LabelFor(x => new ArrangementStatus().Date)
+        </th>
+        <th style="width:20%">
+            @Html.LabelFor(x => new ArrangementStatus().Status)
+        </th>
+        <th>
+            @Html.LabelFor(x => new ArrangementStatus().CreatorId)
+        </th>
+        <th style="width:60%">
+            @Html.LabelFor(x => new ArrangementStatus().Comment)
+        </th>
+    </tr>
+@foreach (var item in Model.Statuses)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @typeof(StatusEnum).GetDisplayNames()[Enum.GetName(typeof(StatusEnum), item.Status)]
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Creator.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+    </tr>
+}
+</table>
+
 </fieldset>
 <p>
     @if (Html.GetUser(User.Identity.Name).AllowEditArrangements)
     {
-        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = Model.Id }) @:|
+        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { year = Model.Year, serial = Model.Serial }) @:|
     }
     @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </p>

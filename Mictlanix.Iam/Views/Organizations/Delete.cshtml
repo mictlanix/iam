@@ -1,19 +1,113 @@
 ﻿@model Mictlanix.Iam.Models.Organization
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Delete;
 }
 
-<h2>Delete</h2>
+<h2>@Mictlanix.Iam.Properties.Resources.Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>@Mictlanix.Iam.Properties.Resources.Message_DeleteConfirmation</h3>
 <fieldset>
-    <legend>Empresa</legend>
+    <legend>@Mictlanix.Iam.Properties.Resources.Organization</legend>
 
-    <div class="display-label">Nombre</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
+     <div class="display-label">
+        @Html.LabelFor(model => model.ShortName)
     </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShortName)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Street)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Street)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.ExteriorNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExteriorNumber)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.InteriorNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InteriorNumber)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Neighborhood)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Neighborhood)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Borough)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Borough)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.ZipCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZipCode)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.PhoneExt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneExt)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Website)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Website)
+    </div>
+
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
@@ -21,3 +115,4 @@
         @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
     </p>
 }
+

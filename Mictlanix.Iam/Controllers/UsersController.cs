@@ -18,11 +18,11 @@ namespace Mictlanix.Iam.Controllers
 
         public ActionResult Index()
         {
-            //if (!Request.IsAuthenticated ||
-            //    !Helpers.HtmlHelpers.GetUser(null, User.Identity.Name).IsAdministrator)
-            //{
-            //    return RedirectToAction("Index", "Home");
-            //}
+            if (!Request.IsAuthenticated ||
+                !Helpers.HtmlHelpers.GetUser(null, User.Identity.Name).IsAdministrator)
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
             return View(db.Users.ToList());
         }

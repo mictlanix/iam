@@ -36,10 +36,10 @@
             @Html.LabelFor(x => new ArrangementRequest().Id)
         </th>
         <th>
-            @Html.LabelFor(x => new ArrangementRequest().School)
+            @Html.LabelFor(x => new ArrangementRequest().SchoolId)
         </th>
         <th>
-            @Html.LabelFor(x => new ArrangementRequest().Organization)
+            @Html.LabelFor(x => new ArrangementRequest().OrganizationId)
         </th>
         <th>
             @Html.LabelFor(x => new ArrangementRequest().Object)
@@ -55,10 +55,10 @@
             @Html.DisplayFor(modelItem => item.Id)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.School)
+            @Html.DisplayFor(modelItem => item.School.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Organization)
+            @Html.DisplayFor(modelItem => item.Organization.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Object)
@@ -75,6 +75,12 @@
             {
                 @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id = item.Id })
             }
+            @if (Html.GetUser(User.Identity.Name).AllowCreateArrangements && item.IsCorrect)
+            {
+                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.CreateArragement, "CreateFromRequest", "Arrangements", new { id = item.Id }, null)
+
+            }
+            
         </td>
     </tr>
 }

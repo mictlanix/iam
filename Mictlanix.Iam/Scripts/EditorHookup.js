@@ -28,5 +28,6 @@
 //
 
 $(document).ready(function () {
-    $('.date').datepicker({ dateFormat: "yy-mm-dd" });
+    $.datepicker.setDefaults($.datepicker.regional["es"]);
+    $('.date').datepicker({ dateFormat: "yy-mm-dd", changeYear: true });
 });

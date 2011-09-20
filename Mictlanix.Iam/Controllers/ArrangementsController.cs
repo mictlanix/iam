@@ -71,9 +71,9 @@ namespace Mictlanix.Iam.Controllers
                 use_id = int.TryParse(search.Pattern, out id);
 
                 var qry = from x in db.Arrangements
-                          where x.Organization.Contains(search.Pattern) ||
-                                x.School.Contains(search.Pattern) ||
-                                (use_id && x.Id == id) 
+                          where x.Organization.Name.Contains(search.Pattern) ||
+                                x.School.Name.Contains(search.Pattern)
+                                //(use_id && x.Id == id) 
                           select x;
 
                 return View(qry.Take(100).ToList());
@@ -85,43 +85,62 @@ namespace Mictlanix.Iam.Controllers
         //
         // GET: /Arrangements/Details/5
 
-        public ViewResult Details(int id)
+        public ViewResult Details(int year, int serial)
         {
-            Arrangement datosconvenio = db.Arrangements.Find(id);
+            Arrangement datosconvenio = db.Arrangements.Find(year, serial);
             return View(datosconvenio);
         }
 
         //
-        // GET: /Arrangements/Create
+        // GET: /Arrangements/CreateFromRequest
 
-        public ActionResult Create()
+        public ActionResult CreateFromRequest(int id)
         {
-            return View();
+            ArrangementRequest request = db.ArrangementRequests.Find(id);
+            return View("Create", new Arrangement {
+                SchoolId = request.SchoolId, 
+                School = request.School,
+                OrganizationId = request.OrganizationId,
+                Organization = request.Organization
+            });
         } 
 
         //
         // POST: /Arrangements/Create
 
         [HttpPost]
-        public ActionResult Create(Arrangement datosconvenio)
+        public ActionResult Create(Arrangement item)
         {
             if (ModelState.IsValid)
             {
-                db.Arrangements.Add(datosconvenio);
+                item.Status = (int)StatusEnum.Status01;
+                item.Year = DateTime.Now.Year;
+
+                try
+                {
+                    item.Serial = db.Arrangements.Where(x => x.Year == item.Year).Select(x => x.Serial).Max() + 1;
+                }
+                catch (Exception)
+                {
+                    item.Serial = 1;
+                }
+
+                db.Arrangements.Add(item);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");  
             }
 
-            return View(datosconvenio);
+            return View(item);
         }
         
         //
         // GET: /Arrangements/Edit/5
  
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int year, int serial)
         {
-            Arrangement datosconvenio = db.Arrangements.Find(id);
-            return View(datosconvenio);
+            Arrangement item = db.Arrangements.Find(year, serial);
+            return View(item);
         }
 
         //
@@ -140,21 +159,54 @@ namespace Mictlanix.Iam.Controllers
         }
 
         //
-        // GET: /Arrangements/Delete/5
- 
-        public ActionResult Delete(int id)
+        // GET: /Arrangements/ChangeStatus/2011/1
+
+        public ActionResult ChangeStatus(int year, int serial)
         {
-            Arrangement datosconvenio = db.Arrangements.Find(id);
+            return View(new ArrangementStatus { ArrangementYear = year, ArrangementSerial = serial});
+        }
+
+        //
+        // POST: /Arrangements/ChangeStatus/2011/1
+
+        [HttpPost]
+        public ActionResult ChangeStatus(ArrangementStatus item)
+        {
+            if (ModelState.IsValid)
+            {
+                // guardar ArrangementStatus en la db 
+                // cambiar estado al Arrangement
+                Arrangement arrangement = db.Arrangements.Find(item.ArrangementYear, item.ArrangementSerial);
+
+                arrangement.Status = item.Status;
+                item.Arrangement = arrangement;
+                item.Date = DateTime.Now;
+                item.CreatorId = User.Identity.Name;
+
+                db.Statuses.Add(item);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View(item);
+        }
+
+        //
+        // GET: /Arrangements/Delete/5
+
+        public ActionResult Delete(int year, int serial)
+        {
+            Arrangement datosconvenio = db.Arrangements.Find(year, serial);
             return View(datosconvenio);
         }
 
         //
-        // POST: /Arrangements/Delete/5
+        // POST: /Arrangements/Delete/5/
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int year, int serial)
         {            
-            Arrangement datosconvenio = db.Arrangements.Find(id);
+            Arrangement datosconvenio = db.Arrangements.Find(year, serial);
             db.Arrangements.Remove(datosconvenio);
             db.SaveChanges();
             return RedirectToAction("Index");

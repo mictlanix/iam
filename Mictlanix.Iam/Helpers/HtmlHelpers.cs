@@ -35,6 +35,8 @@ using System.Web.Mvc;
 using Mictlanix.Iam.Models;
 using System.Data;
 using System.Data.Entity;
+using System.Reflection;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mictlanix.Iam.Helpers
 {
@@ -69,6 +71,26 @@ namespace Mictlanix.Iam.Helpers
             string ctl = html.ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString();
             string atn = html.ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
             return ctl == controller && atn == action ? "gbz0l" : string.Empty;
+        }
+
+        public static Dictionary<string, string> GetDisplayNames(this Type enumeration)
+        {
+            if (!enumeration.IsEnum)
+            {
+                throw new ArgumentException("passed type must be of Enum type", "enumerationValue");
+            }
+
+            Dictionary<string, string> descriptions = new Dictionary<string, string>();
+            var members = enumeration.GetMembers().Where(m => m.MemberType == MemberTypes.Field);
+
+            foreach (MemberInfo member in members)
+            {
+                var attrs = member.GetCustomAttributes(typeof(DisplayAttribute), false);
+                if (attrs.Count() != 0)
+                    descriptions.Add(member.Name, ((DisplayAttribute)attrs[0]).GetName());
+            }
+
+            return descriptions;
         }
     }
 }

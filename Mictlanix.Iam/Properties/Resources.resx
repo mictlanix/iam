@@ -474,4 +474,88 @@
   <data name="DisplayName_Application" xml:space="preserve">
     <value>SiSeCoVi</value>
   </data>
+  <data name="Message_DeleteConfirmation" xml:space="preserve">
+    <value>¿Está seguro de borrar esto?</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="PhoneExt" xml:space="preserve">
+    <value>Extensión Telefónica</value>
+  </data>
+  <data name="Validation_Email" xml:space="preserve">
+    <value>Lo introducido no corresponde a un {0}.</value>
+  </data>
+  <data name="Validation_Url" xml:space="preserve">
+    <value>Lo introducido no corresponde a un {0}.</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Sitio Web</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Abreviatura</value>
+  </data>
+  <data name="CreateArragement" xml:space="preserve">
+    <value>Crear Convenio</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Fecha y Hora</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Status01" xml:space="preserve">
+    <value>Revisión UDV</value>
+  </data>
+  <data name="Status02" xml:space="preserve">
+    <value>Revisión Abogados Delegados UPDCE</value>
+  </data>
+  <data name="Status03" xml:space="preserve">
+    <value>Convenios Rechazados en Sesiones del Subcomité</value>
+  </data>
+  <data name="Status04" xml:space="preserve">
+    <value>Firma del Director de la UPDCE</value>
+  </data>
+  <data name="Status05" xml:space="preserve">
+    <value>Firma del Secretario de Extensión e Integración Social</value>
+  </data>
+  <data name="Status06" xml:space="preserve">
+    <value>Remitido a la Dirección de Normatividad, Consulta y Dictaminación</value>
+  </data>
+  <data name="Status07" xml:space="preserve">
+    <value>Firma del Director de la UPDCE</value>
+  </data>
+  <data name="Status08" xml:space="preserve">
+    <value>Firma de la Contraparte</value>
+  </data>
+  <data name="Status09" xml:space="preserve">
+    <value>Convenio que Paso a Subcomité</value>
+  </data>
+  <data name="Status10" xml:space="preserve">
+    <value>Convenio Aprobado por el Subcomité (concluido)</value>
+  </data>
+  <data name="Status11" xml:space="preserve">
+    <value>Convenio con Firmas Autógrafas Falta Formato PV3</value>
+  </data>
+  <data name="Status12" xml:space="preserve">
+    <value>Convenio Revisado, Falta Documentación</value>
+  </data>
+  <data name="Status13" xml:space="preserve">
+    <value>Convenio con Observacione Jurídicas y Comentarios para revisión de las partes</value>
+  </data>
+  <data name="Status14" xml:space="preserve">
+    <value>Convenio Rechazado Nuevos Lineamientos y/o Extemporalidad de fecha de firma</value>
+  </data>
+  <data name="Status15" xml:space="preserve">
+    <value>Convenio Detenido</value>
+  </data>
+  <data name="Status16" xml:space="preserve">
+    <value>Convenio Cancelado</value>
+  </data>
+  <data name="Validation_WrongId" xml:space="preserve">
+    <value>No se especificó un elemento válido para {0}.</value>
+  </data>
+  <data name="FollowUp" xml:space="preserve">
+    <value>Seguimiento</value>
+  </data>
 </root>

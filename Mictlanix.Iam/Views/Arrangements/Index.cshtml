@@ -10,10 +10,6 @@
 <h2>@Mictlanix.Iam.Properties.Resources.DisplayName_Arrangement</h2>
 
 <p>
-    @if (Html.GetUser(User.Identity.Name).AllowCreateArrangements)
-    {
-        @Html.ActionLink(Mictlanix.Iam.Properties.Resources.CreateNew, "Create");
-    }
 </p>
 
 @using (Html.BeginForm())
@@ -34,25 +30,25 @@
 <table>
     <tr>
         <th>
-            @Html.LabelFor(x => new Arrangement().Id)
+            @Html.LabelFor(x => new Arrangement().SerialNumber)
         </th>
         <th>
             @Html.LabelFor(x => new Arrangement().ReceiptDate)
         </th>
         <th>
-            @Html.LabelFor(x => new Arrangement().School)
+            @Html.LabelFor(x => new Arrangement().SchoolId)
         </th>
         <th>
-            @Html.LabelFor(x => new Arrangement().Organization)
+            @Html.LabelFor(x => new Arrangement().OrganizationId)
         </th>
         <th>
             @Html.LabelFor(x => new Arrangement().Amount)
         </th>
         <th>
-            @Html.LabelFor(x => new Arrangement().SignatureDate)
-        </th>
-        <th>
             @Html.LabelFor(x => new Arrangement().DueDate)
+        </th
+        <th>
+            @Html.LabelFor(x => new Arrangement().Status)
         </th>
         <th></th>
     </tr>
@@ -61,37 +57,38 @@
 {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Id)
+            @Html.DisplayFor(modelItem => item.SerialNumber)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ReceiptDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.School)
+            @Html.DisplayFor(modelItem => item.School.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Organization)
+            @Html.DisplayFor(modelItem => item.Organization.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Amount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SignatureDate)
+            @Html.DisplayFor(modelItem => item.DueDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
+            @Html.ActionLink(typeof(StatusEnum).GetDisplayNames()[Enum.GetName(typeof(StatusEnum), item.Status)],
+                             "ChangeStatus", new { year = item.Year, serial = item.Serial })
         </td>
         <td>
             @if (Html.GetUser(User.Identity.Name).AllowEditArrangements)
             {
-                @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = item.Id }) @:|
+                @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { year = item.Year, serial = item.Serial }) @:|
             }
             
-            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { id = item.Id })
+            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { year = item.Year, serial = item.Serial })
             
             @if (Html.GetUser(User.Identity.Name).AllowDeleteArrangements)
             {
-                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id = item.Id })
+                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { year = item.Year, serial = item.Serial })
             }
         </td>
     </tr>

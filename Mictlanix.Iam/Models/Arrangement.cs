@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Data.Entity.ModelConfiguration;
+using System.Data.Entity;
 using Mictlanix.Iam.Properties;
 using Mictlanix.Iam.Models.Validation;
 
@@ -39,25 +40,28 @@ namespace Mictlanix.Iam.Models
 {
     public class Arrangement
     {
-        [Key]
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Serial", ResourceType= typeof(Resources))]
-        [DisplayFormat(DataFormatString = "CV11{0:000}")]
-        [DatabaseGenerated(System.ComponentModel.DataAnnotations.DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Key, Column(Order = 0)]
+        public int Year { get; set; }
+
+        [Key, Column(Order = 1)]
+        public int Serial { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
         [Display(Name = "ReceiptDate", ResourceType = typeof(Resources))]
         public DateTime? ReceiptDate { get; set; }
 
+        [ForeignKey("School")]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Range(1, int.MaxValue, ErrorMessageResourceName = "Validation_WrongId", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "School", ResourceType = typeof(Resources))]
-        public string School { get; set; }
+        public int SchoolId { get; set; }
 
+        [ForeignKey("Organization")]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Range(1, int.MaxValue)]
         [Display(Name = "Organization", ResourceType = typeof(Resources))]
-        public string Organization { get; set; }
+        public int OrganizationId { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.MultilineText)]
@@ -88,5 +92,22 @@ namespace Mictlanix.Iam.Models
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "Tipe", ResourceType = typeof(Resources))]
         public string Tipe { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Comment", ResourceType = typeof(Resources))]
+        [StringLength(500, MinimumLength = 0)]
+        public string Comment { get; set; }
+
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "Status", ResourceType = typeof(Resources))]
+        public int Status { get; set; }
+
+        public virtual School School { get; set; }
+        public virtual Organization Organization { get; set; }
+        public virtual ICollection<ArrangementStatus> Statuses { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Serial", ResourceType = typeof(Resources))]
+        public string SerialNumber { get { return string.Format("CV{0:00}{1:000}", Year.ToString().Substring(Year.ToString().Length - 2), Serial); } }
     }
 }
