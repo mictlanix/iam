@@ -82,7 +82,7 @@ namespace Mictlanix.Iam.Models
         public int Id { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         [Display(Name = "Date", ResourceType = typeof(Resources))]
         public DateTime Date { get; set; }
 

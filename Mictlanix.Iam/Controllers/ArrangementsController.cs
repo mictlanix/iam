@@ -36,6 +36,7 @@ using System.Web;
 using System.Web.Mvc;
 using Mictlanix.Iam.Models;
 using System.Data.Objects.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Mictlanix.Iam.Controllers
 { 
@@ -65,15 +66,21 @@ namespace Mictlanix.Iam.Controllers
         {
             if (ModelState.IsValid)
             {
-                int id;
-                bool use_id;
+                int year = 0;
+                int serial = 0;
 
-                use_id = int.TryParse(search.Pattern, out id);
+                Match match = Regex.Match(search.Pattern, @"CV(\d{2})(\d{0,3})$", RegexOptions.IgnoreCase);
+
+                if (match.Success)
+                {
+                    year = 2000 + int.Parse(match.Groups[1].Value);
+                    int.TryParse(match.Groups[2].Value, out serial);
+                }
 
                 var qry = from x in db.Arrangements
                           where x.Organization.Name.Contains(search.Pattern) ||
-                                x.School.Name.Contains(search.Pattern)
-                                //(use_id && x.Id == id) 
+                                x.School.Name.Contains(search.Pattern) ||
+                                (year > 0 && x.Year == year && (serial == 0 || x.Serial == serial))
                           select x;
 
                 return View(qry.Take(100).ToList());
@@ -163,7 +170,8 @@ namespace Mictlanix.Iam.Controllers
 
         public ActionResult ChangeStatus(int year, int serial)
         {
-            return View(new ArrangementStatus { ArrangementYear = year, ArrangementSerial = serial});
+            Arrangement arrangement = db.Arrangements.Find(year, serial);
+            return View(new ArrangementStatus { ArrangementYear = year, ArrangementSerial = serial, Status = arrangement.Status});
         }
 
         //

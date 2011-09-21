@@ -12,6 +12,20 @@
     <legend>@Mictlanix.Iam.Properties.Resources.Arrangement</legend>
 
     <div class="display-label">
+        @Html.LabelFor(model => model.SerialNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SerialNumber)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @typeof(StatusEnum).GetDisplayNames()[Enum.GetName(typeof(StatusEnum), Model.Status)]
+    </div>
+
+    <div class="display-label">
         @Html.LabelFor(model => model.ReceiptDate)
     </div>
     <div class="display-field">
@@ -93,7 +107,7 @@
         <th>
             @Html.LabelFor(x => new ArrangementStatus().CreatorId)
         </th>
-        <th style="width:60%">
+        <th style="width:50%">
             @Html.LabelFor(x => new ArrangementStatus().Comment)
         </th>
     </tr>
