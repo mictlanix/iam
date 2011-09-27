@@ -916,6 +916,51 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nivel.
+        /// </summary>
+        public static string SchoolType {
+            get {
+                return ResourceManager.GetString("SchoolType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Superior.
+        /// </summary>
+        public static string SchoolType_College {
+            get {
+                return ResourceManager.GetString("SchoolType_College", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Media Superior.
+        /// </summary>
+        public static string SchoolType_HighSchool {
+            get {
+                return ResourceManager.GetString("SchoolType_HighSchool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NP.
+        /// </summary>
+        public static string SchoolType_None {
+            get {
+                return ResourceManager.GetString("SchoolType_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posgrado.
+        /// </summary>
+        public static string SchoolType_University {
+            get {
+                return ResourceManager.GetString("SchoolType_University", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Búsqueda.
         /// </summary>
         public static string Search {
@@ -1245,6 +1290,15 @@ namespace Mictlanix.Iam.Properties {
         public static string Title_Users {
             get {
                 return ResourceManager.GetString("Title_Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nivel.
+        /// </summary>
+        public static string TypeSchool {
+            get {
+                return ResourceManager.GetString("TypeSchool", resourceCulture);
             }
         }
         

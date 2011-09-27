@@ -25,15 +25,15 @@
         </div>
         <div class="editor-field">
             <select id="status-list" name="Status">
-                @foreach (var item in typeof(StatusEnum).GetDisplayNames())
+                @foreach (var item in Enum.GetValues(typeof(StatusEnum)))
                 {
-                    if ((StatusEnum)Enum.Parse(typeof(StatusEnum), item.Key) == (StatusEnum)Model.Status)
+                    if ((StatusEnum)item == Model.StatusEnum)
                     {
-                        <option value="@((int)Enum.Parse(typeof(StatusEnum), item.Key))" selected="selected">@item.Value</option>
+                        <option value="@((int)item)" selected="selected">@Model.StatusEnum.GetDisplayName()</option>
                     }
                     else
                     {
-                        <option value="@((int)Enum.Parse(typeof(StatusEnum), item.Key))">@item.Value</option>
+                        <option value="@((int)item)">@(((StatusEnum)item).GetDisplayName())</option>
                     }
                 }
             </select>

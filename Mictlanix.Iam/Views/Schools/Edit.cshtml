@@ -1,4 +1,6 @@
-﻿@model Mictlanix.Iam.Models.School
+﻿@using Mictlanix.Iam.Helpers;
+@using Mictlanix.Iam.Models;
+@model Mictlanix.Iam.Models.School
 
 @{
     ViewBag.Title = Mictlanix.Iam.Properties.Resources.Edit;
@@ -30,6 +32,25 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Name)
             @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TypeSchool)
+        </div>
+        <div class="editor-field">
+            <select id="school-type-list" name="TypeSchool">
+                @foreach (var item in Enum.GetValues(typeof(SchoolType)))
+                {
+                    if ((SchoolType)item == Model.SchoolType)
+                    {
+                        <option value="@((int)item)" selected="selected">@Model.SchoolType.GetDisplayName()</option>
+                    }
+                    else
+                    {
+                        <option value="@((int)item)">@(((SchoolType)item).GetDisplayName())</option>
+                    }
+                }
+            </select>
         </div>
 
         <div class="editor-label">

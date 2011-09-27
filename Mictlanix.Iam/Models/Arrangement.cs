@@ -109,5 +109,8 @@ namespace Mictlanix.Iam.Models
         [NotMapped]
         [Display(Name = "Serial", ResourceType = typeof(Resources))]
         public string SerialNumber { get { return string.Format("CV{0:00}{1:000}", Year.ToString().Substring(Year.ToString().Length - 2), Serial); } }
+
+        [NotMapped]
+        public StatusEnum StatusEnum { get { return (StatusEnum)Status; } }
     }
 }

@@ -12,17 +12,17 @@
     <legend>@Mictlanix.Iam.Properties.Resources.Arrangement</legend>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.SerialNumber)
+        @Html.LabelFor(x => x.SerialNumber)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SerialNumber)
+        @Html.DisplayFor(x => x.SerialNumber)
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.Status)
+        @Html.LabelFor(x => x.Status)
     </div>
     <div class="display-field">
-        @typeof(StatusEnum).GetDisplayNames()[Enum.GetName(typeof(StatusEnum), Model.Status)]
+        @Model.StatusEnum.GetDisplayName()
     </div>
 
     <div class="display-label">
@@ -118,7 +118,7 @@
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @typeof(StatusEnum).GetDisplayNames()[Enum.GetName(typeof(StatusEnum), item.Status)]
+            @item.StatusEnum.GetDisplayName()
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Creator.FullName)

@@ -34,7 +34,6 @@ using System.Web;
 using System.Web.Mvc;
 using Mictlanix.Iam.Models;
 using System.Data;
-using System.Data.Entity;
 using System.Reflection;
 using System.ComponentModel.DataAnnotations;
 
@@ -73,24 +72,17 @@ namespace Mictlanix.Iam.Helpers
             return ctl == controller && atn == action ? "gbz0l" : string.Empty;
         }
 
-        public static Dictionary<string, string> GetDisplayNames(this Type enumeration)
+        public static string GetDisplayName(this Enum member)
         {
-            if (!enumeration.IsEnum)
-            {
-                throw new ArgumentException("passed type must be of Enum type", "enumerationValue");
-            }
+            string display_name = member.ToString();
 
-            Dictionary<string, string> descriptions = new Dictionary<string, string>();
-            var members = enumeration.GetMembers().Where(m => m.MemberType == MemberTypes.Field);
+            var prop_info = member.GetType().GetField(display_name);
+            var attrs = prop_info.GetCustomAttributes(typeof(DisplayAttribute), false);
 
-            foreach (MemberInfo member in members)
-            {
-                var attrs = member.GetCustomAttributes(typeof(DisplayAttribute), false);
-                if (attrs.Count() != 0)
-                    descriptions.Add(member.Name, ((DisplayAttribute)attrs[0]).GetName());
-            }
+            if (attrs.Count() != 0)
+                display_name = ((DisplayAttribute)attrs[0]).GetName();
 
-            return descriptions;
+            return display_name;
         }
     }
 }

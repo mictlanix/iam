@@ -112,5 +112,8 @@ namespace Mictlanix.Iam.Models
         public virtual User Creator { get; set; }
         [Display(Name = "Arrangement", ResourceType = typeof(Resources))]
         public virtual Arrangement Arrangement { get; set; }
+
+        [NotMapped]
+        public StatusEnum StatusEnum { get { return (StatusEnum)Status; } }
     }
 }

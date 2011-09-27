@@ -558,4 +558,22 @@
   <data name="FollowUp" xml:space="preserve">
     <value>Seguimiento</value>
   </data>
+  <data name="SchoolType" xml:space="preserve">
+    <value>Nivel</value>
+  </data>
+  <data name="SchoolType_College" xml:space="preserve">
+    <value>Superior</value>
+  </data>
+  <data name="SchoolType_HighSchool" xml:space="preserve">
+    <value>Media Superior</value>
+  </data>
+  <data name="SchoolType_None" xml:space="preserve">
+    <value>NP</value>
+  </data>
+  <data name="SchoolType_University" xml:space="preserve">
+    <value>Posgrado</value>
+  </data>
+  <data name="TypeSchool" xml:space="preserve">
+    <value>Nivel</value>
+  </data>
 </root>
