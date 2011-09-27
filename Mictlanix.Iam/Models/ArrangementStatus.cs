@@ -43,34 +43,34 @@ namespace Mictlanix.Iam.Models
         Status01 = 1,
         [Display(Name = "Status02", ResourceType = typeof(Resources))]
         Status02,
-        [Display(Name = "Status03", ResourceType = typeof(Resources))]
-        Status03,
-        [Display(Name = "Status04", ResourceType = typeof(Resources))]
-        Status04,
+        //[Display(Name = "Status03", ResourceType = typeof(Resources))]
+        //Status03,
+        //[Display(Name = "Status04", ResourceType = typeof(Resources))]
+        //Status04,
         [Display(Name = "Status05", ResourceType = typeof(Resources))]
-        Status05,
+        Status05 = 5,
         [Display(Name = "Status06", ResourceType = typeof(Resources))]
         Status06,
-        [Display(Name = "Status07", ResourceType = typeof(Resources))]
-        Status07,
+        //[Display(Name = "Status07", ResourceType = typeof(Resources))]
+        //Status07,
         [Display(Name = "Status08", ResourceType = typeof(Resources))]
-        Status08,
+        Status08 = 8,
         [Display(Name = "Status09", ResourceType = typeof(Resources))]
         Status09,
         [Display(Name = "Status10", ResourceType = typeof(Resources))]
         Status10,
-        [Display(Name = "Status11", ResourceType = typeof(Resources))]
-        Status11,
-        [Display(Name = "Status12", ResourceType = typeof(Resources))]
-        Status12,
+        //[Display(Name = "Status11", ResourceType = typeof(Resources))]
+        //Status11,
+        //[Display(Name = "Status12", ResourceType = typeof(Resources))]
+        //Status12,
         [Display(Name = "Status13", ResourceType = typeof(Resources))]
-        Status13,
-        [Display(Name = "Status14", ResourceType = typeof(Resources))]
-        Status14,
+        Status13 =13,
+        //[Display(Name = "Status14", ResourceType = typeof(Resources))]
+        //Status14,
         [Display(Name = "Status15", ResourceType = typeof(Resources))]
-        Status15,
+        Status15 = 15,
         [Display(Name = "Status16", ResourceType = typeof(Resources))]
-        Status16
+        Status16 
     }
 
     public class ArrangementStatus
