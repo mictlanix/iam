@@ -47,9 +47,9 @@ namespace Mictlanix.Iam
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            //Database.SetInitializer<SSContext>(new DropCreateDatabaseIfModelChanges<SSContext>());
+            Database.SetInitializer<SSContext>(new DropCreateDatabaseIfModelChanges<SSContext>());
             //new SSContext().Database.Create();
-            new SSContext().Database.ExecuteSqlCommand("INSERT INTO Users VALUES ('admin', '7C4A8D09CA3762AF61E59520943DC26494F8941B', 'Eddy', 'Zavaleta', 'eddy@mictlanix.org', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+            //new SSContext().Database.ExecuteSqlCommand("INSERT INTO Users VALUES ('admin', '7C4A8D09CA3762AF61E59520943DC26494F8941B', 'Eddy', 'Zavaleta', 'eddy@mictlanix.org', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
         }
     }
 }

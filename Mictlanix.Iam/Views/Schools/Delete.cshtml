@@ -30,7 +30,7 @@
         @Html.LabelFor(model => model.TypeSchool)
     </div>
     <div class="display-field">
-        @Model.SchoolType.GetDisplayName()
+        @Html.DisplayFor(x => x.SchoolType)
     </div>
 
     <div class="display-label">

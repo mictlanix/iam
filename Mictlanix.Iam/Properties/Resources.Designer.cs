@@ -502,6 +502,24 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Final de la Vigencia.
+        /// </summary>
+        public static string DueDateFinal {
+            get {
+                return ResourceManager.GetString("DueDateFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inicio de la Vigencia.
+        /// </summary>
+        public static string DueDateStart {
+            get {
+                return ResourceManager.GetString("DueDateStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
         public static string Edit {
@@ -966,6 +984,15 @@ namespace Mictlanix.Iam.Properties {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sector.
+        /// </summary>
+        public static string Sector {
+            get {
+                return ResourceManager.GetString("Sector", resourceCulture);
             }
         }
         

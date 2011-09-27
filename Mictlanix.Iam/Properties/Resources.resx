@@ -576,4 +576,13 @@
   <data name="TypeSchool" xml:space="preserve">
     <value>Nivel</value>
   </data>
+  <data name="DueDateFinal" xml:space="preserve">
+    <value>Final de la Vigencia</value>
+  </data>
+  <data name="DueDateStart" xml:space="preserve">
+    <value>Inicio de la Vigencia</value>
+  </data>
+  <data name="Sector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
 </root>

@@ -85,9 +85,15 @@ namespace Mictlanix.Iam.Models
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
-        [Display(Name = "DueDate", ResourceType = typeof(Resources))]
+        [Display(Name = "DueDateStart", ResourceType = typeof(Resources))]
         [DateGreaterThan("SignatureDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime? DueDate { get; set; }
+        public DateTime? DueDateStart { get; set; }
+
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [DataType(DataType.Date)]
+        [Display(Name = "DueDateFinal", ResourceType = typeof(Resources))]
+        [DateGreaterThan("DueDateStart", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
+        public DateTime? DueDateFinal { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "Tipe", ResourceType = typeof(Resources))]

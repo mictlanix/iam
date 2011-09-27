@@ -75,11 +75,19 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DueDate)
+            @Html.LabelFor(model => model.DueDateStart)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DueDate)
-            @Html.ValidationMessageFor(model => model.DueDate)
+            @Html.EditorFor(model => model.DueDateStart)
+            @Html.ValidationMessageFor(model => model.DueDateStart)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DueDateFinal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DueDateFinal)
+            @Html.ValidationMessageFor(model => model.DueDateFinal)
         </div>
 
         <div class="editor-label">

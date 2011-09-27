@@ -45,7 +45,10 @@
             @Html.LabelFor(x => new Arrangement().Amount)
         </th>
         <th>
-            @Html.LabelFor(x => new Arrangement().DueDate)
+            @Html.LabelFor(x => new Arrangement().DueDateStart)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().DueDateFinal)
         </th>
         <th>
             @Html.LabelFor(x => new Arrangement().Status)
@@ -72,7 +75,10 @@
             @Html.DisplayFor(modelItem => item.Amount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
+            @Html.DisplayFor(modelItem => item.DueDateStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DueDateFinal)
         </td>
         <td>
             @Html.ActionLink(item.StatusEnum.GetDisplayName(), "ChangeStatus", new { year = item.Year, serial = item.Serial })
