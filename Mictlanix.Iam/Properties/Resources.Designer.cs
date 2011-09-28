@@ -268,6 +268,15 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Responsable.
+        /// </summary>
+        public static string AssignTo {
+            get {
+                return ResourceManager.GetString("AssignTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Autores.
         /// </summary>
         public static string Authors {
@@ -493,33 +502,6 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vigencia del Convenio.
-        /// </summary>
-        public static string DueDate {
-            get {
-                return ResourceManager.GetString("DueDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Final de la Vigencia.
-        /// </summary>
-        public static string DueDateFinal {
-            get {
-                return ResourceManager.GetString("DueDateFinal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inicio de la Vigencia.
-        /// </summary>
-        public static string DueDateStart {
-            get {
-                return ResourceManager.GetString("DueDateStart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
         public static string Edit {
@@ -543,6 +525,15 @@ namespace Mictlanix.Iam.Properties {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Final de la Vigencia.
+        /// </summary>
+        public static string ExpiryDate {
+            get {
+                return ResourceManager.GetString("ExpiryDate", resourceCulture);
             }
         }
         
@@ -1006,6 +997,24 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sesión de Aprobación.
+        /// </summary>
+        public static string Session {
+            get {
+                return ResourceManager.GetString("Session", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a Subcomite.
+        /// </summary>
+        public static string SessionDate {
+            get {
+                return ResourceManager.GetString("SessionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abreviatura.
         /// </summary>
         public static string ShortName {
@@ -1195,15 +1204,6 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tipo de Instrumento Jurídico.
-        /// </summary>
-        public static string Tipe {
-            get {
-                return ResourceManager.GetString("Tipe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Acerca de.
         /// </summary>
         public static string Title_About {
@@ -1321,6 +1321,15 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tipo de Instrumento Jurídico.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nivel.
         /// </summary>
         public static string TypeSchool {
@@ -1425,6 +1434,15 @@ namespace Mictlanix.Iam.Properties {
         public static string Validation_WrongId {
             get {
                 return ResourceManager.GetString("Validation_WrongId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inicio de la Vigencia.
+        /// </summary>
+        public static string ValidFrom {
+            get {
+                return ResourceManager.GetString("ValidFrom", resourceCulture);
             }
         }
         

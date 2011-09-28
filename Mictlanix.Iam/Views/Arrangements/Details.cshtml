@@ -75,25 +75,45 @@
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.DueDateStart)
+        @Html.LabelFor(model => model.ValidFrom)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.DueDateStart)
+        @Html.DisplayFor(model => model.ValidFrom)
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.DueDateFinal)
+        @Html.LabelFor(model => model.ExpiryDate)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.DueDateFinal)
+        @Html.DisplayFor(model => model.ExpiryDate)
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.Tipe)
+        @Html.LabelFor(model => model.Type)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Tipe)
+        @Html.DisplayFor(model => model.Type)
     </div>
+
+    @if (Model.SessionDate != null)
+    {
+            <div class="display-label">
+                @Html.LabelFor(model => model.SessionDate)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.SessionDate)
+            </div>
+    }
+
+    @if (Model.Session != null)
+    {
+            <div class="display-label">
+                @Html.LabelFor(model => model.Session)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Session)
+            </div>
+    }
 
      <div class="display-label">
         @Html.LabelFor(model => model.Comment)
@@ -101,6 +121,7 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Comment)
     </div>
+
 
 <h2>@Mictlanix.Iam.Properties.Resources.FollowUp</h2>
 <table style="width:100%">

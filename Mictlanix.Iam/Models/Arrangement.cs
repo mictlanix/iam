@@ -49,7 +49,7 @@ namespace Mictlanix.Iam.Models
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
         [Display(Name = "ReceiptDate", ResourceType = typeof(Resources))]
-        public DateTime? ReceiptDate { get; set; }
+        public DateTime ReceiptDate { get; set; }
 
         [ForeignKey("School")]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
@@ -81,23 +81,30 @@ namespace Mictlanix.Iam.Models
         [DataType(DataType.Date)]
         [Display(Name = "SignatureDate", ResourceType = typeof(Resources))]
         [DateGreaterThan("ReceiptDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime? SignatureDate { get; set; }
+        public DateTime SignatureDate { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
-        [Display(Name = "DueDateStart", ResourceType = typeof(Resources))]
+        [Display(Name = "ValidFrom", ResourceType = typeof(Resources))]
         [DateGreaterThan("SignatureDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime? DueDateStart { get; set; }
+        public DateTime ValidFrom { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
-        [Display(Name = "DueDateFinal", ResourceType = typeof(Resources))]
-        [DateGreaterThan("DueDateStart", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime? DueDateFinal { get; set; }
+        [Display(Name = "ExpiryDate", ResourceType = typeof(Resources))]
+        [DateGreaterThan("ValidFrom", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
+        public DateTime ExpiryDate { get; set; }
+
+        [Display(Name = "Session", ResourceType = typeof(Resources))]
+        public string Session { get; set; }
+
+        [DataType(DataType.Date)]
+        [Display(Name = "SessionDate", ResourceType = typeof(Resources))]
+        public DateTime? SessionDate { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Tipe", ResourceType = typeof(Resources))]
-        public string Tipe { get; set; }
+        [Display(Name = "Type", ResourceType = typeof(Resources))]
+        public string Type { get; set; }
 
         [DataType(DataType.MultilineText)]
         [Display(Name = "Comment", ResourceType = typeof(Resources))]
@@ -108,6 +115,11 @@ namespace Mictlanix.Iam.Models
         [Display(Name = "Status", ResourceType = typeof(Resources))]
         public int Status { get; set; }
 
+        [ForeignKey("Creator")]
+        [Display(Name = "AssignTo", ResourceType = typeof(Resources))]
+        public string CreatorId { get; set; }
+
+        public virtual User Creator { get; set; }
         public virtual School School { get; set; }
         public virtual Organization Organization { get; set; }
         public virtual ICollection<ArrangementStatus> Statuses { get; set; }

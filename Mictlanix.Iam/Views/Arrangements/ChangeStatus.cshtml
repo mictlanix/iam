@@ -27,16 +27,27 @@
             <select id="status-list" name="Status">
                 @foreach (var item in Enum.GetValues(typeof(StatusEnum)))
                 {
-                    if ((StatusEnum)item == Model.StatusEnum)
-                    {
-                        <option value="@((int)item)" selected="selected">@Model.StatusEnum.GetDisplayName()</option>
-                    }
-                    else
-                    {
-                        <option value="@((int)item)">@(((StatusEnum)item).GetDisplayName())</option>
-                    }
+                    <option value="@((int)item)" @((StatusEnum)item == Model.StatusEnum ? "selected='selected'" : "")>@(((StatusEnum)item).GetDisplayName())</option>
                 }
             </select>
+        </div>
+
+        <div id="session-date" style="display:none">
+            <div class="editor-label">
+                @Html.LabelFor(x => x.SessionDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(x => x.SessionDate)
+            </div>
+        </div>
+
+        <div id="session" style="display:none">
+            <div class="editor-label">
+                @Html.LabelFor(x => x.Session)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(x => x.Session)
+            </div>
         </div>
 
         <div class="editor-label">
@@ -46,6 +57,7 @@
             @Html.EditorFor(model => model.Comment)
             @Html.ValidationMessageFor(model => model.Comment)
         </div>
+
         <p>
             <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Save" />
         </p>
@@ -55,3 +67,17 @@
 <div>
     @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
 </div>
+
+<script>
+    $("#status-list").change(function () {
+        var status = $("#status-list option:selected").val();
+        if (status === "9") {
+            $("#session").hide("slow");
+            $("#session-date").show("slow");
+        }
+        else if (status === "10") {
+            $("#session-date").hide("slow");
+            $("#session").show("slow");
+        }
+    });
+</script>
