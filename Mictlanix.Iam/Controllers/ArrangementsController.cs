@@ -64,6 +64,8 @@ namespace Mictlanix.Iam.Controllers
         [HttpPost]
         public ActionResult Index(Search search)
         {
+            List<Arrangement> result = new List<Arrangement>();
+
             if (ModelState.IsValid)
             {
                 int year = 0;
@@ -83,10 +85,17 @@ namespace Mictlanix.Iam.Controllers
                                 (year > 0 && x.Year == year && (serial == 0 || x.Serial == serial))
                           select x;
 
-                return View(qry.Take(100).ToList());
+                result = qry.Take(100).ToList();
             }
 
-            return View(new List<Arrangement>());
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Index", result);
+            }
+            else
+            {
+                return View(result);
+            }
         }
 
         //

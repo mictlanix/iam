@@ -33,12 +33,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
+using Mictlanix.Iam.Properties;
 
 namespace Mictlanix.Iam.Models
 {
     public class Search
     {
-        [Required]
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(250, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Pattern { get; set; }
         public int Offset { get; set; }
         public int Limit { get; set; }

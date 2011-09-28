@@ -39,7 +39,7 @@ using DataAnnotationsExtensions;
 
 namespace Mictlanix.Iam.Models
 {
-    public enum SchoolType
+    public enum TypeEnum
     {
         [Display(Name = "SchoolType_None", ResourceType = typeof(Resources))]
         None,
@@ -64,12 +64,12 @@ namespace Mictlanix.Iam.Models
         public string Name { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [StringLength(15, MinimumLength = 3, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 3, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "ShortName", ResourceType = typeof(Resources))]
         public string ShortName { get; set; }
 
         [Display(Name = "Street", ResourceType = typeof(Resources))]
-        [StringLength(45, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(250, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Street { get; set; }
 
         [Display(Name = "ExteriorNumber", ResourceType = typeof(Resources))]
@@ -120,9 +120,9 @@ namespace Mictlanix.Iam.Models
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "TypeSchool", ResourceType = typeof(Resources))]
-        public int TypeSchool { get; set; }
+        public int Type { get; set; }
 
         [NotMapped]
-        public SchoolType SchoolType { get { return (SchoolType)TypeSchool; } }
+        public TypeEnum TypeEnum { get { return (TypeEnum)Type; } }
     }
 }

@@ -52,12 +52,12 @@ namespace Mictlanix.Iam.Models
         public string Name { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [StringLength(15, MinimumLength = 3, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 3, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "ShortName", ResourceType = typeof(Resources))]
         public string ShortName { get; set; }
 
         [Display(Name = "Street", ResourceType = typeof(Resources))]
-        [StringLength(45, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(250, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Street { get; set; }
 
         [Display(Name = "ExteriorNumber", ResourceType = typeof(Resources))]
