@@ -268,11 +268,11 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Responsable.
+        ///   Looks up a localized string similar to Encargado.
         /// </summary>
-        public static string AssignTo {
+        public static string AssignedTo {
             get {
-                return ResourceManager.GetString("AssignTo", resourceCulture);
+                return ResourceManager.GetString("AssignedTo", resourceCulture);
             }
         }
         
