@@ -95,6 +95,7 @@ header, #header {
 header h1, #header h1 {
     margin-top: 45px;
     color:#6b173b;
+    font-size:25px !important;
 }
 img#logo {
     display:block;

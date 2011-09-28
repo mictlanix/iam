@@ -412,7 +412,7 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SiSeCoVi.
+        ///   Looks up a localized string similar to SiSeCoVi - IPN Secretaría de Extensión e Integración Social.
         /// </summary>
         public static string DisplayName_Application {
             get {
