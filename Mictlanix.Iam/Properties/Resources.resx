@@ -585,8 +585,8 @@
   <data name="SessionDate" xml:space="preserve">
     <value>Ingreso a Subcomite</value>
   </data>
-  <data name="AssignTo" xml:space="preserve">
-    <value>Responsable</value>
+  <data name="AssignedTo" xml:space="preserve">
+    <value>Encargado</value>
   </data>
   <data name="Session" xml:space="preserve">
     <value>Sesión de Aprobación</value>
