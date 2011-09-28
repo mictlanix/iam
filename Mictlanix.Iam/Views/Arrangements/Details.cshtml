@@ -26,6 +26,13 @@
     </div>
 
     <div class="display-label">
+        @Html.LabelFor(model => model.AssignedToId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssignedTo.FullName)
+    </div>
+
+    <div class="display-label">
         @Html.LabelFor(model => model.ReceiptDate)
     </div>
     <div class="display-field">

@@ -47,6 +47,12 @@ namespace Mictlanix.Iam.Helpers
             return db.Users.SingleOrDefault(x => x.UserName == username);
         }
 
+        public static List<User> GetUsers(this HtmlHelper helper)
+        {
+            SSContext db = new SSContext();
+            return db.Users.ToList();
+        }
+
         public static List<School> GetSchools(this HtmlHelper helper)
         {
             SSContext db = new SSContext();

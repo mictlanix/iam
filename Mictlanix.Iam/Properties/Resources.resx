@@ -591,4 +591,7 @@
   <data name="Session" xml:space="preserve">
     <value>Sesión de Aprobación</value>
   </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Asignar</value>
+  </data>
 </root>

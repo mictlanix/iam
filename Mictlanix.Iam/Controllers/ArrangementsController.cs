@@ -235,6 +235,31 @@ namespace Mictlanix.Iam.Controllers
             return RedirectToAction("Index");
         }
 
+        //GET: /Arrangement/Assign
+        public ViewResult Assign(int year, int serial)
+        {
+            Arrangement arrangement = db.Arrangements.Find(year, serial);
+            return View("Assign", new Assignment { Arrangement = arrangement, ArrangementYear = year, ArrangementSerial = serial});
+        }
+
+        //
+        // POST: /Arrangement/Assign
+
+        [HttpPost]
+        public ActionResult Assign(Assignment item)
+        {
+            if (ModelState.IsValid)
+            {
+                Arrangement arrangement = db.Arrangements.Find(item.ArrangementYear, item.ArrangementSerial);
+                arrangement.AssignedToId = item.AssignedToId;
+                arrangement.AssignedTo = db.Users.Find(item.AssignedToId);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(item);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

@@ -1,0 +1,54 @@
+﻿@using Mictlanix.Iam.Helpers;
+@using Mictlanix.Iam.Models;
+@model Mictlanix.Iam.Models.Assignment
+
+@{
+    ViewBag.Title = Mictlanix.Iam.Properties.Resources.Assign;
+}
+
+<h2>@Mictlanix.Iam.Properties.Resources.Assign</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>@Mictlanix.Iam.Properties.Resources.Arrangement</legend>
+
+        @Html.HiddenFor(x => x.ArrangementYear)
+        @Html.HiddenFor(x => x.ArrangementSerial)
+
+        <div class="display-label">
+            @Html.LabelFor(x => x.Arrangement.SerialNumber)
+            @Html.DisplayFor(x => x.Arrangement.SerialNumber)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.Arrangement.SchoolId)
+            @Html.DisplayFor(model => model.Arrangement.School.Name)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.Arrangement.OrganizationId)
+            @Html.DisplayFor(model => model.Arrangement.Organization.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssignedToId)
+        </div>
+        <div class="editor-field">
+            <select id="users-list" name="AssignedToId">
+            @foreach (var item in Html.GetUsers())
+            {
+            <option value="@item.UserName">@item.FullName</option>
+            }
+            </select>
+        </div>
+
+        <p>
+            <input type="submit" value= "@Mictlanix.Iam.Properties.Resources.Assign" />
+        </p>
+
+    </fieldset>
+}
+<p>
+    @Html.ActionLink(Mictlanix.Iam.Properties.Resources.BackToList, "Index")
+</p>
