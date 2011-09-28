@@ -25,6 +25,13 @@
     </div>
 
     <div class="display-label">
+        @Html.LabelFor(model => model.TypeSchool)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(x => x.SchoolType)
+    </div>
+
+    <div class="display-label">
         @Html.LabelFor(model => model.Street)
     </div>
     <div class="display-field">
@@ -99,7 +106,6 @@
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Email)
-        @Html.ValidationMessageFor(Model => Model.Email)
     </div>
 
     <div class="display-label">
@@ -107,7 +113,6 @@
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Website)
-        @Html.ValidationMessageFor(Model => Model.Website)
     </div>
 </fieldset>
 <p>

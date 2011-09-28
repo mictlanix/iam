@@ -116,8 +116,7 @@ namespace Mictlanix.Iam.Models
                        ElectronicMedia && 
                        Annexes && Forms && 
                        LegalDocuments && 
-                       ResponsibleStatement && 
-                       SchoolAutorization;
+                       ResponsibleStatement;
             }
         }
 

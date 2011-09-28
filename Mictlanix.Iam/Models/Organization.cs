@@ -106,6 +106,9 @@ namespace Mictlanix.Iam.Models
         [StringLength(80, MinimumLength = 1, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Website { get; set; }
 
+        [Display(Name = "Sector", ResourceType = typeof(Resources))]
+        [StringLength(80, MinimumLength = 1, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        public string Sector { get; set; }
 
     }
 }

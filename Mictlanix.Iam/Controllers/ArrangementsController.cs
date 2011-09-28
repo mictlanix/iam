@@ -108,7 +108,11 @@ namespace Mictlanix.Iam.Controllers
                 SchoolId = request.SchoolId, 
                 School = request.School,
                 OrganizationId = request.OrganizationId,
-                Organization = request.Organization
+                Organization = request.Organization,
+                ReceiptDate = DateTime.Today,
+                SignatureDate = DateTime.Today,
+                ValidFrom = DateTime.Today,
+                ExpiryDate = DateTime.Today
             });
         } 
 
@@ -185,6 +189,17 @@ namespace Mictlanix.Iam.Controllers
                 // guardar ArrangementStatus en la db 
                 // cambiar estado al Arrangement
                 Arrangement arrangement = db.Arrangements.Find(item.ArrangementYear, item.ArrangementSerial);
+                //DateTime date = DateTime.Parse(Request.Params["SessionDate"]);
+
+                if (item.StatusEnum == StatusEnum.Status09)
+                {
+                    arrangement.SessionDate = item.SessionDate;
+                }
+
+                if (item.StatusEnum == StatusEnum.Status10)
+                {
+                    arrangement.Session = item.Session;
+                }
 
                 arrangement.Status = item.Status;
                 item.Arrangement = arrangement;

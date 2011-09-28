@@ -39,6 +39,17 @@ using DataAnnotationsExtensions;
 
 namespace Mictlanix.Iam.Models
 {
+    public enum SchoolType
+    {
+        [Display(Name = "SchoolType_None", ResourceType = typeof(Resources))]
+        None,
+        [Display(Name = "SchoolType_HighSchool", ResourceType = typeof(Resources))]
+        HighSchool,
+        [Display(Name = "SchoolType_College", ResourceType = typeof(Resources))]
+        College,
+        [Display(Name = "SchoolType_University", ResourceType = typeof(Resources))]
+        University,
+    }
     public class School
     {
         [Key]
@@ -107,5 +118,11 @@ namespace Mictlanix.Iam.Models
         [StringLength(80, MinimumLength = 1, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Website { get; set; }
 
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "TypeSchool", ResourceType = typeof(Resources))]
+        public int TypeSchool { get; set; }
+
+        [NotMapped]
+        public SchoolType SchoolType { get { return (SchoolType)TypeSchool; } }
     }
 }

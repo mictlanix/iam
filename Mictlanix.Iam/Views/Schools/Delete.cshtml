@@ -1,4 +1,6 @@
-﻿@model Mictlanix.Iam.Models.School
+﻿@using Mictlanix.Iam.Helpers;
+@using Mictlanix.Iam.Models;
+@model Mictlanix.Iam.Models.School
 
 @{
     ViewBag.Title = Mictlanix.Iam.Properties.Resources.Delete;
@@ -22,6 +24,13 @@
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.TypeSchool)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(x => x.SchoolType)
     </div>
 
     <div class="display-label">

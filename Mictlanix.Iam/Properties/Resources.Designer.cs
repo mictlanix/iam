@@ -268,6 +268,15 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Responsable.
+        /// </summary>
+        public static string AssignTo {
+            get {
+                return ResourceManager.GetString("AssignTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Autores.
         /// </summary>
         public static string Authors {
@@ -493,15 +502,6 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vigencia del Convenio.
-        /// </summary>
-        public static string DueDate {
-            get {
-                return ResourceManager.GetString("DueDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
         public static string Edit {
@@ -525,6 +525,15 @@ namespace Mictlanix.Iam.Properties {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Final de la Vigencia.
+        /// </summary>
+        public static string ExpiryDate {
+            get {
+                return ResourceManager.GetString("ExpiryDate", resourceCulture);
             }
         }
         
@@ -916,6 +925,51 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nivel.
+        /// </summary>
+        public static string SchoolType {
+            get {
+                return ResourceManager.GetString("SchoolType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Superior.
+        /// </summary>
+        public static string SchoolType_College {
+            get {
+                return ResourceManager.GetString("SchoolType_College", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Media Superior.
+        /// </summary>
+        public static string SchoolType_HighSchool {
+            get {
+                return ResourceManager.GetString("SchoolType_HighSchool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NP.
+        /// </summary>
+        public static string SchoolType_None {
+            get {
+                return ResourceManager.GetString("SchoolType_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posgrado.
+        /// </summary>
+        public static string SchoolType_University {
+            get {
+                return ResourceManager.GetString("SchoolType_University", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Búsqueda.
         /// </summary>
         public static string Search {
@@ -925,11 +979,38 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sector.
+        /// </summary>
+        public static string Sector {
+            get {
+                return ResourceManager.GetString("Sector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Número de Expedientes.
         /// </summary>
         public static string Serial {
             get {
                 return ResourceManager.GetString("Serial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sesión de Aprobación.
+        /// </summary>
+        public static string Session {
+            get {
+                return ResourceManager.GetString("Session", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a Subcomite.
+        /// </summary>
+        public static string SessionDate {
+            get {
+                return ResourceManager.GetString("SessionDate", resourceCulture);
             }
         }
         
@@ -1123,15 +1204,6 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tipo de Instrumento Jurídico.
-        /// </summary>
-        public static string Tipe {
-            get {
-                return ResourceManager.GetString("Tipe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Acerca de.
         /// </summary>
         public static string Title_About {
@@ -1249,6 +1321,24 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tipo de Instrumento Jurídico.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nivel.
+        /// </summary>
+        public static string TypeSchool {
+            get {
+                return ResourceManager.GetString("TypeSchool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Usuario.
         /// </summary>
         public static string User {
@@ -1344,6 +1434,15 @@ namespace Mictlanix.Iam.Properties {
         public static string Validation_WrongId {
             get {
                 return ResourceManager.GetString("Validation_WrongId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inicio de la Vigencia.
+        /// </summary>
+        public static string ValidFrom {
+            get {
+                return ResourceManager.GetString("ValidFrom", resourceCulture);
             }
         }
         

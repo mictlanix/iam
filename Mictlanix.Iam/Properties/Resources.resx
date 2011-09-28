@@ -225,9 +225,6 @@
   <data name="DisplayName_School" xml:space="preserve">
     <value>Catálogo de Dependencias Politécnicas</value>
   </data>
-  <data name="DueDate" xml:space="preserve">
-    <value>Vigencia del Convenio</value>
-  </data>
   <data name="CurrentPassword" xml:space="preserve">
     <value>Contraseña Actual</value>
   </data>
@@ -357,7 +354,7 @@
   <data name="Street" xml:space="preserve">
     <value>Calle</value>
   </data>
-  <data name="Tipe" xml:space="preserve">
+  <data name="Type" xml:space="preserve">
     <value>Tipo de Instrumento Jurídico</value>
   </data>
   <data name="Title_ArragementRequest" xml:space="preserve">
@@ -557,5 +554,41 @@
   </data>
   <data name="FollowUp" xml:space="preserve">
     <value>Seguimiento</value>
+  </data>
+  <data name="SchoolType" xml:space="preserve">
+    <value>Nivel</value>
+  </data>
+  <data name="SchoolType_College" xml:space="preserve">
+    <value>Superior</value>
+  </data>
+  <data name="SchoolType_HighSchool" xml:space="preserve">
+    <value>Media Superior</value>
+  </data>
+  <data name="SchoolType_None" xml:space="preserve">
+    <value>NP</value>
+  </data>
+  <data name="SchoolType_University" xml:space="preserve">
+    <value>Posgrado</value>
+  </data>
+  <data name="TypeSchool" xml:space="preserve">
+    <value>Nivel</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>Final de la Vigencia</value>
+  </data>
+  <data name="ValidFrom" xml:space="preserve">
+    <value>Inicio de la Vigencia</value>
+  </data>
+  <data name="Sector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="SessionDate" xml:space="preserve">
+    <value>Ingreso a Subcomite</value>
+  </data>
+  <data name="AssignTo" xml:space="preserve">
+    <value>Responsable</value>
+  </data>
+  <data name="Session" xml:space="preserve">
+    <value>Sesión de Aprobación</value>
   </data>
 </root>
