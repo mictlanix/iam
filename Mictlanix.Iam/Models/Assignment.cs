@@ -1,5 +1,5 @@
 ﻿// 
-// Search.cs
+// Arrangement.cs
 // 
 // Author:
 //   Eddy Zavaleta <eddy@mictlanix.org>
@@ -30,19 +30,32 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Web.Mvc;
-using System.Web.Security;
+using System.Linq;
+using System.Data.Entity.ModelConfiguration;
 using Mictlanix.Iam.Properties;
+using Mictlanix.Iam.Models.Validation;
 
 namespace Mictlanix.Iam.Models
 {
-    public class Search
+
+    public class Assignment
     {
+        [ForeignKey("Arrangement"), Column(Order = 0)]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [StringLength(250, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
-        public string Pattern { get; set; }
-        public int Offset { get; set; }
-        public int Limit { get; set; }
+        public int ArrangementYear { get; set; }
+
+        [ForeignKey("Arrangement"), Column(Order = 1)]
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        public int ArrangementSerial { get; set; }
+
+        [ForeignKey("AssignedTo")]
+        [Display(Name = "AssignedTo", ResourceType = typeof(Resources))]
+        [StringLength(20, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        public string AssignedToId { get; set; }
+
+        [Display(Name = "Arrangement", ResourceType = typeof(Resources))]
+        public virtual Arrangement Arrangement { get; set; }
+
+        public virtual User AssignedTo { get; set; }
     }
 }

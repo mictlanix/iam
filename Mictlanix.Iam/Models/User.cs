@@ -42,22 +42,24 @@ namespace Mictlanix.Iam.Models
     {
         [Key]
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [StringLength(10, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(20, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "UserName", ResourceType = typeof(Resources))]
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Password)]
         [Display(Name = "Password", ResourceType = typeof(Resources))]
         public string Password { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "FirstName", ResourceType = typeof(Resources))]
+        [StringLength(50, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string FirstName { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "LastName", ResourceType = typeof(Resources))]
+        [StringLength(50, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string LastName { get; set; }
 
         public string FullName { get { return string.Format("{0} {1}", FirstName, LastName); } }
@@ -65,6 +67,7 @@ namespace Mictlanix.Iam.Models
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email", ResourceType = typeof(Resources))]
+        [StringLength(250, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Email { get; set; }
 
         [Display(Name = "IsAdministrator", ResourceType = typeof(Resources))]

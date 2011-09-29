@@ -42,17 +42,19 @@ namespace Mictlanix.Iam.Models
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "CurrentPassword", ResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Password)]
         [Display(Name = "NewPassword", ResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
         [Compare("NewPassword", ErrorMessageResourceName = "Validation_PasswordDoNotMatch", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string ConfirmPassword { get; set; }
     }
 
@@ -60,11 +62,13 @@ namespace Mictlanix.Iam.Models
     {
         [Required]
         [Display(Name = "UserName", ResourceType = typeof(Resources))]
+        [StringLength(20, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password", ResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Password { get; set; }
 
         [Display(Name = "RememberMe", ResourceType = typeof(Resources))]
@@ -79,27 +83,31 @@ namespace Mictlanix.Iam.Models
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(40, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Password)]
         [Display(Name = "Password", ResourceType = typeof(Resources))]
         public string Password { get; set; }
 
         [Compare("Password", ErrorMessageResourceName = "Validation_PasswordDoNotMatch", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Password)]
+        [StringLength(40, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources))]
         public string ConfirmPassword { get; set; }
         
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "FirstName", ResourceType = typeof(Resources))]
+        [StringLength(50, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string FirstName { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [Display(Name = "LastName", ResourceType = typeof(Resources))]
+        [StringLength(50, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string LastName { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email", ResourceType = typeof(Resources))]
+        [StringLength(250, MinimumLength = 6, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Email { get; set; }
     }
 }

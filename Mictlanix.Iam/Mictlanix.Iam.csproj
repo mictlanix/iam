@@ -86,6 +86,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Arrangement.cs" />
     <Compile Include="Models\ArrangementStatus.cs" />
+    <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\School.cs" />
     <Compile Include="Models\Search.cs" />
@@ -314,6 +315,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\DisplayTemplates\SchoolType.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Arrangements\Assign.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Arrangements\_Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

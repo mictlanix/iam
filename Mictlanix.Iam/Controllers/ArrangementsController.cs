@@ -64,6 +64,8 @@ namespace Mictlanix.Iam.Controllers
         [HttpPost]
         public ActionResult Index(Search search)
         {
+            List<Arrangement> result = new List<Arrangement>();
+
             if (ModelState.IsValid)
             {
                 int year = 0;
@@ -83,10 +85,17 @@ namespace Mictlanix.Iam.Controllers
                                 (year > 0 && x.Year == year && (serial == 0 || x.Serial == serial))
                           select x;
 
-                return View(qry.Take(100).ToList());
+                result = qry.Take(100).ToList();
             }
 
-            return View(new List<Arrangement>());
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Index", result);
+            }
+            else
+            {
+                return View(result);
+            }
         }
 
         //
@@ -233,6 +242,31 @@ namespace Mictlanix.Iam.Controllers
             db.Arrangements.Remove(datosconvenio);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        //GET: /Arrangement/Assign
+        public ViewResult Assign(int year, int serial)
+        {
+            Arrangement arrangement = db.Arrangements.Find(year, serial);
+            return View("Assign", new Assignment { Arrangement = arrangement, ArrangementYear = year, ArrangementSerial = serial});
+        }
+
+        //
+        // POST: /Arrangement/Assign
+
+        [HttpPost]
+        public ActionResult Assign(Assignment item)
+        {
+            if (ModelState.IsValid)
+            {
+                Arrangement arrangement = db.Arrangements.Find(item.ArrangementYear, item.ArrangementSerial);
+                arrangement.AssignedToId = item.AssignedToId;
+                arrangement.AssignedTo = db.Users.Find(item.AssignedToId);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(item);
         }
 
         protected override void Dispose(bool disposing)

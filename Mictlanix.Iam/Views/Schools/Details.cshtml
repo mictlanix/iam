@@ -25,10 +25,10 @@
     </div>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.TypeSchool)
+        @Html.LabelFor(model => model.Type)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(x => x.SchoolType)
+        @Model.TypeEnum.GetDisplayName()
     </div>
 
     <div class="display-label">

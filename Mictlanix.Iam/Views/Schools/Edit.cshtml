@@ -35,19 +35,19 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TypeSchool)
+            @Html.LabelFor(model => model.Type)
         </div>
         <div class="editor-field">
-            <select id="school-type-list" name="TypeSchool">
-                @foreach (var item in Enum.GetValues(typeof(SchoolType)))
+            <select id="school-type-list" name="Type">
+                @foreach (var item in Enum.GetValues(typeof(TypeEnum)))
                 {
-                    if ((SchoolType)item == Model.SchoolType)
+                    if ((TypeEnum)item == Model.TypeEnum)
                     {
-                        <option value="@((int)item)" selected="selected">@Model.SchoolType.GetDisplayName()</option>
+                        <option value="@((int)item)" selected="selected">@Model.TypeEnum.GetDisplayName()</option>
                     }
                     else
                     {
-                        <option value="@((int)item)">@(((SchoolType)item).GetDisplayName())</option>
+                        <option value="@((int)item)">@(((TypeEnum)item).GetDisplayName())</option>
                     }
                 }
             </select>
