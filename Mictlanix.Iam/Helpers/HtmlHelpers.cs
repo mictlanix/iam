@@ -50,19 +50,19 @@ namespace Mictlanix.Iam.Helpers
         public static List<User> GetUsers(this HtmlHelper helper)
         {
             SSContext db = new SSContext();
-            return db.Users.ToList();
+            return db.Users.OrderBy(x => x.FirstName).OrderBy(x => x.LastName).ToList();
         }
 
         public static List<School> GetSchools(this HtmlHelper helper)
         {
             SSContext db = new SSContext();
-            return db.Schools.ToList();
+            return db.Schools.OrderBy(x => x.Name).ToList();
         }
 
         public static List<Organization> GetOrganizations(this HtmlHelper helper)
         {
             SSContext db = new SSContext();
-            return db.Organizations.ToList();
+            return db.Organizations.OrderBy(x => x.Name).ToList();
         }
 
         public static string GetMenuClass(this HtmlHelper html, string controller)

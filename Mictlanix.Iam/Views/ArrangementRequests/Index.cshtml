@@ -1,6 +1,6 @@
 ﻿@using Mictlanix.Iam.Models;
 @using Mictlanix.Iam.Helpers;
-@model IEnumerable<Mictlanix.Iam.Models.ArrangementRequest>
+@model Search<ArrangementRequest>
 
 @{
     ViewBag.Title = Mictlanix.Iam.Properties.Resources.ArrangementRequests;
@@ -15,74 +15,17 @@
     }
 </p>
 
-@using (Html.BeginForm())
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "search-result" }))
 {
-    @Html.ValidationSummary(true)
-    <fieldset>
-     	<legend>@Mictlanix.Iam.Properties.Resources.Search</legend>
-        <div class="editor-field">
-            @Html.EditorFor(model => new Search().Pattern)
-            <input type="submit" value= "Buscar" />
-        </div>
-        <p>
-            @Html.ValidationMessageFor(model => new Search().Pattern)
-        </p>
-    </fieldset>
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Pattern):
+    </div>
+    <div class="editor-field">
+        <input type="text" id="Pattern" name="Pattern" style="width:80%"/>
+        <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Search" />
+    </div>
 }
 
-<table>
-    <tr>
-        <th>
-            @Html.LabelFor(x => new ArrangementRequest().Id)
-        </th>
-        <th>
-            @Html.LabelFor(x => new ArrangementRequest().SchoolId)
-        </th>
-        <th>
-            @Html.LabelFor(x => new ArrangementRequest().OrganizationId)
-        </th>
-        <th>
-            @Html.LabelFor(x => new ArrangementRequest().Object)
-        </th>
-        
-        <th></th>
-    </tr>
-
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.School.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Organization.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Object)
-        </td>
-        <td>
-            @if (Html.GetUser(User.Identity.Name).AllowEditRequests)
-            {
-                @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = item.Id }) @:|
-            }
-            
-            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { id = item.Id })
-            
-            @if (Html.GetUser(User.Identity.Name).AllowDeleteRequests)
-            {
-                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id = item.Id })
-            }
-            @if (Html.GetUser(User.Identity.Name).AllowCreateArrangements && item.IsCorrect)
-            {
-                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.CreateArragement, "CreateFromRequest", "Arrangements", new { id = item.Id }, null)
-
-            }
-            
-        </td>
-    </tr>
-}
-
-</table>
+<div id="search-result">
+    @Html.Partial("_Index")
+</div>

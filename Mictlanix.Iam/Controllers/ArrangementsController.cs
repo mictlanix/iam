@@ -35,7 +35,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Mictlanix.Iam.Models;
-using System.Data.Objects.SqlClient;
 using System.Text.RegularExpressions;
 
 namespace Mictlanix.Iam.Controllers
@@ -56,15 +55,15 @@ namespace Mictlanix.Iam.Controllers
                 return RedirectToAction("Index", "Home");  
             }
 
-            return View(db.Arrangements.ToList());
+            return View(new Search<Arrangement>());
         }
 
         // POST: /Arrangements/Index
 
         [HttpPost]
-        public ActionResult Index(Search search)
+        public ActionResult Index(Search<Arrangement> search)
         {
-            List<Arrangement> result = new List<Arrangement>();
+            Search<Arrangement> result = new Search<Arrangement>();
 
             if (ModelState.IsValid)
             {
@@ -85,7 +84,7 @@ namespace Mictlanix.Iam.Controllers
                                 (year > 0 && x.Year == year && (serial == 0 || x.Serial == serial))
                           select x;
 
-                result = qry.Take(100).ToList();
+                result.Results = qry.ToList();
             }
 
             if (Request.IsAjaxRequest())

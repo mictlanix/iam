@@ -37,12 +37,19 @@ using Mictlanix.Iam.Properties;
 
 namespace Mictlanix.Iam.Models
 {
-    public class Search
+    public class Search<T>
     {
+        public Search()
+        {
+            Results = new List<T>();
+        }
+
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [StringLength(250, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "Pattern", ResourceType = typeof(Resources))]
         public string Pattern { get; set; }
         public int Offset { get; set; }
         public int Limit { get; set; }
+        public IList<T> Results { get; set; }
     }
 }

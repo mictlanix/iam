@@ -808,6 +808,15 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Texto de búsqueda.
+        /// </summary>
+        public static string Pattern {
+            get {
+                return ResourceManager.GetString("Pattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teléfono.
         /// </summary>
         public static string Phone {
@@ -1060,6 +1069,15 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ninguno.
+        /// </summary>
+        public static string Status00 {
+            get {
+                return ResourceManager.GetString("Status00", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Revisión UDV.
         /// </summary>
         public static string Status01 {
@@ -1267,7 +1285,7 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inicio.
+        ///   Looks up a localized string similar to SiSeCoVi.
         /// </summary>
         public static string Title_Home {
             get {

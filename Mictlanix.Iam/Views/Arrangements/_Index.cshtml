@@ -1,7 +1,11 @@
 ﻿@using Mictlanix.Iam.Models;
 @using Mictlanix.Iam.Helpers;
 @using Mictlanix.Iam.Properties;
-@model IEnumerable<Mictlanix.Iam.Models.Arrangement>
+@model Search<Arrangement>
+
+<p>
+@Html.ValidationMessageFor(x => x.Pattern)
+</p>
 
 <table>
     <tr>
@@ -36,32 +40,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model)
+@foreach (var item in Model.Results)
 {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SerialNumber)
+            @Html.DisplayFor(x => item.SerialNumber)
+        </td>
+        <td class="date">
+            @Html.DisplayFor(x => item.ReceiptDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ReceiptDate)
+            @Html.DisplayFor(x => item.School.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.School.Name)
+            @Html.DisplayFor(x => item.Organization.Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Organization.Name)
+        <td class="number">
+            @Html.DisplayFor(x => item.Amount)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
+        <td class="date">
+            @Html.DisplayFor(x => item.ValidFrom)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ValidFrom)
+        <td class="date">
+            @Html.DisplayFor(x => item.ExpiryDate)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExpiryDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssignedTo.UserName)
+        <td class="center">
+            @Html.DisplayFor(x => item.AssignedTo.UserName)
         </td>
         <td title="@item.StatusEnum.GetDisplayName()" style="text-align:center">
             @Html.ActionLink(item.Status.ToString("00"), "ChangeStatus", new { year = item.Year, serial = item.Serial })

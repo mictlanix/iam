@@ -53,7 +53,7 @@ namespace Mictlanix.Iam.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            return View(db.Schools.ToList());
+            return View(db.Schools.OrderBy(x => x.Name).ToList());
         }
 
         //

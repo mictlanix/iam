@@ -436,7 +436,7 @@
     <value>Convenios</value>
   </data>
   <data name="Title_Home" xml:space="preserve">
-    <value>Inicio</value>
+    <value>SiSeCoVi</value>
   </data>
   <data name="Title_Organizations" xml:space="preserve">
     <value>Contrapartes</value>
@@ -593,5 +593,11 @@
   </data>
   <data name="Assign" xml:space="preserve">
     <value>Asignar</value>
+  </data>
+  <data name="Pattern" xml:space="preserve">
+    <value>Texto de búsqueda</value>
+  </data>
+  <data name="Status00" xml:space="preserve">
+    <value>Ninguno</value>
   </data>
 </root>

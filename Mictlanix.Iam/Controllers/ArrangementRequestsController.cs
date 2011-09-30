@@ -53,14 +53,16 @@ namespace Mictlanix.Iam.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            return View(db.ArrangementRequests.ToList());
+            return View(new Search<ArrangementRequest>());
         }
 
         // POST: /Products/Index
 
         [HttpPost]
-        public ActionResult Index(Search search)
+        public ActionResult Index(Search<ArrangementRequest> search)
         {
+            Search<ArrangementRequest> result = new Search<ArrangementRequest>();
+
             if (ModelState.IsValid)
             {
                 int id;
@@ -74,10 +76,10 @@ namespace Mictlanix.Iam.Controllers
                                 (use_id && x.Id == id)
                           select x;
 
-                return View(qry.Take(100).ToList());
+                result.Results = qry.ToList();
             }
 
-            return View(new List<ArrangementRequest>());
+            return View(result);
         }
 
         //

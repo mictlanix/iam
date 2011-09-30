@@ -50,6 +50,7 @@ namespace Mictlanix.Iam.Models
         [Display(Name = "SchoolType_University", ResourceType = typeof(Resources))]
         University,
     }
+
     public class School
     {
         [Key]

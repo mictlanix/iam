@@ -37,22 +37,24 @@ using Mictlanix.Iam.Models.Validation;
 
 namespace Mictlanix.Iam.Models
 {
-    public enum StatusEnum 
+    public enum StatusEnum
     {
+        [Display(Name = "Status00", ResourceType = typeof(Resources))]
+        Status00,
         [Display(Name = "Status01", ResourceType = typeof(Resources))]
-        Status01 = 1,
+        Status01,
         [Display(Name = "Status02", ResourceType = typeof(Resources))]
         Status02,
         //[Display(Name = "Status03", ResourceType = typeof(Resources))]
         //Status03,
-        //[Display(Name = "Status04", ResourceType = typeof(Resources))]
-        //Status04,
+        [Display(Name = "Status04", ResourceType = typeof(Resources))]
+        Status04 = 4,
         [Display(Name = "Status05", ResourceType = typeof(Resources))]
         Status05 = 5,
         [Display(Name = "Status06", ResourceType = typeof(Resources))]
         Status06,
-        //[Display(Name = "Status07", ResourceType = typeof(Resources))]
-        //Status07,
+        [Display(Name = "Status07", ResourceType = typeof(Resources))]
+        Status07,
         [Display(Name = "Status08", ResourceType = typeof(Resources))]
         Status08 = 8,
         [Display(Name = "Status09", ResourceType = typeof(Resources))]
@@ -61,10 +63,10 @@ namespace Mictlanix.Iam.Models
         Status10,
         //[Display(Name = "Status11", ResourceType = typeof(Resources))]
         //Status11,
-        //[Display(Name = "Status12", ResourceType = typeof(Resources))]
-        //Status12,
+        [Display(Name = "Status12", ResourceType = typeof(Resources))]
+        Status12 = 12,
         [Display(Name = "Status13", ResourceType = typeof(Resources))]
-        Status13 =13,
+        Status13 = 13,
         //[Display(Name = "Status14", ResourceType = typeof(Resources))]
         //Status14,
         [Display(Name = "Status15", ResourceType = typeof(Resources))]

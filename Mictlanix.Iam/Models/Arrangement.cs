@@ -83,19 +83,19 @@ namespace Mictlanix.Iam.Models
         [DataType(DataType.Date)]
         [Display(Name = "SignatureDate", ResourceType = typeof(Resources))]
         [DateGreaterThan("ReceiptDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime SignatureDate { get; set; }
+        public DateTime? SignatureDate { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
         [Display(Name = "ValidFrom", ResourceType = typeof(Resources))]
         [DateGreaterThan("SignatureDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime ValidFrom { get; set; }
+        public DateTime? ValidFrom { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
         [Display(Name = "ExpiryDate", ResourceType = typeof(Resources))]
         [DateGreaterThan("ValidFrom", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
-        public DateTime ExpiryDate { get; set; }
+        public DateTime? ExpiryDate { get; set; }
 
         [Display(Name = "Session", ResourceType = typeof(Resources))]
         [StringLength(250, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
@@ -112,7 +112,7 @@ namespace Mictlanix.Iam.Models
 
         [DataType(DataType.MultilineText)]
         [Display(Name = "Comment", ResourceType = typeof(Resources))]
-        [StringLength(500, MinimumLength = 0, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(1000, MinimumLength = 0, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Comment { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]

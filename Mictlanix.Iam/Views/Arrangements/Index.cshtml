@@ -1,7 +1,7 @@
 ﻿@using Mictlanix.Iam.Models;
 @using Mictlanix.Iam.Helpers;
 @using Mictlanix.Iam.Properties;
-@model IEnumerable<Mictlanix.Iam.Models.Arrangement>
+@model Search<Arrangement>
 
 @{
     ViewBag.Title = Mictlanix.Iam.Properties.Resources.Arrangement;
@@ -9,23 +9,17 @@
 
 <h2>@Mictlanix.Iam.Properties.Resources.DisplayName_Arrangement</h2>
 
-<p>
-</p>
-
 @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "search-result" }))
 {
-    @Html.ValidationSummary(true)
-    <fieldset>
-        <div class="editor-field">
-            @Html.EditorFor(x => new Search().Pattern)
-            <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Search" />
-        </div>
-        <p>
-            @Html.ValidationMessageFor(model => new Search().Pattern)
-        </p>
-    </fieldset>
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Pattern):
+    </div>
+    <div class="editor-field">
+        <input type="text" id="Pattern" name="Pattern" style="width:80%"/>
+        <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Search" />
+    </div>
 }
 
 <div id="search-result">
-@Html.Partial("_Index")
+    @Html.Partial("_Index")
 </div>

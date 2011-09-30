@@ -47,8 +47,8 @@ namespace Mictlanix.Iam.Models
         public int Id { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        [Display(Name = "Name")]
         [StringLength(250, MinimumLength = 2, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [Display(Name = "Name", ResourceType = typeof(Resources))]
         public string Name { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
