@@ -39,9 +39,9 @@
         </div>
         <div class="editor-field">
             <select id="school-type-list" name="Type">
-                @foreach (var item in Enum.GetValues(typeof(TypeEnum)))
+                @foreach (var item in Enum.GetValues(typeof(SchoolType)))
                 {
-                    <option value="@((int)item)">@(((TypeEnum)item).GetDisplayName())</option>
+                    <option value="@((int)item)">@(((SchoolType)item).GetDisplayName())</option>
                  
                 }
             </select>

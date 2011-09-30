@@ -1,0 +1,45 @@
+﻿body{background: transparent url(images/body-bg.png);}
+#container{position: relative;background: transparent url(images/header-bg.png) repeat-x top left;}
+header, #header {
+    top:32px;
+    height: 160px;
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    z-index: 10;
+}
+header h1, #header h1 {
+    margin-top: 45px;
+    color:#6b173b;
+    font-size:25px !important;
+}
+img#logo {
+    display:block;
+    float:right;
+    text-align:right;
+    max-height:95px;
+}
+.date {
+  white-space:nowrap;
+}
+.number {
+  text-align:right;
+}
+.actions {
+  white-space:nowrap;
+  width:1px;
+}
+.center {
+  text-align:center;
+}
+#activity-indicator {
+  display:none;
+  height:24px;
+  vertical-align:text-bottom;
+}
+table {
+  width:100%;
+}
+table th {
+  text-align:center;
+}

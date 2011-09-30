@@ -15,7 +15,7 @@
     }
 </p>
 
-@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "search-result" }))
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "search-result", LoadingElementId = "activity-indicator" }))
 {
     <div class="editor-label">
         @Html.LabelFor(x => x.Pattern):
@@ -23,6 +23,7 @@
     <div class="editor-field">
         <input type="text" id="Pattern" name="Pattern" style="width:80%"/>
         <input type="submit" value="@Mictlanix.Iam.Properties.Resources.Search" />
+        <img id="activity-indicator" alt="@Mictlanix.Iam.Properties.Resources.Loading" src="@Url.Content("~/Content/images/ajax-loader.gif")" />
     </div>
 }
 

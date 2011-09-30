@@ -83,6 +83,18 @@ namespace Mictlanix.Iam.Models
         [DatabaseGenerated(System.ComponentModel.DataAnnotations.DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [ForeignKey("Creator")]
+        [StringLength(20, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        public string CreatorId { get; set; }
+
+        [ForeignKey("Arrangement"), Column(Order = 0)]
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        public int ArrangementYear { get; set; }
+
+        [ForeignKey("Arrangement"), Column(Order = 1)]
+        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
+        public int ArrangementSerial { get; set; }
+
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.DateTime)]
         [Display(Name = "Date", ResourceType = typeof(Resources))]
@@ -95,23 +107,10 @@ namespace Mictlanix.Iam.Models
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Comment", ResourceType = typeof(Resources))]
-        [StringLength(500, MinimumLength = 0, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
+        [StringLength(1000, MinimumLength = 0, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
         public string Comment { get; set; }
 
-        [ForeignKey("Creator")]
         [Display(Name = "Creator", ResourceType = typeof(Resources))]
-        [StringLength(20, MinimumLength = 4, ErrorMessageResourceName = "Validation_StringLength", ErrorMessageResourceType = typeof(Resources))]
-        public string CreatorId { get; set; }
-
-        [ForeignKey("Arrangement"), Column(Order = 0)]
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        public int ArrangementYear { get; set; }
-
-        [ForeignKey("Arrangement"), Column(Order = 1)]
-        [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
-        public int ArrangementSerial { get; set; }
-
-
         public virtual User Creator { get; set; }
 
         [Display(Name = "Arrangement", ResourceType = typeof(Resources))]

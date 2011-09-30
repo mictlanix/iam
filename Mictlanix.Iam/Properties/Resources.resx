@@ -600,4 +600,13 @@
   <data name="Status00" xml:space="preserve">
     <value>Ninguno</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
+  <data name="NewStatusComment" xml:space="preserve">
+    <value>Convenio recién creado.</value>
+  </data>
+  <data name="Menu_Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
 </root>

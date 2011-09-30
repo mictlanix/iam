@@ -39,7 +39,7 @@ using DataAnnotationsExtensions;
 
 namespace Mictlanix.Iam.Models
 {
-    public enum TypeEnum
+    public enum SchoolType
     {
         [Display(Name = "SchoolType_None", ResourceType = typeof(Resources))]
         None,
@@ -124,6 +124,6 @@ namespace Mictlanix.Iam.Models
         public int Type { get; set; }
 
         [NotMapped]
-        public TypeEnum TypeEnum { get { return (TypeEnum)Type; } }
+        public SchoolType TypeEnum { get { return (SchoolType)Type; } }
     }
 }

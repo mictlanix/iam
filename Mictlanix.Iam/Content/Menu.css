@@ -74,41 +74,9 @@ body{background:#fff}
 #gbi5{background:url(https://ssl.gstatic.com/gb/images/b_8d5afc09.png);_background:url(https://ssl.gstatic.com/gb/images/b8_3615d64d.png);background-position:0 0;display:block;font-size:0;height:17px;width:16px}
 .gbtb .gbts{background:url(https://ssl.gstatic.com/gb/images/b_8d5afc09.png);_background:url(https://ssl.gstatic.com/gb/images/b8_3615d64d.png);background-position:-27px -22px;border:0;font-size:0;padding:29px 0 0;*padding:27px 0 0;width:1px}
 .gbto #gbi5{background-position:-6px -22px}
-        
+
 /* Popup */
 .gbto{box-shadow:0 1px 5px #ccc;-moz-box-shadow:0 1px 5px #ccc;-webkit-box-shadow:0 1px 5px #ccc}
 .gbto .gbm{visibility:visible;top:29px!important}
 .gbto .gbts{background:#fff;border-color:#bebebe;color:#36c;padding-bottom:1px;padding-top:2px}
 .gbto .gbzt .gbtb2,.gbto .gbgt .gbtb2{border-top-width:0}
-
-/* mine */
-body{background: transparent url(images/body-bg.png);}
-#container{position: relative;background: transparent url(images/header-bg.png) repeat-x top left;}
-header, #header {
-    top:32px;
-    height: 160px;
-    position: relative;
-    margin: 0 auto;
-    width: 90%;
-    z-index: 10;
-}
-header h1, #header h1 {
-    margin-top: 45px;
-    color:#6b173b;
-    font-size:25px !important;
-}
-img#logo {
-    display:block;
-    float:right;
-    text-align:right;
-    max-height:95px;
-}
-.date {
-  white-space:nowrap;
-}
-.number {
-  text-align:right;
-}
-.center {
-  text-align:center;
-}

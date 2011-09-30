@@ -32,6 +32,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+//using Microsoft.Data.Schema.SchemaModel;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Mictlanix.Iam.Models
 {
@@ -43,5 +45,13 @@ namespace Mictlanix.Iam.Models
         public DbSet<ArrangementStatus> Statuses { get; set; }
         public DbSet<School> Schools { get; set; }
         public DbSet<Organization> Organizations { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Arrangement>().Property(x => x.SignatureDate).IsOptional();
+            modelBuilder.Entity<Arrangement>().Property(x => x.ValidFrom).IsOptional();
+            modelBuilder.Entity<Arrangement>().Property(x => x.ExpiryDate).IsOptional();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
     }
 }

@@ -55,7 +55,7 @@ namespace Mictlanix.Iam.Controllers
                 return RedirectToAction("Index", "Home");  
             }
 
-            return View(new Search<Arrangement>());
+            return View(new Search<Arrangement> { Results = (from x in db.Arrangements orderby x.Year descending, x.Serial descending select x).Take(10).ToList() });
         }
 
         // POST: /Arrangements/Index
@@ -82,6 +82,7 @@ namespace Mictlanix.Iam.Controllers
                           where x.Organization.Name.Contains(search.Pattern) ||
                                 x.School.Name.Contains(search.Pattern) ||
                                 (year > 0 && x.Year == year && (serial == 0 || x.Serial == serial))
+                          orderby x.Year descending, x.Serial descending
                           select x;
 
                 result.Results = qry.ToList();
@@ -130,27 +131,36 @@ namespace Mictlanix.Iam.Controllers
         [HttpPost]
         public ActionResult Create(Arrangement item)
         {
-            if (ModelState.IsValid)
+            ArrangementStatus status;
+            IQueryable<int> qry;
+
+            if (!ModelState.IsValid)
+                return View(item);
+
+            qry = from x in db.Arrangements
+                  where x.Year == item.Year
+                  orderby x.Serial descending
+                  select x.Serial;
+
+            item.Status = (int)StatusEnum.Status01;
+            item.Year = DateTime.Today.Year;
+            item.Serial = qry.FirstOrDefault() + 1;
+
+            status = new ArrangementStatus
             {
-                item.Status = (int)StatusEnum.Status01;
-                item.Year = DateTime.Now.Year;
+                ArrangementYear = item.Year,
+                ArrangementSerial = item.Serial,
+                CreatorId = User.Identity.Name,
+                Date = DateTime.Now,
+                Status = item.Status,
+                Comment = Mictlanix.Iam.Properties.Resources.NewStatusComment
+            };
 
-                try
-                {
-                    item.Serial = db.Arrangements.Where(x => x.Year == item.Year).Select(x => x.Serial).Max() + 1;
-                }
-                catch (Exception)
-                {
-                    item.Serial = 1;
-                }
+            db.Arrangements.Add(item);
+            db.Statuses.Add(status);
+            db.SaveChanges();
 
-                db.Arrangements.Add(item);
-                db.SaveChanges();
-
-                return RedirectToAction("Index");  
-            }
-
-            return View(item);
+            return RedirectToAction("Index");
         }
         
         //

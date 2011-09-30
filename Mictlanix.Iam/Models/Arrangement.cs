@@ -120,9 +120,9 @@ namespace Mictlanix.Iam.Models
         public int Status { get; set; }
 
         [ForeignKey("AssignedTo")]
-        [Display(Name = "AssignedTo", ResourceType = typeof(Resources))]
         public string AssignedToId { get; set; }
 
+        [Display(Name = "AssignedTo", ResourceType = typeof(Resources))]
         public virtual User AssignedTo { get; set; }
         public virtual School School { get; set; }
         public virtual Organization Organization { get; set; }

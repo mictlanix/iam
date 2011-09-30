@@ -53,7 +53,7 @@ namespace Mictlanix.Iam.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            return View(new Search<ArrangementRequest>());
+            return View(new Search<ArrangementRequest> { Results = db.ArrangementRequests.OrderByDescending(x => x.Id).ToList() });
         }
 
         // POST: /Products/Index
@@ -76,10 +76,17 @@ namespace Mictlanix.Iam.Controllers
                                 (use_id && x.Id == id)
                           select x;
 
-                result.Results = qry.ToList();
+                result.Results = qry.OrderByDescending(x => x.Id).ToList();
             }
 
-            return View(result);
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Index", result);
+            }
+            else
+            {
+                return View(result);
+            }
         }
 
         //

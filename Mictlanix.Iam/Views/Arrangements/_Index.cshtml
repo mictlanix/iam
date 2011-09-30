@@ -3,6 +3,10 @@
 @using Mictlanix.Iam.Properties;
 @model Search<Arrangement>
 
+@{
+    var user = Html.GetUser(User.Identity.Name);
+}
+
 <p>
 @Html.ValidationMessageFor(x => x.Pattern)
 </p>
@@ -31,7 +35,7 @@
             @Html.LabelFor(x => new Arrangement().ExpiryDate)
         </th>
         <th>
-            @Html.LabelFor(x => new Arrangement().AssignedToId)
+            @Html.LabelFor(x => new Arrangement().AssignedTo)
         </th>
 
         <th>
@@ -67,25 +71,29 @@
         <td class="center">
             @Html.DisplayFor(x => item.AssignedTo.UserName)
         </td>
-        <td title="@item.StatusEnum.GetDisplayName()" style="text-align:center">
+        <td title="@item.StatusEnum.GetDisplayName()" class="center">
             @Html.ActionLink(item.Status.ToString("00"), "ChangeStatus", new { year = item.Year, serial = item.Serial })
         </td>
-        <td>
-            @if (Html.GetUser(User.Identity.Name).AllowEditArrangements)
+        <td class="actions">
+            @if (user.AllowEditArrangements)
             {
-                @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { year = item.Year, serial = item.Serial }) @:|
+                @Html.ActionImage(Url.Content("~/Content/icons/edit.png"), "Edit", new { year = item.Year, serial = item.Serial },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Edit, title = Mictlanix.Iam.Properties.Resources.Edit })
             }
             
-            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { year = item.Year, serial = item.Serial })
+            @Html.ActionImage(Url.Content("~/Content/icons/details.png"), "Details", new { year = item.Year, serial = item.Serial },
+                              new { alt = Mictlanix.Iam.Properties.Resources.Details, title = Mictlanix.Iam.Properties.Resources.Details })
             
-            @if (Html.GetUser(User.Identity.Name).AllowDeleteArrangements)
+            @if (user.AllowDeleteArrangements)
             {
-                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { year = item.Year, serial = item.Serial })
+                @Html.ActionImage(Url.Content("~/Content/icons/delete.png"), "Delete", new { year = item.Year, serial = item.Serial },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Delete, title = Mictlanix.Iam.Properties.Resources.Delete })
             }
             
-            @if (Html.GetUser(User.Identity.Name).IsAdministrator)
+            @if (user.IsAdministrator)
             {
-                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Assign, "Assign", new { year = item.Year, serial = item.Serial })
+                @Html.ActionImage(Url.Content("~/Content/icons/user.png"), "Assign", new { year = item.Year, serial = item.Serial },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Assign, title = Mictlanix.Iam.Properties.Resources.Assign })
             }
         </td>
     </tr>

@@ -4,6 +4,7 @@
 
 @{
     ViewBag.Title = Mictlanix.Iam.Properties.Resources.DisplayName_Organization;
+    var user = Html.GetUser(User.Identity.Name);
 }
 
 <h2>@Mictlanix.Iam.Properties.Resources.DisplayName_Organization</h2>
@@ -33,17 +34,20 @@
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
-            @if (Html.GetUser(User.Identity.Name).AllowEditOrganizations)
+        <td class="actions">
+            @if (user.AllowEditOrganizations)
             {
-                @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Edit, "Edit", new { id = item.Id }) @:|
+                @Html.ActionImage(Url.Content("~/Content/icons/edit.png"), "Edit", new { id = item.Id },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Edit, title = Mictlanix.Iam.Properties.Resources.Edit })
             }
             
-            @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Details, "Details", new { id = item.Id })
+            @Html.ActionImage(Url.Content("~/Content/icons/details.png"), "Details", new { id = item.Id },
+                              new { alt = Mictlanix.Iam.Properties.Resources.Details, title = Mictlanix.Iam.Properties.Resources.Details })
             
-            @if (Html.GetUser(User.Identity.Name).AllowDeleteOrganizations)
+            @if (user.AllowDeleteOrganizations)
             {
-                @:| @Html.ActionLink(Mictlanix.Iam.Properties.Resources.Delete, "Delete", new { id = item.Id })
+                @Html.ActionImage(Url.Content("~/Content/icons/delete.png"), "Delete", new { id = item.Id },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Delete, title = Mictlanix.Iam.Properties.Resources.Delete })
             }
         </td>
     </tr>
