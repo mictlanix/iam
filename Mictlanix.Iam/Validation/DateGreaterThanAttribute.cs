@@ -57,14 +57,12 @@ namespace Mictlanix.Iam.Models.Validation
             var basePropertyInfo = validationContext.ObjectType.GetProperty(property_name);
 
             //Get Value of the property
-            var startDate = (DateTime)basePropertyInfo.GetValue(validationContext.ObjectInstance, null);
+            var startDate = (DateTime?)basePropertyInfo.GetValue(validationContext.ObjectInstance, null);
             var attrs = basePropertyInfo.GetCustomAttributes(typeof(DisplayAttribute), false);
             string property = attrs.Length == 0 ? property_name : ((DisplayAttribute)attrs[0]).GetName();
 
-            var thisDate = (DateTime)value;
-
             //Actual comparision
-            if (thisDate <= startDate)
+            if (value == null || (DateTime)value <= startDate)
             {
                 var message = string.Format(ErrorMessageString, validationContext.DisplayName, property);
                 return new ValidationResult(message);

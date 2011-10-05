@@ -700,7 +700,7 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The user name or password provided is incorrect..
+        ///   Looks up a localized string similar to El usuario o contraseña es  incorrecto..
         /// </summary>
         public static string Message_InvalidUserPassword {
             get {
@@ -1033,7 +1033,7 @@ namespace Mictlanix.Iam.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Número de Expedientes.
+        ///   Looks up a localized string similar to Número de Expediente.
         /// </summary>
         public static string Serial {
             get {

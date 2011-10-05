@@ -3,16 +3,16 @@
   <publishProfile publishUrl="C:\Users\eddy\Projects\iam-publish" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="Views/Arrangements/Create.cshtml" publishTime="09/27/2011 22:51:41" />
     <file relUrl="Content/themes/base/minified/jquery.ui.slider.min.css" publishTime="08/31/2011 01:47:05" />
-    <file relUrl="bin/Mictlanix.Iam.pdb" publishTime="09/30/2011 08:40:45" />
+    <file relUrl="bin/Mictlanix.Iam.pdb" publishTime="10/05/2011 13:15:00" />
     <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="08/31/2011 01:47:07" />
     <file relUrl="Views/ArrangementRequests/Delete.cshtml" publishTime="09/23/2011 11:51:09" />
     <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="06/29/2011 03:40:12" />
     <file relUrl="Views/Users/Index.cshtml" publishTime="09/30/2011 07:48:54" />
-    <file relUrl="bin/WebActivator.dll" publishTime="09/28/2011 22:23:15" />
     <file relUrl="Content/icons/user.png" publishTime="04/13/2011 12:07:08" />
     <file relUrl="Content/themes/base/minified/jquery-ui.min.css" publishTime="08/31/2011 01:47:04" />
     <file relUrl="Views/Organizations/Details.cshtml" publishTime="09/27/2011 22:51:41" />
     <file relUrl="Content/themes/base/minified/jquery.ui.autocomplete.min.css" publishTime="08/31/2011 01:47:06" />
+    <file relUrl="Views/Schools/Details.cshtml" publishTime="09/28/2011 22:15:09" />
     <file relUrl="Views/Account/ChangePasswordSuccess.cshtml" publishTime="08/31/2011 04:21:11" />
     <file relUrl="Views/ArrangementRequests/_Index.cshtml" publishTime="09/30/2011 07:47:32" />
     <file relUrl="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="08/31/2011 01:47:08" />
@@ -32,7 +32,6 @@
     <file relUrl="Scripts/MicrosoftAjax.js" publishTime="06/29/2011 03:39:52" />
     <file relUrl="Content/images/welcome.png" publishTime="09/14/2011 06:05:39" />
     <file relUrl="Content/images/false.png" publishTime="08/26/2011 23:30:22" />
-    <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="06/29/2011 03:39:52" />
     <file relUrl="Views/Shared/_LogOnPartial.cshtml" publishTime="09/14/2011 09:07:01" />
     <file relUrl="Views/Organizations/Edit.cshtml" publishTime="09/27/2011 22:51:41" />
     <file relUrl="Views/Organizations/Delete.cshtml" publishTime="09/27/2011 22:51:41" />
@@ -49,14 +48,14 @@
     <file relUrl="Content/themes/base/minified/jquery.ui.tabs.min.css" publishTime="08/31/2011 01:47:05" />
     <file relUrl="bin/DataAnnotationsExtensions.dll" publishTime="09/23/2011 11:57:19" />
     <file relUrl="Views/Arrangements/Delete.cshtml" publishTime="09/27/2011 22:51:41" />
-    <file relUrl="Scripts/jquery-ui-1.8.16.min.js" publishTime="08/31/2011 01:47:04" />
+    <file relUrl="Views/Organizations/Create.cshtml" publishTime="09/27/2011 22:51:41" />
     <file relUrl="Global.asax" publishTime="08/30/2011 23:50:31" />
     <file relUrl="Views/Schools/Index.cshtml" publishTime="09/30/2011 06:18:47" />
     <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="06/29/2011 03:39:52" />
     <file relUrl="Views/Shared/DisplayTemplates/DateTime.cshtml" publishTime="09/23/2011 11:51:09" />
     <file relUrl="Content/themes/base/minified/jquery.ui.theme.min.css" publishTime="08/31/2011 01:47:05" />
     <file relUrl="Content/icons/add.png" publishTime="04/13/2011 12:07:16" />
-    <file relUrl="Web.config" publishTime="09/30/2011 08:41:01" />
+    <file relUrl="Web.config" publishTime="10/05/2011 13:10:30" />
     <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="09/28/2011 22:23:15" />
     <file relUrl="Content/icons/delete.png" publishTime="04/13/2011 12:05:42" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="06/29/2011 03:39:52" />
@@ -64,7 +63,6 @@
     <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="06/29/2011 03:39:50" />
     <file relUrl="packages.config" publishTime="09/28/2011 22:23:16" />
     <file relUrl="Views/Shared/DisplayTemplates/SchoolType.cshtml" publishTime="09/29/2011 22:47:22" />
-    <file relUrl="Views/Shared/EditorTemplates/Date.cshtml" publishTime="08/31/2011 11:48:36" />
     <file relUrl="Views/Shared/DisplayTemplates/Boolean.cshtml" publishTime="09/07/2011 00:48:30" />
     <file relUrl="Content/themes/base/jquery.ui.dialog.css" publishTime="06/29/2011 03:40:12" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png" publishTime="08/31/2011 01:47:06" />
@@ -76,39 +74,41 @@
     <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="06/29/2011 03:39:50" />
     <file relUrl="Content/icons/next.png" publishTime="04/13/2011 12:07:14" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="08/31/2011 01:47:07" />
-    <file relUrl="Views/_ViewStart.cshtml" publishTime="06/29/2011 03:39:52" />
+    <file relUrl="Views/ArrangementRequests/Index.cshtml" publishTime="09/29/2011 23:36:13" />
     <file relUrl="Content/themes/base/jquery.ui.autocomplete.css" publishTime="06/29/2011 03:40:14" />
-    <file relUrl="bin/Mictlanix.Iam.dll" publishTime="09/30/2011 08:40:46" />
+    <file relUrl="bin/Mictlanix.Iam.dll" publishTime="10/05/2011 13:15:00" />
     <file relUrl="Content/images/body-bg.png" publishTime="09/06/2011 02:47:15" />
     <file relUrl="Content/images/header-bg.png" publishTime="09/06/2011 04:22:29" />
-    <file relUrl="Views/Home/About.cshtml" publishTime="09/07/2011 01:26:40" />
+    <file relUrl="Views/Home/About.cshtml" publishTime="10/05/2011 13:09:20" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="08/31/2011 01:47:08" />
     <file relUrl="Content/themes/base/minified/jquery.ui.dialog.min.css" publishTime="08/31/2011 01:47:05" />
     <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="08/31/2011 01:45:57" />
     <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="06/29/2011 03:40:10" />
+    <file relUrl="Scripts/jquery.validate.min.js" publishTime="08/31/2011 01:45:58" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="08/31/2011 01:47:08" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png" publishTime="08/31/2011 01:47:07" />
-    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="08/31/2011 01:47:07" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.all.min.css" publishTime="08/31/2011 01:47:06" />
     <file relUrl="Views/Account/ChangePassword.cshtml" publishTime="08/31/2011 04:39:31" />
+    <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="06/29/2011 03:39:52" />
     <file relUrl="Views/Shared/DisplayTemplates/MultilineText.cshtml" publishTime="09/29/2011 22:55:07" />
     <file relUrl="Views/Users/Edit.cshtml" publishTime="08/31/2011 13:08:22" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="08/31/2011 01:47:08" />
-    <file relUrl="Views/Organizations/Create.cshtml" publishTime="09/27/2011 22:51:41" />
     <file relUrl="Content/themes/base/jquery.ui.button.css" publishTime="06/29/2011 03:40:12" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_888888_256x240.png" publishTime="08/31/2011 01:47:06" />
+    <file relUrl="Scripts/jquery-ui-1.8.16.min.js" publishTime="08/31/2011 01:47:04" />
     <file relUrl="Content/images/logo.png" publishTime="09/14/2011 06:17:52" />
     <file relUrl="Scripts/modernizr-2.0.6-development-only.js" publishTime="08/31/2011 01:39:55" />
-    <file relUrl="Scripts/jquery-1.6.4.min.js" publishTime="09/28/2011 22:23:09" />
     <file relUrl="Views/Users/Delete.cshtml" publishTime="08/31/2011 12:31:29" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="08/31/2011 01:47:08" />
     <file relUrl="Views/ArrangementRequests/Edit.cshtml" publishTime="09/23/2011 11:51:09" />
     <file relUrl="Content/themes/base/minified/jquery.ui.selectable.min.css" publishTime="08/31/2011 01:47:05" />
-    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="09/29/2011 23:33:58" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="08/31/2011 01:47:07" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="10/05/2011 13:03:53" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="08/31/2011 01:47:06" />
     <file relUrl="bin/DataAnnotationsExtensions.ClientValidation.dll" publishTime="09/23/2011 11:57:19" />
     <file relUrl="Views/Users/Details.cshtml" publishTime="09/29/2011 23:39:59" />
     <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="06/29/2011 03:40:14" />
-    <file relUrl="Views/Arrangements/Details.cshtml" publishTime="09/30/2011 08:00:21" />
+    <file relUrl="Views/Arrangements/Details.cshtml" publishTime="10/04/2011 04:11:24" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="08/31/2011 01:47:08" />
     <file relUrl="Views/Schools/Delete.cshtml" publishTime="09/28/2011 22:15:09" />
     <file relUrl="Views/ArrangementRequests/Details.cshtml" publishTime="09/23/2011 11:51:09" />
@@ -117,13 +117,12 @@
     <file relUrl="Content/themes/base/minified/images/ui-icons_454545_256x240.png" publishTime="08/31/2011 01:47:06" />
     <file relUrl="Content/themes/base/minified/jquery.ui.resizable.min.css" publishTime="08/31/2011 01:47:05" />
     <file relUrl="Content/themes/base/minified/jquery.ui.core.min.css" publishTime="08/31/2011 01:47:05" />
-    <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="08/31/2011 01:47:08" />
+    <file relUrl="Scripts/jquery-1.6.4.min.js" publishTime="09/28/2011 22:23:09" />
     <file relUrl="Views/Shared/DisplayTemplates/Date.cshtml" publishTime="08/15/2011 18:56:34" />
     <file relUrl="Content/themes/base/jquery.ui.slider.css" publishTime="06/29/2011 03:40:12" />
     <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="08/31/2011 01:47:07" />
     <file relUrl="Content/Site.css" publishTime="09/27/2011 17:22:03" />
     <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="06/29/2011 03:39:50" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.all.min.css" publishTime="08/31/2011 01:47:06" />
     <file relUrl="Content/icons/search.png" publishTime="04/13/2011 12:06:02" />
     <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="06/29/2011 03:39:52" />
     <file relUrl="Views/Arrangements/Index.cshtml" publishTime="09/29/2011 23:35:25" />
@@ -136,14 +135,15 @@
     <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="08/31/2011 01:47:07" />
     <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="06/29/2011 03:40:12" />
     <file relUrl="Content/main.css" publishTime="09/30/2011 07:47:52" />
-    <file relUrl="Views/Schools/Details.cshtml" publishTime="09/28/2011 22:15:09" />
+    <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="08/31/2011 01:47:08" />
     <file relUrl="Views/Schools/Create.cshtml" publishTime="09/30/2011 05:29:09" />
-    <file relUrl="Views/ArrangementRequests/Index.cshtml" publishTime="09/29/2011 23:36:13" />
     <file relUrl="Content/Menu.css" publishTime="09/29/2011 23:33:19" />
-    <file relUrl="Views/Organizations/Index.cshtml" publishTime="09/30/2011 06:19:05" />
+    <file relUrl="bin/WebActivator.dll" publishTime="09/28/2011 22:23:15" />
     <file relUrl="Scripts/jquery-ui-i18n.min.js" publishTime="09/23/2011 11:51:09" />
-    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="08/31/2011 01:47:07" />
-    <file relUrl="Scripts/jquery.validate.min.js" publishTime="08/31/2011 01:45:58" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="08/31/2011 01:47:07" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="06/29/2011 03:39:52" />
+    <file relUrl="Views/Organizations/Index.cshtml" publishTime="09/30/2011 06:19:05" />
+    <file relUrl="Views/Shared/EditorTemplates/Date.cshtml" publishTime="08/31/2011 11:48:36" />
     <file relUrl="Views/Account/Register.cshtml" publishTime="08/31/2011 04:58:08" />
     <file relUrl="Views/Arrangements/_Index.cshtml" publishTime="09/30/2011 08:01:17" />
     <file relUrl="Content/themes/base/minified/jquery.ui.button.min.css" publishTime="08/31/2011 01:47:05" />

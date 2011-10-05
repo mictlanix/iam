@@ -343,7 +343,7 @@
     <value>Búsqueda</value>
   </data>
   <data name="Serial" xml:space="preserve">
-    <value>Número de Expedientes</value>
+    <value>Número de Expediente</value>
   </data>
   <data name="SignatureDate" xml:space="preserve">
     <value>Fecha de Firma</value>
@@ -403,7 +403,7 @@
     <value>La contraseña actual es incorrecta o la contraseña nueva es inválida.</value>
   </data>
   <data name="Message_InvalidUserPassword" xml:space="preserve">
-    <value>The user name or password provided is incorrect.</value>
+    <value>El usuario o contraseña es  incorrecto.</value>
   </data>
   <data name="Message_UnknownError" xml:space="preserve">
     <value>Error desconocido. Por favor, verifica tus datos y vuelve a intentarlo. Si el problema persiste contacte a su administrador de sistema.</value>

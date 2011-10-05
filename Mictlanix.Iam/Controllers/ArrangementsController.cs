@@ -220,12 +220,15 @@ namespace Mictlanix.Iam.Controllers
                 }
 
                 arrangement.Status = item.Status;
+
                 item.Arrangement = arrangement;
                 item.Date = DateTime.Now;
                 item.CreatorId = User.Identity.Name;
-
                 db.Statuses.Add(item);
+
+                db.Configuration.ValidateOnSaveEnabled = false;
                 db.SaveChanges();
+                db.Configuration.ValidateOnSaveEnabled = true;
 
                 return RedirectToAction("Index");
             }
@@ -271,7 +274,11 @@ namespace Mictlanix.Iam.Controllers
                 Arrangement arrangement = db.Arrangements.Find(item.ArrangementYear, item.ArrangementSerial);
                 arrangement.AssignedToId = item.AssignedToId;
                 arrangement.AssignedTo = db.Users.Find(item.AssignedToId);
+                
+                db.Configuration.ValidateOnSaveEnabled = false;
                 db.SaveChanges();
+                db.Configuration.ValidateOnSaveEnabled = true;
+
                 return RedirectToAction("Index");
             }
 
