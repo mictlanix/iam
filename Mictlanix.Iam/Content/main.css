@@ -13,6 +13,9 @@ header h1, #header h1 {
     color:#6b173b;
     font-size:25px !important;
 }
+img {
+  border:none;
+}
 img#logo {
     display:block;
     float:right;
@@ -25,12 +28,12 @@ img#logo {
 .number {
   text-align:right;
 }
+.center {
+  text-align:center;
+}
 .actions {
   white-space:nowrap;
   width:1px;
-}
-.center {
-  text-align:center;
 }
 #activity-indicator {
   display:none;

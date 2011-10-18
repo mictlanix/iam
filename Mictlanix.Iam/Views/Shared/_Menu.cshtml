@@ -1,5 +1,6 @@
 ﻿@using Mictlanix.Iam.Models;
 @using Mictlanix.Iam.Helpers;
+
 @{
     ViewBag.User = Html.GetUser(User.Identity.Name) ?? new User();
 }
