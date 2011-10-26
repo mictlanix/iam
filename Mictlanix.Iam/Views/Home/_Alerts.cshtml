@@ -1,0 +1,98 @@
+﻿@using Mictlanix.Iam.Models;
+@using Mictlanix.Iam.Helpers;
+@using Mictlanix.Iam.Properties;
+@model List<Arrangement>
+
+@{
+    var user = Html.GetUser(User.Identity.Name);
+}
+
+<table>
+    <tr>
+        <th>
+            @Html.LabelFor(x => new Arrangement().SerialNumber)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().ReceiptDate)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().SchoolId)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().OrganizationId)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().Amount)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().ValidFrom)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().ExpiryDate)
+        </th>
+        <th>
+            @Html.LabelFor(x => new Arrangement().AssignedTo)
+        </th>
+
+        <th>
+            @Html.LabelFor(x => new Arrangement().Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(x => item.SerialNumber)
+        </td>
+        <td class="date">
+            @Html.DisplayFor(x => item.ReceiptDate)
+        </td>
+        <td>
+            @Html.DisplayFor(x => item.School.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(x => item.Organization.Name)
+        </td>
+        <td class="number">
+            @Html.DisplayFor(x => item.Amount)
+        </td>
+        <td class="date">
+            @Html.DisplayFor(x => item.ValidFrom)
+        </td>
+        <td class="date">
+            @Html.DisplayFor(x => item.ExpiryDate)
+        </td>
+        <td class="center">
+            @Html.DisplayFor(x => item.AssignedTo.UserName)
+        </td>
+        <td title="@item.StatusEnum.GetDisplayName()" class="center">
+            @Html.ActionLink(item.Status.ToString("00"), "ChangeStatus", new { year = item.Year, serial = item.Serial })
+        </td>
+        <td class="actions">
+            @if (user.AllowEditArrangements)
+            {
+                @Html.ActionImage(Url.Content("~/Content/icons/edit.png"), "Edit", new { year = item.Year, serial = item.Serial },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Edit, title = Mictlanix.Iam.Properties.Resources.Edit })
+            }
+            
+            @Html.ActionImage(Url.Content("~/Content/icons/details.png"), "Details", new { year = item.Year, serial = item.Serial },
+                              new { alt = Mictlanix.Iam.Properties.Resources.Details, title = Mictlanix.Iam.Properties.Resources.Details })
+            
+            @if (user.AllowDeleteArrangements)
+            {
+                @Html.ActionImage(Url.Content("~/Content/icons/delete.png"), "Delete", new { year = item.Year, serial = item.Serial },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Delete, title = Mictlanix.Iam.Properties.Resources.Delete })
+            }
+            
+            @if (user.IsAdministrator)
+            {
+                @Html.ActionImage(Url.Content("~/Content/icons/user.png"), "Assign", new { year = item.Year, serial = item.Serial },
+                                  new { alt = Mictlanix.Iam.Properties.Resources.Assign, title = Mictlanix.Iam.Properties.Resources.Assign })
+            }
+        </td>
+    </tr>
+}
+
+</table>

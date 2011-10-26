@@ -1,0 +1,26 @@
+﻿@using Mictlanix.Iam.Models;
+@using Mictlanix.Iam.Helpers;
+@using Mictlanix.Iam.Properties;
+@model ArrangementAlerts
+           
+@{
+    ViewBag.Title = Resources.Arrangement;
+}
+
+<h2>CriticalList</h2>
+
+<div id="critical-list">
+    @Html.Partial("_Alerts", Model.CriticalList)
+</div>
+
+<h2>WarningList</h2>
+
+<div id="warning-list">
+    @Html.Partial("_Alerts", Model.WarningList)
+</div>
+
+<h2>NormalList</h2>
+
+<div id="normal-list">
+    @Html.Partial("_Alerts", Model.NormalList)
+</div>

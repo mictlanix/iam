@@ -32,19 +32,118 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Mictlanix.Iam.Models;
 
 namespace Mictlanix.Iam.Controllers
 {
     public class HomeController : Controller
     {
+        SSContext db = new SSContext();
+
+        ArrangementAlertRule[] alerts = 
+        {
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status01, 
+                WarningDays = 3, 
+                CriticalDays = 6, 
+                Validation = ValidateStatusChange
+            },
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status02, 
+                WarningDays = 3, 
+                CriticalDays = 6, 
+                Validation = ValidateStatusChange
+            },
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status05, 
+                WarningDays = 3, 
+                CriticalDays = 6, 
+                Validation = ValidateStatusChange
+            },
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status06, 
+                WarningDays = 60, 
+                CriticalDays = 30,
+                Validation = ValidateExpiryDate
+            },
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status08, 
+                WarningDays = 60, 
+                CriticalDays = 30,
+                Validation = ValidateExpiryDate
+            },
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status09, 
+                WarningDays = 15, 
+                CriticalDays = 30, 
+                Validation = ValidateStatusChange
+            },
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status13, 
+                WarningDays = 15, 
+                CriticalDays = 30, 
+                Validation = ValidateStatusChange
+            },
+            new ArrangementAlertRule {
+                Status = StatusEnum.Status15, 
+                WarningDays = 30, 
+                CriticalDays = 60, 
+                Validation = ValidateStatusChange
+            }
+        };
+
         public ActionResult Index()
         {
-            return View();
+            if (!Request.IsAuthenticated)
+            {
+                return View();
+            }
+
+            List<Arrangement> normal = new List<Arrangement>();
+            List<Arrangement> warning = new List<Arrangement>();
+            List<Arrangement> critical = new List<Arrangement>();
+            var qry = from x in db.Arrangements
+                      where x.Status != (int)StatusEnum.Status10 && 
+                            x.Status != (int)StatusEnum.Status16
+                      select x;
+
+            foreach (var item in qry.ToList())
+            {
+                ArrangementAlertRule alert = alerts.SingleOrDefault(x => x.Status == item.StatusEnum);
+
+                if (alert != null && alert.Validation(item, alert.CriticalDays))
+                {
+                    critical.Add(item);
+                }
+                else if (alert != null && alert.Validation(item, alert.WarningDays))
+                {
+                    warning.Add(item);
+                }
+                else
+                {
+                    normal.Add(item);
+                }
+            }
+
+            return View("Alerts", new ArrangementAlerts { NormalList = normal, WarningList = warning, CriticalList = critical });
         }
 
         public ActionResult About()
         {
             return View();
+        }
+        
+        public static bool ValidateStatusChange(Arrangement item, int days)
+        {
+            return (DateTime.Now - item.Statuses.Last().Date).Days >= days;
+        }
+
+        public static bool ValidateExpiryDate(Arrangement item, int days)
+        {
+            if (item.ExpiryDate == null)
+                return true;
+
+            return (item.ExpiryDate.Value - DateTime.Now).Days <= days;
         }
     }
 }
