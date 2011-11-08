@@ -529,7 +529,7 @@
     <value>Convenio que Paso a Subcomité</value>
   </data>
   <data name="Status10" xml:space="preserve">
-    <value>Convenio Aprobado por el Subcomité (concluido)</value>
+    <value>Convenio Aprobado por el Subcomité</value>
   </data>
   <data name="Status11" xml:space="preserve">
     <value>Convenio con Firmas Autógrafas Falta Formato PV3</value>
@@ -608,5 +608,29 @@
   </data>
   <data name="Menu_Home" xml:space="preserve">
     <value>Inicio</value>
+  </data>
+  <data name="CriticalList" xml:space="preserve">
+    <value>Vencidos</value>
+  </data>
+  <data name="NormalList" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="WarningList" xml:space="preserve">
+    <value>Por Vencer</value>
+  </data>
+  <data name="Message_DeleteUnsuccessful" xml:space="preserve">
+    <value>No se puede borrar el elemento porque tiene dependencias en el sistema.</value>
+  </data>
+  <data name="Alerts" xml:space="preserve">
+    <value>Alertas</value>
+  </data>
+  <data name="AllowAlerts" xml:space="preserve">
+    <value>Alertas</value>
+  </data>
+  <data name="ExpiredList" xml:space="preserve">
+    <value>Expirados</value>
+  </data>
+  <data name="ValidList" xml:space="preserve">
+    <value>Vigentes</value>
   </data>
 </root>

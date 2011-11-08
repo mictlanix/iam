@@ -68,29 +68,11 @@
             @Html.DisplayFor(x => item.AssignedTo.UserName)
         </td>
         <td title="@item.StatusEnum.GetDisplayName()" class="center">
-            @Html.ActionLink(item.Status.ToString("00"), "ChangeStatus", new { year = item.Year, serial = item.Serial })
+            @Html.ActionLink(item.Status.ToString("00"), "ChangeStatus", "Arrangements", new { year = item.Year, serial = item.Serial }, null)
         </td>
         <td class="actions">
-            @if (user.AllowEditArrangements)
-            {
-                @Html.ActionImage(Url.Content("~/Content/icons/edit.png"), "Edit", new { year = item.Year, serial = item.Serial },
-                                  new { alt = Mictlanix.Iam.Properties.Resources.Edit, title = Mictlanix.Iam.Properties.Resources.Edit })
-            }
-            
-            @Html.ActionImage(Url.Content("~/Content/icons/details.png"), "Details", new { year = item.Year, serial = item.Serial },
+            @Html.ActionImage(Url.Content("~/Content/icons/details.png"), "Details", "Arrangements", new { year = item.Year, serial = item.Serial },
                               new { alt = Mictlanix.Iam.Properties.Resources.Details, title = Mictlanix.Iam.Properties.Resources.Details })
-            
-            @if (user.AllowDeleteArrangements)
-            {
-                @Html.ActionImage(Url.Content("~/Content/icons/delete.png"), "Delete", new { year = item.Year, serial = item.Serial },
-                                  new { alt = Mictlanix.Iam.Properties.Resources.Delete, title = Mictlanix.Iam.Properties.Resources.Delete })
-            }
-            
-            @if (user.IsAdministrator)
-            {
-                @Html.ActionImage(Url.Content("~/Content/icons/user.png"), "Assign", new { year = item.Year, serial = item.Serial },
-                                  new { alt = Mictlanix.Iam.Properties.Resources.Assign, title = Mictlanix.Iam.Properties.Resources.Assign })
-            }
         </td>
     </tr>
 }

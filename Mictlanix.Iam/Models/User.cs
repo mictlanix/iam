@@ -73,6 +73,9 @@ namespace Mictlanix.Iam.Models
         [Display(Name = "IsAdministrator", ResourceType = typeof(Resources))]
         public bool IsAdministrator { get; set; }
 
+        [Display(Name = "AllowAlerts", ResourceType = typeof(Resources))]
+        public bool AllowAlerts { get; set; }
+
         [Display(Name = "AllowReadSchools", ResourceType = typeof(Resources))]
         public bool AllowReadSchools { get; set; }
 

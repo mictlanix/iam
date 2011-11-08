@@ -46,7 +46,6 @@ namespace Mictlanix.Iam.Controllers
         //
         // GET: /Arrangements/
 
-
         public ActionResult Index()
         {
             if (!Request.IsAuthenticated ||
@@ -79,8 +78,13 @@ namespace Mictlanix.Iam.Controllers
                 }
 
                 var qry = from x in db.Arrangements
-                          where x.Organization.Name.Contains(search.Pattern) ||
+                          where x.Organization.ShortName.Contains(search.Pattern) || 
+                                x.Organization.Name.Contains(search.Pattern) ||
+                                x.School.ShortName.Contains(search.Pattern) ||
                                 x.School.Name.Contains(search.Pattern) ||
+                                x.Object.Contains(search.Pattern) ||
+                                x.Responsible.Contains(search.Pattern) ||
+                                x.Comment.Contains(search.Pattern) ||
                                 (year > 0 && x.Year == year && (serial == 0 || x.Serial == serial))
                           orderby x.Year descending, x.Serial descending
                           select x;
@@ -249,10 +253,24 @@ namespace Mictlanix.Iam.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int year, int serial)
-        {            
-            Arrangement datosconvenio = db.Arrangements.Find(year, serial);
-            db.Arrangements.Remove(datosconvenio);
-            db.SaveChanges();
+        {
+            try
+            {
+                Arrangement item = db.Arrangements.Find(year, serial);
+
+                foreach (var x in item.Statuses.ToList())
+                {
+                    db.Statuses.Remove(x);
+                }
+
+                db.Arrangements.Remove(item);
+
+                db.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                return View("DeleteUnsuccessful");
+            }
             return RedirectToAction("Index");
         }
 

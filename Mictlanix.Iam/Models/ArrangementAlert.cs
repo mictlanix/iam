@@ -50,5 +50,12 @@ namespace Mictlanix.Iam.Models
         public List<Arrangement> NormalList { get; set; }
         public List<Arrangement> WarningList { get; set; }
         public List<Arrangement> CriticalList { get; set; }
+        public List<Arrangement> ExpiredList { get; set; }
+        public List<Arrangement> ValidList { get; set; }
+    }
+
+    public class ArrangementAlertExpired
+    {
+        public Func<Arrangement, bool> Valid { get; set; }
     }
 }

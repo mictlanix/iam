@@ -127,13 +127,13 @@ namespace Mictlanix.Iam.Helpers
         public static List<School> GetSchools(this HtmlHelper helper)
         {
             SSContext db = new SSContext();
-            return db.Schools.OrderBy(x => x.Name).ToList();
+            return db.Schools.OrderBy(x => x.ShortName).ToList();
         }
 
         public static List<Organization> GetOrganizations(this HtmlHelper helper)
         {
             SSContext db = new SSContext();
-            return db.Organizations.OrderBy(x => x.Name).ToList();
+            return db.Organizations.OrderBy(x => x.ShortName).ToList();
         }
     }
 }

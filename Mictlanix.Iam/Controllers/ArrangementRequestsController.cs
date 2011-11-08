@@ -72,7 +72,12 @@ namespace Mictlanix.Iam.Controllers
 
                 var qry = from x in db.ArrangementRequests
                           where x.Organization.Name.Contains(search.Pattern) ||
+                                x.Organization.ShortName.Contains(search.Pattern) ||
                                 x.School.Name.Contains(search.Pattern) ||
+                                x.School.ShortName.Contains(search.Pattern) ||
+                                x.Object.Contains(search.Pattern) ||
+                                x.LegalRequirement.Contains(search.Pattern) ||
+                                x.Comment.Contains(search.Pattern) ||
                                 (use_id && x.Id == id)
                           select x;
 
@@ -161,10 +166,18 @@ namespace Mictlanix.Iam.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
-        {            
-            ArrangementRequest revisionarreglo = db.ArrangementRequests.Find(id);
-            db.ArrangementRequests.Remove(revisionarreglo);
-            db.SaveChanges();
+        {
+            try
+            {
+                ArrangementRequest revisionarreglo = db.ArrangementRequests.Find(id);
+                db.ArrangementRequests.Remove(revisionarreglo);
+                db.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                return View("DeleteUnsuccessful");
+            }
+
             return RedirectToAction("Index");
         }
 

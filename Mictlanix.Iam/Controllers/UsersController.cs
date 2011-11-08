@@ -74,10 +74,18 @@ namespace Mictlanix.Iam.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(string id)
-        {            
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
+        {
+            try
+            {
+                User user = db.Users.Find(id);
+                db.Users.Remove(user);
+                db.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                return View("DeleteUnsuccessful");
+            }
+
             return RedirectToAction("Index");
         }
 

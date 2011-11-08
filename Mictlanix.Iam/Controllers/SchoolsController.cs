@@ -53,7 +53,7 @@ namespace Mictlanix.Iam.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            return View(db.Schools.OrderBy(x => x.Name).ToList());
+            return View(db.Schools.OrderBy(x => x.ShortName).ToList());
         }
 
         //
@@ -127,10 +127,18 @@ namespace Mictlanix.Iam.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
-        {            
-            School Schools = db.Schools.Find(id);
-            db.Schools.Remove(Schools);
-            db.SaveChanges();
+        {
+            try
+            {
+                School item = db.Schools.Find(id);
+                db.Schools.Remove(item);
+                db.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                return View("DeleteUnsuccessful");
+            }
+
             return RedirectToAction("Index");
         }
 

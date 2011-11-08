@@ -82,13 +82,13 @@ namespace Mictlanix.Iam.Models
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
         [Display(Name = "SignatureDate", ResourceType = typeof(Resources))]
-        [DateGreaterThan("ReceiptDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
+        //[DateGreaterThan("ReceiptDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
         public DateTime? SignatureDate { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]
         [DataType(DataType.Date)]
         [Display(Name = "ValidFrom", ResourceType = typeof(Resources))]
-        [DateGreaterThan("SignatureDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
+        //[DateGreaterThan("SignatureDate", ErrorMessageResourceName = "Validation_DateGreaterThan", ErrorMessageResourceType = typeof(Resources))]
         public DateTime? ValidFrom { get; set; }
 
         [Required(ErrorMessageResourceName = "Validation_Required", ErrorMessageResourceType = typeof(Resources))]

@@ -94,7 +94,8 @@ namespace Mictlanix.Iam.Controllers
 
         public ActionResult Index()
         {
-            if (!Request.IsAuthenticated)
+            if (!Request.IsAuthenticated ||
+                !Helpers.HtmlHelpers.GetUser(null, User.Identity.Name).AllowAlerts)
             {
                 return View();
             }
@@ -102,6 +103,13 @@ namespace Mictlanix.Iam.Controllers
             List<Arrangement> normal = new List<Arrangement>();
             List<Arrangement> warning = new List<Arrangement>();
             List<Arrangement> critical = new List<Arrangement>();
+            List<Arrangement> expired = new List<Arrangement>();
+            List<Arrangement> valid = new List<Arrangement>();
+
+            var list = from x in db.Arrangements
+                       where x.ExpiryDate != null
+                       select x;
+
             var qry = from x in db.Arrangements
                       where x.Status != (int)StatusEnum.Status10 && 
                             x.Status != (int)StatusEnum.Status16
@@ -125,7 +133,28 @@ namespace Mictlanix.Iam.Controllers
                 }
             }
 
-            return View("Alerts", new ArrangementAlerts { NormalList = normal, WarningList = warning, CriticalList = critical });
+            foreach (var item in list.ToList())
+            {
+                ArrangementAlertExpired expiry = new ArrangementAlertExpired {Valid = ValidateExpired };
+
+                if (expiry.Valid(item))
+                {
+                    expired.Add(item);
+                }
+                else 
+                {
+                    valid.Add(item);
+                }
+            }
+
+            return View("Alerts", new ArrangementAlerts 
+                        { 
+                            NormalList = normal, 
+                            WarningList = warning, 
+                            CriticalList = critical, 
+                            ExpiredList = expired, 
+                            ValidList = valid 
+                        });
         }
 
         public ActionResult About()
@@ -144,6 +173,12 @@ namespace Mictlanix.Iam.Controllers
                 return true;
 
             return (item.ExpiryDate.Value - DateTime.Now).Days <= days;
+        }
+
+        public static bool ValidateExpired(Arrangement item)
+        {
+            return (item.ExpiryDate.Value - DateTime.Now).Days < 0;
+        
         }
     }
 }

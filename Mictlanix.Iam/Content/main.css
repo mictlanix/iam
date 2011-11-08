@@ -46,3 +46,28 @@ table {
 table th {
   text-align:center;
 }
+
+#tab-critical-lists {
+  color:red;
+  font-weight:bold;
+}
+#critical-list table th {
+  background:red;
+  color:white;
+}
+#tab-warning-lists {
+    color:#ccbb00;
+    font-weight:bold;
+}
+#warning-list table th {
+  background:#ccbb00;
+  color:white;
+}
+#tab-normal-lists {
+  color:green;
+  font-weight:bold;
+}
+#normal-list table th {
+  background:green;
+  color:white;
+}

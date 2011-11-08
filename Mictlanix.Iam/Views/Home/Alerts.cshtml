@@ -4,23 +4,43 @@
 @model ArrangementAlerts
            
 @{
-    ViewBag.Title = Resources.Arrangement;
+    ViewBag.Title = Resources.Alerts;
 }
 
-<h2>CriticalList</h2>
+<h2>@Resources.Alerts</h2>
 
-<div id="critical-list">
-    @Html.Partial("_Alerts", Model.CriticalList)
+<div id="tabs">
+	<ul>
+		<li><a id="tab-critical-lists" href="#critical-list">@Resources.CriticalList</a></li>
+		<li><a id="tab-warning-lists" href="#warning-list">@Resources.WarningList</a></li>
+		<li><a id="tab-normal-lists" href="#normal-list">@Resources.NormalList</a></li>
+        <li><a id="tab-expired-lists" href="#expired-list">@Resources.ExpiredList</a></li>
+        <li><a id="tab-valid-lists" href="#valid-list">@Resources.ValidList</a></li>
+	</ul>
+
+    <div id="critical-list">
+        @Html.Partial("_Alerts", Model.CriticalList)
+    </div>
+
+    <div id="warning-list">
+        @Html.Partial("_Alerts", Model.WarningList)
+    </div>
+
+    <div id="normal-list">
+        @Html.Partial("_Alerts", Model.NormalList)
+    </div>
+
+    <div id="expired-list">
+        @Html.Partial("_Alerts", Model.ExpiredList)
+    </div>
+
+    <div id="valid-list">
+        @Html.Partial("_Alerts", Model.ValidList)
+    </div>
 </div>
 
-<h2>WarningList</h2>
-
-<div id="warning-list">
-    @Html.Partial("_Alerts", Model.WarningList)
-</div>
-
-<h2>NormalList</h2>
-
-<div id="normal-list">
-    @Html.Partial("_Alerts", Model.NormalList)
-</div>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
